@@ -10,7 +10,8 @@ class CreateAdhernetsTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+    */
+    
     public function up()
     {
         Schema::create('adhernets', function (Blueprint $table) {
