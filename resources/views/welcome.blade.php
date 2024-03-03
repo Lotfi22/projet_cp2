@@ -15,15 +15,12 @@
             <label for="fichier" ></label> 
             <input id="fichier" type="file" name="fichier">
 
-            <h2>Hello</h2>
-
-
-
-
             {{--  --}}
         </form>
 
         <h1>Bonjour</h1>
+
+        <h1>Hello</h1>
 
         {{--  --}}
     </body>

@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () 
+{
+    return view('welcome');
+});
 
-Route::get('/test/lotfi','TestController@test1');
+Route::get('/test','TestController@test1');
