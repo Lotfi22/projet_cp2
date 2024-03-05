@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/lotfi','TestController@lotfi');
+
+Route::get('/sports','TestController@index');
+
+Route::post('/sports/create','TestController@create');
