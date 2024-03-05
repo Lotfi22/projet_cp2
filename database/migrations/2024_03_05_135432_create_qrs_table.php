@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQrsTables extends Migration
+class CreateQrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateQrsTables extends Migration
      */
     public function up()
     {
-        Schema::create('qrs_tables', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('qrs', function (Blueprint $table) {
+           $table->bigIncrements('id');
             $table->string('img');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
@@ -28,6 +28,6 @@ class CreateQrsTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qrs_tables');
+        Schema::dropIfExists('qrs');
     }
 }

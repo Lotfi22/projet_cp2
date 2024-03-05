@@ -15,8 +15,10 @@ class CreateSousCategoriesTable extends Migration
     {
         Schema::create('sous_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_categories');
-            $table->bigInteger('id_sport');
+            $table->unsignedBigInteger('id_sport');
+            $table->foreign('id_sport')->references('id')->on('sports');
+              $table->unsignedBigInteger('id_categorie');
+            $table->foreign('id_categorie')->references('id')->on('categories');
             $table->text('description');
             $table->timestamp('created_at')->useCurrent(); 
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

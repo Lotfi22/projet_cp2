@@ -15,7 +15,8 @@ class CreateFacturesTable extends Migration
     {
         Schema::create('factures', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_gestionnaire');
+            $table->unsignedBigInteger('id_gestionnaire');
+            $table->foreign('id_gestionnaire')->references('id')->on('gestionnaires');
             $table->double('ht', 10, 6);
             $table->double('tva', 4, 4);
             $table->double('versement', 10, 6);

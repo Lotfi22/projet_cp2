@@ -15,10 +15,12 @@ class CreateGroupesTable extends Migration
     {
         Schema::create('groupes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_coach');
-            $table->bigInteger('id_groupe');
-            $table->bigInteger('id_sport');
-            $table->bigInteger('id_abonnement');
+            $table->unsignedBigInteger('id_coach');
+            $table->foreign('id_coach')->references('id')->on('coachs');
+            $table->unsignedBigInteger('id_sport');
+            $table->foreign('id_sport')->references('id')->on('sports');
+            $table->unsignedBigInteger('id_abonnement');
+            $table->foreign('id_abonnement')->references('id')->on('abonnements');
             $table->bigInteger('capacite');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate(); 

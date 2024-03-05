@@ -15,6 +15,10 @@ class CreatePresencesTable extends Migration
     {
         Schema::create('presences', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_adherant');
+            $table->foreign('id_adherant')->references('id')->on('adherants');
+            $table->unsignedBigInteger('id_seance');
+            $table->foreign('id_seance')->references('id')->on('seances');
             $table->timestamp('heure_debut')->nullable()->default(null);
             $table->timestamp('heure_fin')->nullable()->default(null);
             $table->boolean('evaluation');

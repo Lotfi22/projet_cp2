@@ -17,8 +17,10 @@ class CreateSeancesTable extends Migration
             $table->bigIncrements('id');
             $table->time('heure_debut');
             $table->time('heure_fin');
-            $table->bigInteger('id_groupe');
-            $table->bigInteger('id_salle');
+            $table->unsignedBigInteger('id_groupe');
+            $table->foreign('id_groupe')->references('id')->on('groupes');
+            $table->unsignedBigInteger('id_salle');
+            $table->foreign('id_salle')->references('id')->on('salles');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

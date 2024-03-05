@@ -15,6 +15,8 @@ class CreateAdherantsTable extends Migration
     {
         Schema::create('adherants', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_qr');
+            $table->foreign('id_qr')->references('id')->on('qrs');
             $table->string('nom', 100);
             $table->string('prenom', 100);
             $table->date('date_naissance');
@@ -25,7 +27,6 @@ class CreateAdherantsTable extends Migration
             $table->text('adresse')->nullable();
             $table->text('email')->nullable();
             $table->string('type_abonnement');
-            $table->bigInteger('id_qr');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
