@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAbonnemetsTable extends Migration
+class CreateAbonnementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAbonnemetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('abonnemets', function (Blueprint $table) {
+        Schema::create('abonnements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type_abonnement');
-            $table->bigInteger('nb_seance');
-            $table->double('tarif',8, 6);
-            $table->timestamp('created_at')->useCurrent();
+            $table->integer('nbr_seances');
+            $table->double('tarif', 12, 2);
+            $table->timestamp('created_at')->useCurrent(); 
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
@@ -30,6 +30,6 @@ class CreateAbonnemetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abonnemets');
+        Schema::dropIfExists('abonnements');
     }
 }
