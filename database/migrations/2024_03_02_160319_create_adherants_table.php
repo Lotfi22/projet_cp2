@@ -4,17 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdhernetsTable extends Migration
+class CreateAdherantsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
-    */
-    
+     */
     public function up()
     {
-        Schema::create('adhernets', function (Blueprint $table) {
+        Schema::create('adherants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom', 100);
             $table->string('prenom', 100);
@@ -25,6 +24,8 @@ class CreateAdhernetsTable extends Migration
             $table->string('dossier_medical')->nullable();
             $table->text('adresse')->nullable();
             $table->text('email')->nullable();
+            $table->string('type_abonnement');
+            $table->bigInteger('id_qr');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -37,6 +38,6 @@ class CreateAdhernetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adhernets');
+        Schema::dropIfExists('adherants');
     }
 }
