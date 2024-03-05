@@ -15,8 +15,8 @@ class CreateParticipationsTable extends Migration
     {
         Schema::create('participations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp('heure_debut');
-            $table->timestamp('heure_fin'); 
+            $table->timestamp('heure_debut')->nullable()->default(null);
+            $table->timestamp('heure_fin')->nullable()->default(null);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

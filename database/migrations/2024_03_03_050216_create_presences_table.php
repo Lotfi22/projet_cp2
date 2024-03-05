@@ -15,8 +15,8 @@ class CreatePresencesTable extends Migration
     {
         Schema::create('presences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp('heure_debut');
-            $table->timestamp('heure_fin');
+            $table->timestamp('heure_debut')->nullable()->default(null);
+            $table->timestamp('heure_fin')->nullable()->default(null);
             $table->boolean('evaluation');
             $table->text('description_eve'); 
             $table->timestamp('created_at')->useCurrent();
