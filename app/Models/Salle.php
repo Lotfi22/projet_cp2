@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Request;
 
-
-class Sport extends Model
+class Salle extends Model
 {
     use HasFactory;
-
     public static function add(Request $request)
     {
 
@@ -18,7 +16,4 @@ class Sport extends Model
 
         // code...
     }
-
-
-    /**/
 }
