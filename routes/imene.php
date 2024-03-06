@@ -15,3 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/imene','TestController@imene');
+
+Route::get('/abonnements','AbonnementController@index');
+
+Route::post('/abonnements/create','AbonnementController@create');
+
+Route::get('/categories','CategorieController@index');
+
+Route::post('/categories/create','CategorieController@create');
+
+Route::get('/sous_categories','Sous_categorieController@index');
+
+Route::post('/sous_categories/create','Sous_categorieController@create');
+
