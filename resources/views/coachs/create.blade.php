@@ -27,18 +27,18 @@
                </select>
 			   <br>
              <label for="datenaissance">Date naissance:</label>
-             <input type="date" id="datenaissance_admin" name="datenaissance_admin">
+             <input type="date" id="datenaissance_coach" name="datenaissance_coach">
              <br>
              <label for="telephone">Entrer votre numero telephone :</label>
-             <input type="tel" id="num_admin" name="num_admin" pattern="[0]{1}-[5-7]{1}-[0-9]{8}">
+             <input type="tel" id="num_coach" name="num_coach" pattern="[0]{1}-[5-7]{1}-[0-9]{8}">
              <br>
              <label for="telephone">Entrer votre numero telephone d'urgence :</label>
              <input type="tel" id="num_urgence" name="num_urgence" pattern="[0]{1}-[5-7]{1}-[0-9]{8}">
 			 <br>
-             <input id="adresse" type="text" name="adresse_admin" placeholder="adresse">
+             <input id="adresse" type="text" name="adresse_coach" placeholder="adresse">
              <br>
              <label for="email">Entrer votre email:</label>
-             <input type="email" id="email_admin" name="email_admin">
+             <input type="email" id="email_coach" name="email_coach">
              <br>
           
 			<button type="submit">Valider</button>
