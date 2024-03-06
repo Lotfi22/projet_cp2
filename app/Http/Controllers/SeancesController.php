@@ -13,7 +13,7 @@ class SeancesController extends Controller
 
     }
 
-    public fuction create (request $request)
+    public function create (request $request)
     {
         dd("why do when you can don't");
     }

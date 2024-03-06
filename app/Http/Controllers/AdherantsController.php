@@ -13,7 +13,7 @@ class AdherantsController extends Controller
 
     }
 
-    public fuction create (request $request)
+    public function create (request $request)
     {
         dd("meow");
     }
