@@ -15,3 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/rahma','TestController@rahma');
+//Admin
+Route::get('/admins','AdminController@index');
+Route::post('/admins/create','AdminController@create');
+//Facture
+Route::get('/factures','FactureController@index');
+Route::post('/factures/create','FactureController@create');
+//Salle
+Route::get('/salles','SalleController@index');
+Route::post('/salles/create','SalleController@create');

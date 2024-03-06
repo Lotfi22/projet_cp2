@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/afaf','TestController@afaf');
+//Coach
+Route::get('/coachs','CoachController@index');
+Route::post('/coachs/create','CoachController@create');
+//Groupe
+Route::get('/groupes','GroupeController@index');
+Route::post('/groupes/create','GroupeController@create');
