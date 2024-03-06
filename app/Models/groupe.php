@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 
 
-class groupe extends Model
+class Groupe extends Model
 {
     use HasFactory;
     public static function add(Request $request)
