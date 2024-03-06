@@ -15,3 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/meriem','TestController@meriem');
+Route::get('/evenements','EvenementController@index');
+Route::post('/evenements/create','EvenementController@create');
+Route::get('/gestionnaires','GestionnaireController@index');
+Route::post('/gestionnaires/create','GestionnaireController@create');
+Route::get('/qrs','QrController@index');
+Route::post('/qrs/create','QrController@create');
+
+
+
