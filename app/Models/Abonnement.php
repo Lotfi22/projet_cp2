@@ -2,19 +2,12 @@
 
 namespace App\Models;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-
-class Salle extends Model
+class Abonnement extends Model
 {
     use HasFactory;
-    public static function add(Request $request)
-    {
-
-        
-
-        // code...
-    }
+   
 }

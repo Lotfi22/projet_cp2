@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/chaima','TestController@chaima');
+//adherants
+Route::get('/adherants', 'AdherantsController@index');
+Route::post('/adherants/create', 'AdherantsController@create');
+//seances
+Route::get('/seances', 'SeancesController@index');
+Route::post('/seances/create', 'SeancesController@create');
