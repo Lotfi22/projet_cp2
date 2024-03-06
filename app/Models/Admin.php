@@ -9,6 +9,9 @@ use Request;
 class Admin extends Model
 {
     use HasFactory;
+
+    protected $guard='admin';
+
     public static function add(Request $request)
     {
 
