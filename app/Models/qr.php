@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
+
+
 
 class Qr extends Model
 {

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 
 
-class coach extends Model
+class Coach extends Model
 {
     use HasFactory;
 
