@@ -15,3 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/selma','TestController@selma');
+
+Route::get('/participations','ParticipationController@index');
+
+Route::post('/participations/create','ParticipationController@create');
+
+Route::get('/presences','PresenceController@index');
+
+Route::post('/presences/create','PresenceController@create');
