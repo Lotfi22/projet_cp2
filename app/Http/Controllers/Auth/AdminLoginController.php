@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 class AdminLoginController extends Controller
 {
 
+    protected $redirectTo = '/admin';
+
+
     public function __construct()
     {
-        $this->middleware('guest:admin');
+        $this->middleware('guest:admin', ['except' => 'logout']);
     }
-    
+
+    protected function guard()
+    {
+
+        return Auth::guard('admin');
+    }    
+
+
     public function showLoginForm()
     {
         return view('auth.admin-login');
@@ -43,6 +53,12 @@ class AdminLoginController extends Controller
             // sinon redirection vers le login
             return redirect()->back()->withInput($request->only('email','remember'));
     }
+
+
+    protected function loggedOut(Request $request)
+    {
+        return redirect()->route('admin.login');
+    }    
 
     //
 }

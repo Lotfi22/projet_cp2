@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/rahma','TestController@rahma');
 //Admin
-Route::get('/admins','AdminController@index');
+/*Route::get('/admins','AdminController@index');*/
 Route::post('/admins/create','AdminController@create');
 //Facture
 Route::get('/factures','FactureController@index');

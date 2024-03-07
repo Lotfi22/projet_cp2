@@ -18,12 +18,11 @@ class RedirectIfAuthenticated
      * @return mixed
      */
     
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next, $guard = "web")
     {
 
         switch ($guard) 
         {
-
 
             case 'admin':
             
