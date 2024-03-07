@@ -15,12 +15,17 @@
 	<body>
 		<form action="/seances/create" method="post">
 
+			{{ csrf_field() }}
+
 			<input id="heure_debut" type="time" name="heure_debut">
 
 			<input id="heure_fin" type="time" name="heure_fin">
 
-		</form>
+			<button type="submit">Valider</button>
 
+		{{--  --}}
+		</form>
+	{{--  --}}
 	</body>
 
 </html>

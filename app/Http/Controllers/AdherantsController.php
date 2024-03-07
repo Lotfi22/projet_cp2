@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 class AdherantsController extends Controller
 {
     public function index()
+
     {
         
         return view('adherants.create');
 
     }
 
-    public fuction create (request $request)
+
+    public function create (Request $request)
+
     {
+
         dd("meow");
+
     }
+
 }
