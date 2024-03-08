@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class AdminController extends Controller
 {
 
@@ -15,7 +17,7 @@ class AdminController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:admin');
+        //$this->middleware('auth:admin');
     }
 
     /**
@@ -25,6 +27,8 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if(!Auth::guard('admin')->check()){return redirect('/admin/login');}
+
         return view('admins.home');
     }
 
