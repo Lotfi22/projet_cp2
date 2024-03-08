@@ -92,4 +92,17 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
+
+    public function getHomeRouteForGuard($guard)
+    {
+        switch ($guard) 
+        {
+            case 'admin':  return '/admin'; break;
+             
+            default: return '/home'; break;
+
+        }
+        // Replace with your logic
+    }    
+
 }

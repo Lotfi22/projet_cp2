@@ -26,7 +26,7 @@
               </div>
               
             <form method="POST" action="{{ route('admin.login.submit') }}">
-              
+                @csrf <!-- {{ csrf_field() }} -->
                 <div class="form-group">
                     <input id="email" placeholder="Admin" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 

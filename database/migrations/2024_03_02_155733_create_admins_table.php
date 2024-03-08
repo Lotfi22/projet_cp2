@@ -23,8 +23,9 @@ class CreateAdminsTable extends Migration
             $table->date('date_naissance');
             $table->string('num_telephone',100);
             $table->string('num_urgence',100);
-            $table->string('gamail',100);
             $table->string('adresse',100);
+            $table->string('email',100);
+            $table->string('password',100);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

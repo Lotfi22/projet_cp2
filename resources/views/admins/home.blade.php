@@ -1,23 +1,11 @@
-@extends('layouts.layout_admin')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in as Admin!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello</title>
+</head>
+<body>
+<h1>HEllo ADMIN</h1>
+</body>
+</html>

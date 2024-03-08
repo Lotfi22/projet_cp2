@@ -15,9 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(RouteServiceProvider::class, function ($app) {
+            return new RouteServiceProvider($app);
+        });
     }
-
     /**
      * Bootstrap any application services.
      *
