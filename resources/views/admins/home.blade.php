@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello</title>
-</head>
-<body>
-<h1>HEllo ADMIN</h1>
-</body>
-</html>
+@extends('layouts.layout_admin')
+
+@section('content')
+
+    <h1>HERE</h1>
+
+@endsection

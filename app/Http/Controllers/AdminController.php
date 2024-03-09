@@ -16,18 +16,17 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-
-        //$this->middleware('auth:admin');
+        $this->middleware('admin_log:admin');
     }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
-     */
+    */
+    
     public function index()
     {
-        if(!Auth::guard('admin')->check()){return redirect('/admin/login');}
 
         return view('admins.home');
     }
