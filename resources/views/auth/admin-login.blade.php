@@ -10,7 +10,7 @@
     <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 
-    <title>Bootstrap 5  Login Page Design</title>
+    <title>Admin Loggin</title>
   </head>
   <body>
     <section class="form-01-main">
