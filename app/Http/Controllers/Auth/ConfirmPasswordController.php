@@ -36,5 +36,6 @@ class ConfirmPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        //The 'auth' middleware ensure that users must be authenticated
     }
 }

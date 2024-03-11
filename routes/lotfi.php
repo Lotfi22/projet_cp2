@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/lotfi','TestController@lotfi');
 
-Route::get('/sports','TestController@index');
-
-Route::post('/sports/create','TestController@create');
 
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 
