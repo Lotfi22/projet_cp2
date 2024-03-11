@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class CategorieController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin_log:admin');
+    }
+
+
     public function index()
     {
 
@@ -20,7 +27,12 @@ class CategorieController extends Controller
 
     public function create(Request $request)
     {
-        dd("je ne cours pas deriere la vedette la vedette vient vers moi");
+        
+        DB::insert("insert into categories(nom,description,age_min,age_max)
+                    values('$request->nom','$request->description','$request->age_min','$request->age_max')");
+
+        return back();
+
         // code...
     }
 
