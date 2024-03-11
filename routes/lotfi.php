@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
+
 
 
 /*
@@ -14,18 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/lotfi','TestController@lotfi');
+Route::get('/sports','TestController@index');
+Route::post('/sports/create','TestController@create');
 
 
+
+// Auth routes
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-
 Route::get('/admin', 'AdminController@index')->name('admin.home');
-
 Route::get('/password',function(){ dd(Hash::make('ADMIN')); });
 
-Route::get('/flush',function(){ Session::flush(); });
+//Categiries routes :
+Route::get('/admin/categories','CategorieController@index');
+Route::post('/admin/categories/create','CategorieController@create')->name('categorie.create');;
+Route::post('/admin/categories/update','CategorieController@update');
+Route::get('/admin/categories/delete/{id}','CategorieController@delete');
+
+
 
 
 

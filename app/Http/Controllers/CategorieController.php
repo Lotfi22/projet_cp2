@@ -4,22 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class CategorieController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin_log:admin');
+    }
+
+
     public function index()
     {
 
-        return view('categories.create');
+        $categories = DB::select("select * from categories");        
+        
+        return view('categories.index',compact('categories'));
 
         // code...
     }
 
     public function create(Request $request)
     {
+        
+        DB::insert("insert into categories(nom,description,age_min,age_max)
+                    values('$request->nom','$request->description','$request->age_min','$request->age_max')");
 
-        dd("je ne cours pas deriere la vedette la vedette vient vers moi");
+        return back();
 
         // code...
     }
 
+
+    //
 }

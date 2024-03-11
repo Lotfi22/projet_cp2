@@ -10,12 +10,12 @@
 	<body>
 
 		<form method="post" action="/categories/create">
-			
-			
+
+
 			{{ csrf_field() }}
 
 			<input id="nom_categorie" type="text" name="nom_categorie" placeholder="Nom de la categorie">
-            <input id="discription" type="text" name="discription_categorie" placeholder="discription">
+            <input id="description" type="text" name="description_categorie" placeholder="description">
 			<button type="submit">Valider</button>
 
 			{{--  --}}
