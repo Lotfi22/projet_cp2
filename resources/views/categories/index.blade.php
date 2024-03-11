@@ -56,7 +56,7 @@
 
             			<td>{{ $categorie->discription }}</td>
 
-            			<td>{{ date_format(date_create($categorie->created_at),"d/m/Y H:i:s"); }}</td>
+            			<td>{{ date_format(date_create($categorie->created_at),"d/m/Y H:i:s");}}</td>
 
             			{{--  --}}
             		</tr>

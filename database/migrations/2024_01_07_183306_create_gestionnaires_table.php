@@ -27,7 +27,7 @@ class CreateGestionnairesTable extends Migration
             $table->text('email')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-        });
+    });
     }
 
     /**
