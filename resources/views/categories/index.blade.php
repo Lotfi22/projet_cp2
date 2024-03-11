@@ -2,87 +2,174 @@
 
 @section('content')
 
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> 
-	<span class="sb-nav-link-icon"><i class="fas fa-plus"></i></span> Ajouter</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ajout nouvelle Catégorie</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-        <form method="POST" action="{{ route('categorie.create') }}" >
+<a href="#" class="btn btn-primary col-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Ajouter Nouvelle catégorie</a>
 
-        	@csrf <!-- {{ csrf_field() }} -->
 
-          	<div class="form-group">
-            	<label for="recipient-name" class="col-form-label">Description:</label>
-            	<input type="text" name="description" class="form-control" id="recipient-name">
-          	</div>
-		 	<button type="submit" class="btn btn-primary col-md-12">Valider</button>       
-		</form>
-      </div>
+
+<div class="modal fade" id="kt_modal_new_card" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Ajouter Nouvelle Catégorie</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                <!--begin::Form-->
+                
+                <form id="kt_modal_new_card_form" class="form" method="POST" action="/admin/categories/create">
+                    
+                    {{ csrf_field() }}
+
+
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        
+                        <label for="nom" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Name On Card</span>
+                        </label>
+                        
+                        
+                        <input required id="nom" type="text" class="form-control form-control-solid" placeholder="Nom de la catégorie"  name="nom"/>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label for="description" class="required fs-6 fw-bold form-label mb-2">description</label>
+
+                        <div class="position-relative">
+
+                            <input required id="description" placeholder="description" type="text" class="form-control form-control-solid" name="description"/>
+                            <!--end::Card logos-->
+                        </div>
+                        <!--end::Input wrapper-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-10">
+                        <!--begin::Col-->
+                        <div class="col-md-12 fv-row">
+                            <!--begin::Label-->
+                            <label class="required fs-6 fw-bold form-label mb-2">Tranche d'Age</label>
+                            <!--end::Label-->
+                            <!--begin::Row-->
+                            <div class="row col-md-12">
+                                <!--begin::Col-->
+                                <div class="col-md-6">
+                                    <select required name="age_min" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Age minimum">
+
+                                        <option></option>
+
+                                        @for ($i = 3; $i < 50; $i++)
+                                            
+                                            <option value="{{ $i }}">{{ $i }}</option>
+
+                                        @endfor
+
+                                        {{--  --}}
+                                    </select>
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-md-6">
+                                    <select required name="age_max" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Age maximum">
+                                        <option></option>
+
+                                        @for ($i = 3; $i < 50; $i++)
+                                            
+                                            <option value="{{ $i }}">{{ $i }}</option>
+
+                                        @endfor
+
+
+                                    </select>
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                        
+                        {{--  --}}
+                    </div>
+
+
+                    <button class="col-md-12 btn btn-info">Submit</button>
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
     </div>
-  </div>
+    <!--end::Modal dialog-->
 </div>
 
 
-<div class="card mb-4">
-    <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        Categories
-    </div>
-    <div class="card-body">
-        <table id="datatablesSimple">
+
+
+<div class="card-body pt-0">
+
+    <div style="margin-top: 5%;" class="card-body pt-0">
+        <!--begin::Table-->
+        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+            <!--begin::Table head-->
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>description</th>
-                    <th>Ajoutée le</th>
+                <!--begin::Table row-->
+                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                    <th class="min-w-125px">ID</th>
+                    <th class="min-w-125px">NOM</th>
+                    <th class="min-w-125px">DESCRIPTION</th>
+                    <th class="min-w-125px">AGE MINIMUM</th>
+                    <th class="min-w-125px">AGE MAXIMUM</th>
+                    <th class="min-w-125px">DATE CREATION</th>
+                    <th class="text-end min-w-70px">Actions</th>
                 </tr>
+                <!--end::Table row-->
             </thead>
-            <tbody>
-            	
-            	@foreach ($categories as $categorie)
-            		
-            		<tr>
-            			
-            			<td>{{ $categorie->id  }}</td>
 
-            			<td>{{ $categorie->discription }}</td>
+            <tbody class="fw-bold text-gray-600">
 
-            			<td>{{ date_format(date_create($categorie->created_at),"d/m/Y H:i:s"); }}</td>
+                @foreach ($categories as $categorie)
+                    
+                    <tr>
+                        
+                        <td>{{ $categorie->id }}</td>
+                        <td>{{ $categorie->nom }}</td>
+                        <td>{{ $categorie->description }}</td>
+                        <td>{{ $categorie->age_min }}</td>
+                        <td>{{ $categorie->age_max }}</td>
+                        <td>{{ $categorie->created_at }}</td>
+                        <td>Modifer , supprimer</td>
 
-            			{{--  --}}
-            		</tr>
+                    </tr>    
 
-            		{{--  --}}	
-            	@endforeach
+                    {{-- expr --}}
+                @endforeach
 
-
-            	{{--  --}}
+                {{--  --}}
             </tbody>
-		</table>
+            <!--end::Table body-->
+        </table>
+        <!--end::Table-->
+    </div>
+<!--end::Card body-->
+</div>
 
 
-<script>
-	
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('Nouvelle Catégorie')
-  modal.find('.modal-body input').val(recipient)
-})	
-
-</script>
 
 
 @endsection
