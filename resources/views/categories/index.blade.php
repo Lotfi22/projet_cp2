@@ -29,19 +29,19 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                 <!--begin::Form-->
-                
+
                 <form id="kt_modal_new_card_form" class="form" method="POST" action="/admin/categories/create">
-                    
+
                     {{ csrf_field() }}
 
 
                     <div class="d-flex flex-column mb-7 fv-row">
-                        
+
                         <label for="nom" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
                             <span class="required">Name On Card</span>
                         </label>
-                        
-                        
+
+
                         <input required id="nom" type="text" class="form-control form-control-solid" placeholder="Nom de la catégorie"  name="nom"/>
                     </div>
                     <!--end::Input group-->
@@ -74,7 +74,7 @@
                                         <option></option>
 
                                         @for ($i = 3; $i < 50; $i++)
-                                            
+
                                             <option value="{{ $i }}">{{ $i }}</option>
 
                                         @endfor
@@ -89,7 +89,7 @@
                                         <option></option>
 
                                         @for ($i = 3; $i < 50; $i++)
-                                            
+
                                             <option value="{{ $i }}">{{ $i }}</option>
 
                                         @endfor
@@ -101,7 +101,7 @@
                             </div>
                             <!--end::Row-->
                         </div>
-                        
+
                         {{--  --}}
                     </div>
 
@@ -143,13 +143,10 @@
 
             <tbody class="fw-bold text-gray-600">
 
-<<<<<<< HEAD
-            			<td>{{ date_format(date_create($categorie->created_at),"d/m/Y H:i:s");}}</td>
-=======
                 @foreach ($categories as $categorie)
-                    
+
                     <tr>
-                        
+
                         <td>{{ $categorie->id }}</td>
                         <td>{{ $categorie->nom }}</td>
                         <td>{{ $categorie->description }}</td>
@@ -157,9 +154,9 @@
                         <td>{{ $categorie->age_max }}</td>
                         <td>{{ $categorie->created_at }}</td>
                         <td>Modifer , supprimer</td>
->>>>>>> 9e366f3b385adee68cb92383ef8ed69b9e79a8f2
 
-                    </tr>    
+
+                    </tr>
 
                     {{-- expr --}}
                 @endforeach
