@@ -24,3 +24,6 @@ Route::post('/factures/create','FactureController@create');
 //Salle
 Route::get('/salles','SalleController@index');
 Route::post('/salles/create','SalleController@create');
+
+
+Route::get('/admin/gestionnaires','GestionnaireController@index');

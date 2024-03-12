@@ -21,3 +21,6 @@ Route::post('/coachs/create','CoachController@create');
 //Groupe
 Route::get('/groupes','GroupeController@index');
 Route::post('/groupes/create','GroupeController@create');
+//Sport
+Route::get('/sports','TestController@index');
+Route::post('/sports/create','TestController@create');

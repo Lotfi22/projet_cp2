@@ -38,7 +38,7 @@
                     <div class="d-flex flex-column mb-7 fv-row">
 
                         <label for="nom" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Name On Card</span>
+                            <span class="required">Nom</span>
                         </label>
 
 
