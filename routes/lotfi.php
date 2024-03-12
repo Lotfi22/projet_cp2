@@ -22,6 +22,7 @@ Route::get('/sports','TestController@index');
 Route::post('/sports/create','TestController@create');
 
 
+
 // Auth routes
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

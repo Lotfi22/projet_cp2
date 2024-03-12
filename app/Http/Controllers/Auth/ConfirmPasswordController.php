@@ -33,8 +33,10 @@ class ConfirmPasswordController extends Controller
      *
      * @return void
      */
+    //to protect routes and restrict access based on the currently authenticated user's
     public function __construct()
     {
         $this->middleware('auth');
+        //The 'auth' middleware ensure that users must be authenticated
     }
 }

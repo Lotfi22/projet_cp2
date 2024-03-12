@@ -16,15 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/imene','TestController@imene');
 
-Route::get('/abonnements','AbonnementController@index');
+//Abonnement routes:
+Route::get('/admin/abonnements','AbonnementController@index');
+Route::post('/admin/abonnements/create','AbonnementController@create');
+Route::post('/admin/abonnements/update','AbonnementController@update');
+Route::get('/admin/abonnements/delete/{id}','AbonnementController@delete');
 
-Route::post('/abonnements/create','AbonnementController@create');
-
+//Categories routes:
 Route::get('/categories','CategorieController@index');
-
 Route::post('/categories/create','CategorieController@create');
 
-Route::get('/sous_categories','Sous_categorieController@index');
+//Sous_categories routes:
+Route::get('/admin/sous_categories','Sous_categorieController@index');
+Route::post('/admin/sous_categories/create','Sous_categorieController@create');
+Route::post('/admin/sous_categories/update','Sous_categorieController@update');
+Route::get('/admin/sous_categories/delete/{id}','Sous_categorieController@delete');
 
-Route::post('/sous_categories/create','Sous_categorieController@create');
+
+
 

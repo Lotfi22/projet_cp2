@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
+
 class CategorieController extends Controller
 {
 
@@ -18,8 +19,8 @@ class CategorieController extends Controller
     public function index()
     {
 
-        $categories = DB::select("select * from categories");        
-        
+        $categories = DB::select("select * from categories");
+
         return view('categories.index',compact('categories'));
 
         // code...
