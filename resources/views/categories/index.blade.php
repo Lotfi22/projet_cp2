@@ -143,9 +143,6 @@
 
             <tbody class="fw-bold text-gray-600">
 
-<<<<<<< HEAD
-            			<td>{{ date_format(date_create($categorie->created_at),"d/m/Y H:i:s");}}</td>
-=======
                 @foreach ($categories as $categorie)
                     
                     <tr>
@@ -157,7 +154,6 @@
                         <td>{{ $categorie->age_max }}</td>
                         <td>{{ $categorie->created_at }}</td>
                         <td>Modifer , supprimer</td>
->>>>>>> 9e366f3b385adee68cb92383ef8ed69b9e79a8f2
 
                     </tr>    
 

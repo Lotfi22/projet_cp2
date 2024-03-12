@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use app\Models\Admin;
 
 
@@ -17,7 +16,7 @@ class AdminLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:admin', ['except' => 'logout']);
+       $this->middleware('guest:admin', ['except' => 'logout']);
     }
 
     protected function guard()
