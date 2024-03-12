@@ -3,16 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class EvenementController extends Controller
 {
     public function index() {
-        return view('evenements.create');
+        $evenements = DB::select("select * from evenements");        
+        
+        return view('evenements.index',compact('evenements'));
+        //return view('evenements.create');
     }
     public function create (Request $request)
     {
+        DB::insert("insert into evenements(date_eve)
+                    values('$request->date_eve')");
 
-        dd("ajouter_evenement");
+        return back();
+        
+
+        // code...
     }
     //
 }

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -22,11 +21,15 @@ class AdminLoginController extends Controller
     public function __construct()
     //This constructor method is used to initialize the controller and set up middleware for handling incoming HTTP requests
     {
+<<<<<<< HEAD
+       $this->middleware('guest:admin', ['except' => 'logout']);
+=======
         $this->middleware('guest:admin', ['except' => 'logout']);
         /*'guest:admin': This is the name of the middleware being applied,
         The 'guest' middleware typically checks if the user is not authenticated */
 
         //['except' => 'logout'] : middleware should be applied to all controller methods except for the logout method
+>>>>>>> 8149d367afa4450e05f6bb5e5842a8ce5f3d9bc7
     }
 
     protected function guard()
