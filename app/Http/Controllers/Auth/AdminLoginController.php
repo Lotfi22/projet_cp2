@@ -11,11 +11,14 @@ use app\Models\Admin;
 
 class AdminLoginController extends Controller
 {
+//redicrected to admin it means if 
 
+    // It defines the path where the user will be redirected after successfully logging in or registering. 
     protected $redirectTo = '/admin';
 
 
 
+   //. This ensures that unauthenticated users (guests) can only access certain actions, typically those related to authentication, such as logging in.
     public function __construct()
     //This constructor method is used to initialize the controller and set up middleware for handling incoming HTTP requests
     {
@@ -25,16 +28,13 @@ class AdminLoginController extends Controller
 
         //['except' => 'logout'] : middleware should be applied to all controller methods except for the logout method
     }
-    
 
     protected function guard()
     {
         return Auth::guard('admin');
-        /* a guard is like a digital bouncer for your application, checking IDs at the door
-        , controlling who gets in, and making sure everyone follows the rules once they're inside */
     }    
 
-
+    // from the name its clear that itnreturns the auth admin view
     public function showLoginForm()
     {
         return view('auth.admin-login');
@@ -42,15 +42,15 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
- 
-        
-        // Attente d'authentification 
-        
+
+
+        // Attente d'authentification
+
         if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
         {
             // Si c'est réussi, redirection vers le dashboard
             return redirect()->intended(route('admin.home'));
-        }        
+        }
             // sinon redirection vers le login
             return redirect()->back()->withInput($request->only('email','remember'));
     }
@@ -59,7 +59,7 @@ class AdminLoginController extends Controller
     protected function loggedOut(Request $request)
     {
         return redirect()->route('admin.login');
-    }    
+    }
 
     //
 }
