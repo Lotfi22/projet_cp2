@@ -11,22 +11,26 @@ use app\Models\Admin;
 
 class AdminLoginController extends Controller
 {
+//redicrected to admin it means if 
 
+    // It defines the path where the user will be redirected after successfully logging in or registering. 
     protected $redirectTo = '/admin';
 
 
+   //. This ensures that unauthenticated users (guests) can only access certain actions, typically those related to authentication, such as logging in.
     public function __construct()
     {
         $this->middleware('guest:admin', ['except' => 'logout']);
     }
-
+    //In this case, it returns the admin guard using Laravel's Auth::guard() method.
+    // determining whether a user is authenticated for a given request. They verify the user's credentials,
     protected function guard()
     {
 
         return Auth::guard('admin');
     }    
 
-
+    // from the name its clear that itnreturns the auth admin view
     public function showLoginForm()
     {
         return view('auth.admin-login');
@@ -50,7 +54,7 @@ class AdminLoginController extends Controller
 
     protected function loggedOut(Request $request)
     {
-        return redirect()->route('admin.login');
+       return redirect()->route('admin.login');
     }    
 
     //
