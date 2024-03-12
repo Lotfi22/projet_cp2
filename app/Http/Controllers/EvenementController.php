@@ -13,8 +13,6 @@ class EvenementController extends Controller
     {
 
         dd("ajouter_evenement");
-
-        // code...
     }
     //
 }
