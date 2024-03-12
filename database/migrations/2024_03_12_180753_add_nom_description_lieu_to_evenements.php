@@ -18,6 +18,11 @@ class AddNomDescriptionLieuToEvenements extends Migration
             $table->string('nom',100);
             $table->text('description');
             $table->string('lieu');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
+            $table->dropColumn('date_eve');
+
+
             
         });
     }
@@ -34,6 +39,8 @@ class AddNomDescriptionLieuToEvenements extends Migration
             $table->dropColumn('nom');
             $table->dropColumn('description');
             $table->dropColumn('lieu');
+            $table->dropColumn('date_debut');
+            $table->dropColumn('date_fin');
             
         });
     }

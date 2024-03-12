@@ -37,12 +37,48 @@
 
                     <div class="d-flex flex-column mb-7 fv-row">
                         
-                        <label for="Date_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Date d'évenement</span>
+                        <label for="Nom_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Nom d'évenement</span>
                         </label>
                         
                         
-                        <input required id="Date_evenemt" type="date" class="form-control form-control-solid" name="date_eve"/>
+                        <input required id="Nom_evenemt" type="string" class="form-control form-control-solid" name="nom"/>
+                    </div>
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        
+                        <label for="DateDebut_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Date debut</span>
+                        </label>
+                        
+                        
+                        <input required id="DateDebut_evenemt" type="datetime-local" class="form-control form-control-solid" name="date debut"/>
+                    </div>
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        
+                        <label for="DateFin_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Date fin</span>
+                        </label>
+                        
+                        
+                        <input required id="DateFin_evenemt" type="datetime-local" class="form-control form-control-solid" name="date fin"/>
+                    </div>                    
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        
+                        <label for="Description_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Description</span>
+                        </label>
+                        
+                        
+                        <input required id="Description_evenemt" type="text" class="form-control form-control-solid" name="description"/>
+                    </div>
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        
+                        <label for="Lieu_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Lieu</span>
+                        </label>
+                        
+                        
+                        <input required id="Lieu_evenemt" type="string" class="form-control form-control-solid" name="lieu"/>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -71,9 +107,12 @@
             <thead>
                 <!--begin::Table row-->
                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                    <th class="min-w-125px">ID</th>
-                    <th class="min-w-125px">Date d'evenement</th>
-                    <th class="min-w-125px">DATE CREATION</th>
+                    <th class="min-w-125px">Nom</th>
+                    <th class="min-w-125px">Date debut</th>
+                    <th class="min-w-125px">Date fin</th>
+                    <th class="min-w-125px">Description</th>
+                    <th class="min-w-125px">Lieu</th>
+                    <th class="min-w-125px">Date de creation</th>
                     <th class="text-end min-w-70px">Actions</th>
                 </tr>
                 <!--end::Table row-->
@@ -85,8 +124,11 @@
                     
                     <tr>
                         
-                        <td>{{ $evenement->id }}</td>
-                        <td>{{ $evenement->date_eve}}</td>
+                        <td>{{ $evenement->nom}}</td>
+                        <td>{{ $evenement->date_debut}}</td>
+                        <td>{{ $evenement->date_fin}}</td>
+                        <td>{{ $evenement->description}}</td>
+                        <td>{{ $evenement->lieu}}</td>
                         <td>{{ $evenement->created_at }}</td>
                         <td>Modifer supprimer</td>
 
