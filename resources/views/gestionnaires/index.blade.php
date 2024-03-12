@@ -2,7 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
 
 <a href="#" class="btn btn-primary col-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Ajouter Nouveau gestionnaire</a>
 
@@ -195,8 +194,5 @@
 
 
 
-=======
-<h1>HERE</h1>
->>>>>>> 8149d367afa4450e05f6bb5e5842a8ce5f3d9bc7
 
 @endsection
