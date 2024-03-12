@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 use app\Models\Admin;
 
 
@@ -28,7 +29,7 @@ class AdminLoginController extends Controller
     {
 
         return Auth::guard('admin');
-    }    
+    }
 
     // from the name its clear that itnreturns the auth admin view
     public function showLoginForm()
@@ -38,15 +39,15 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
- 
-        
-        // Attente d'authentification 
-        
+
+
+        // Attente d'authentification
+
         if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
         {
             // Si c'est réussi, redirection vers le dashboard
             return redirect()->intended(route('admin.home'));
-        }        
+        }
             // sinon redirection vers le login
             return redirect()->back()->withInput($request->only('email','remember'));
     }
@@ -54,8 +55,8 @@ class AdminLoginController extends Controller
 
     protected function loggedOut(Request $request)
     {
-       return redirect()->route('admin.login');
-    }    
+        return redirect()->route('admin.login');
+    }
 
     //
 }
