@@ -112,6 +112,20 @@
                                     </a>
                                 </div>
                                 
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/admin/factures">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                         <!-- <img alt="logo" src="../demo1/dist/assets/media/logos/facture.png" class="h-80px logo"  />-->
+
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Factures</span>
+                                    </a>
+                                </div>
+                                
                                 
                                
                             </div>
