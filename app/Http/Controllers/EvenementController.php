@@ -16,8 +16,8 @@ class EvenementController extends Controller
     }
     public function create (Request $request)
     {
-        DB::insert("insert into evenements(date_eve)
-                    values('$request->date_eve')");
+        DB::insert("insert into evenements(nom,date_debut,date_fin,description,lieu)
+                    values('$request->nom','$request->date_debut','$request->date_fin','$request->description','$request->lieu')");
 
         return back();
         
