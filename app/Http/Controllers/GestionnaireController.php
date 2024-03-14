@@ -20,8 +20,11 @@ class GestionnaireController extends Controller
          }
     public function create(Request $request)
     {
+        DB::insert("insert into gestionnaires(nom,prenom,date_naissance,genre,num_tel,num_tel_urgence,email,adresse,id_qr)
+                    values('$request->nom','$request->prenom','$request->date_naissance','$request->genre','$request->num_tel','$request->num_tel_urgence','$request->email','$request->adresse','$request->id_qr')");
 
-        dd("ajouter_gestionnaire");
+        return back();
+        //dd("ajouter_gestionnaire");
         // code...
     }
     //
