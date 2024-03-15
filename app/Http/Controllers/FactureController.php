@@ -41,7 +41,20 @@ class FactureController extends Controller
         
         Facture::supprimer($id_facture);
 
-        session()->flash('notification.message' , 'Fatégorie '.$id_facture.' supprimer avec succés');
+        session()->flash('notification.message' , 'Facture '.$id_facture.' supprimer avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
+
+        return back();
+
+        // code...
+    }
+    public function update(Request $request)
+    {
+        
+        Facture::misajour($request);
+
+        session()->flash('notification.message' , 'Facture '.$request->id.' Modifier avec succés');
 
         session()->flash('notification.type' , 'warning'); 
 
