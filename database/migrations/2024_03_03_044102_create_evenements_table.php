@@ -15,7 +15,12 @@ class CreateEvenementsTable extends Migration
     {
         Schema::create('evenements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date_eve');
+            $table->string('nom',100);
+            $table->text('description');
+            $table->string('lieu');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

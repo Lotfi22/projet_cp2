@@ -25,6 +25,7 @@ class CreateCoachsTable extends Migration
             $table->string('nbr_telephone_urgence', 100);
             $table->string('adress', 100)->nullable();
             $table->string('email', 100)->nullable();
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate(); 
         });

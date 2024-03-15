@@ -22,6 +22,7 @@ class CreateFacturesTable extends Migration
             $table->double('versement', 10, 6);
             $table->double('droit_timbre', 10, 6);
             $table->string('etat_paiement', 100);
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
