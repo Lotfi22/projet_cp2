@@ -78,12 +78,13 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Genre</label>
-                        <select id="genre" name="genre" required class="form-control"  value="{{ $gestionnaire->prenom ?? '' }}">
-                            <option disabled selected>Genre</option>
-                            <option value="Homme" class="form-control">Homme</option>
-                            <option value="Femme" class="form-control">Femme</option>
+                        <select id="genre" name="genre" required class="form-control">
+                            <option disabled>Genre</option>
+                            <option value="Homme" class="form-control" {{ $gestionnaire->genre == 'Homme' ? 'selected' : '' }}>Homme</option>
+                            <option value="Femme" class="form-control" {{ $gestionnaire->genre == 'Femme' ? 'selected' : '' }}>Femme</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" value="{{ $gestionnaire->email ?? ''}}"
