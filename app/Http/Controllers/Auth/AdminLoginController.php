@@ -27,7 +27,6 @@ class AdminLoginController extends Controller
         /*'guest:admin': This is the name of the middleware being applied,
         The 'guest' middleware typically checks if the user is not authenticated */
         //['except' => 'logout'] : middleware should be applied to all controller methods except for the logout method
-
     }
 
     protected function guard()

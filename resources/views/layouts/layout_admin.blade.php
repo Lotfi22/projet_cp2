@@ -53,7 +53,7 @@
                         <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
                             <!--begin::Menu-->
                             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
-                               
+
                                 <div class="menu-item">
                                     <a class="menu-link " href="/admin">
                                         <span class="menu-icon">
@@ -119,7 +119,48 @@
                                         <span class="menu-title">Gestion des coachs</span>
                                     </a>
                                 </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/groupes">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                                <path d="M14.754 10C15.7205 10 16.504 10.7835 16.504 11.75V16.499C16.504 18.9848 14.4888 21 12.003 21C9.51712 21 7.50193 18.9848 7.50193 16.499V11.75C7.50193 10.7835 8.28543 10 9.25193 10H14.754ZM7.13128 9.99906C6.78183 10.4218 6.55636 10.9508 6.51057 11.5304L6.50193 11.75V16.499C6.50193 17.3456 6.69319 18.1476 7.03487 18.864C6.70577 18.953 6.35899 19 6.00124 19C3.79142 19 2 17.2086 2 14.9988V11.75C2 10.8318 2.70711 10.0788 3.60647 10.0058L3.75 10L7.13128 9.99906ZM16.8747 9.99906L20.25 10C21.2165 10 22 10.7835 22 11.75V15C22 17.2091 20.2091 19 18 19C17.6436 19 17.298 18.9534 16.9691 18.8659C17.2697 18.238 17.4538 17.5452 17.4951 16.8144L17.504 16.499V11.75C17.504 11.0847 17.2678 10.4747 16.8747 9.99906ZM12 3C13.6569 3 15 4.34315 15 6C15 7.65685 13.6569 9 12 9C10.3431 9 9 7.65685 9 6C9 4.34315 10.3431 3 12 3ZM18.5 4C19.8807 4 21 5.11929 21 6.5C21 7.88071 19.8807 9 18.5 9C17.1193 9 16 7.88071 16 6.5C16 5.11929 17.1193 4 18.5 4ZM5.5 4C6.88071 4 8 5.11929 8 6.5C8 7.88071 6.88071 9 5.5 9C4.11929 9 3 7.88071 3 6.5C3 5.11929 4.11929 4 5.5 4Z" fill="#212121"/>
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Groupe</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/sports">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm.94,2.06a8,8,0,0,1,4,1.63L12,10.59,10.74,9.32A10,10,0,0,0,12.94,4.06ZM9.31,7.9,7.1,5.69a8,8,0,0,1,3.82-1.61A8,8,0,0,1,9.31,7.9ZM7.9,9.31a8,8,0,0,1-3.82,1.61A8,8,0,0,1,5.69,7.1Zm1.43,1.43L10.59,12l-4.9,4.9a8,8,0,0,1-1.63-4A10,10,0,0,0,9.32,10.74ZM12,13.41l1.26,1.26a10,10,0,0,0-2.2,5.26,8,8,0,0,1-4-1.63Zm2.69,2.69,2.21,2.21a8,8,0,0,1-3.82,1.61A8,8,0,0,1,14.69,16.1Zm1.41-1.41a8,8,0,0,1,3.82-1.61,8,8,0,0,1-1.61,3.82Zm-1.43-1.43L13.41,12l4.9-4.9a8,8,0,0,1,1.63,4A10,10,0,0,0,14.68,13.26Z" fill="white" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Sports</span>
+                                    </a>
+                                </div>
                                 
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/admin/evenements">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Evenements</span>
+                                    </a>
+                                </div>
+
                                 <div class="menu-item">
                                     <a class="menu-link" href="/admin/factures">
                                         <span class="menu-icon">
@@ -133,16 +174,31 @@
                                         <span class="menu-title">Factures</span>
                                     </a>
                                 </div>
-                                
-                                
-                               
+
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/admin/abonnements">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="black" />
+                                                    <path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="black" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Abonnements</span>
+                                    </a>
+                                </div>
+
+
                             </div>
                             <!--end::Menu-->
                         </div>
                         <!--end::Aside Menu-->
                     </div>
-                    
-                   
+
+
                     <!--end::Footer-->
                 </div>
                 <!--end::Aside-->
@@ -175,6 +231,13 @@
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/chat/chat.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/create-app.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/upgrade-plan.js') }}"></script>
+<<<<<<< HEAD
+
+
+        <!--end::Global Javascript Bundle-->
+        <!--begin::Page Vendors Javascript(used by this page)-->
+=======
+>>>>>>> c72c0edd687502af66c0e11ba5eab22b96cc6b06
         <script src="{{ asset('demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/export.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/list.js') }}"></script>

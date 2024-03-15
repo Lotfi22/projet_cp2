@@ -2,15 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 
 class Evenement extends Model
 {
-    use HasFactory;
-    public static function add(Request $request)
+
+    public static function supprimer($id_evenement)
     {
-    //code
+
+        return DB::delete("delete from evenements where id = \"$id_evenement\" ");
+
     }
+
+    use HasFactory;
+    
 }
+

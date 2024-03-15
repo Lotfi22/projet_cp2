@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Facture;
+
 class FactureController extends Controller
 {
     public function __construct()
@@ -24,11 +26,37 @@ class FactureController extends Controller
 
     public function create(Request $request)
     {   
-        //($request->all());
+         Facture::inserer($request);
         
-        DB::insert("insert into factures(ht,tva,versement,droit_timbre,etat_paiement,id_gestionnaire)
-                    
-                    values('$request->ht','$request->tva','$request->versement','$request->droit_timbre','$request->etat_paiement','$request->id_gestionnaire')");
+           session()->flash('notification.message' , 'Facture '.$request->id.' Ajoutée avec succés');
+
+           session()->flash('notification.type' , 'success'); 
+             
+                    return back();
+
+        // code...
+    }
+    public function delete($id_facture)
+    {
+        
+        Facture::supprimer($id_facture);
+
+        session()->flash('notification.message' , 'Facture '.$id_facture.' supprimer avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
+
+        return back();
+
+        // code...
+    }
+    public function update(Request $request)
+    {
+        
+        Facture::misajour($request);
+
+        session()->flash('notification.message' , 'Facture '.$request->id.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
 
         return back();
 
