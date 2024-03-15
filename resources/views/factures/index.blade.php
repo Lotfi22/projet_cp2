@@ -23,7 +23,7 @@
 
                          <thead style="cursor:pointer;" class="bg-secondary text-white">
                             <tr>
-                                
+
                                 <th >ID</th>
                                 <th>MHT</th>
                                 <th>TVA</th>
@@ -38,9 +38,9 @@
 
                          <tbody>
                                @foreach ($factures as $facture)
-                  
+
                                     <tr>
-                                        
+
                                         <td>{{ $facture->id }}</td>
                                         <td>{{ $facture->ht ?? ''}}</td>
                                         <td>{{ $facture->tva ?? ''}}</td>
@@ -58,9 +58,9 @@
 
                                         </td>
 
-                                    </tr>    
+                                    </tr>
                               @endforeach
-                           
+
                          </tbody>
                       </table>
                   </div>
@@ -79,13 +79,13 @@
                 <div class="modal-header">
                     <h3 class="modal-title " id="lineModalLabel">Ajouter facture : </h3>
                 </div>
-                
+
                 <div class="modal-body">
-                    
+
                     <form action="/admin/factures/create" method="post" enctype="multipart/form-data" class="row col-md-12">
-                        
+
                         @csrf
-                        
+
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="ht">Montant Hors Tax </label>
                             <input required type="number" value="{{ old('ht') }}" name="ht" placeholder="Montant hors tax" class="form-control" id="ht">
@@ -115,18 +115,18 @@
 
 
 
-                        
+
 
 
                         <div class="btn-group col-md-6" role="group">
-                            
-                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+
+                            <button type="submit"  class="col-md-12 btn btn-primary">Save</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
-                            
+
                             <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
-                        </div>    
+                        </div>
                     </form>
                 </div>
             </div>
