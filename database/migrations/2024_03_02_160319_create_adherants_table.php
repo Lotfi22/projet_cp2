@@ -27,6 +27,7 @@ class CreateAdherantsTable extends Migration
             $table->text('adresse')->nullable();
             $table->text('email')->nullable();
             $table->string('type_abonnement');
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
