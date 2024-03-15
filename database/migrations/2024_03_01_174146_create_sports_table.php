@@ -19,8 +19,6 @@ class CreateSportsTable extends Migration
             $table->text('description');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-
-            //$table->foreign('')->references('id')->on();
         });
     }
 
