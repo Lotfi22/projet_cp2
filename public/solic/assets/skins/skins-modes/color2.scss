@@ -122,10 +122,11 @@ a.text-secondary {
 		border: 1px solid $primary2 !important;
 	}
 }
+
 .btn-primary {
 	color: $white;
-	background: $primary2 !important;
-	border-color: $primary2 !important;
+	background: $primary9 !important;
+	border-color: $primary9 !important;
 	&:hover {
 		color: $white;
 		background-color: #266ef3;

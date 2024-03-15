@@ -5,14 +5,14 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4"> Mes categorie</h1>
+        <h1 class="mt-4 text-white" > Mes categories</h1>
 
         <div class="card mb-4">
 
             <div class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
-                    Ajouter Catégorie
+                     Ajouter Catégorie
                 </button>
             </div>
 
@@ -71,7 +71,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="lineModalLabel">Ajouter categorie : </h3>
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter categorie : </h3>
                 </div>
                 
                 <div class="modal-body">
