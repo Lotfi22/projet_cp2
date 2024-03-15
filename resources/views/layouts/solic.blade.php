@@ -28,7 +28,7 @@
 
 
         <!-- TITLE -->
-        <title> INTAJI </title>
+        <title> JSS </title>
 
 
         <link href="{{asset('css/toastr.css')}}" rel="stylesheet" />
@@ -57,7 +57,7 @@
         <link href="{{ asset('solic/assets/css/icons.css') }}" rel="stylesheet"/>
 
         <!-- Skin css-->
-        <link href="{{ asset('solic/assets/skins/skins-modes/color19.css') }}"  id="theme" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('solic/assets/skins/skins-modes/color2.css') }}"  id="theme" rel="stylesheet" type="text/css" media="all" />
         <link rel="stylesheet" href="{{ asset('solic/assets/plugins/multipleselect/multiple-select.css') }}">
 
         <link href="{{ asset('solic/assets/plugins/sweet-alert/sweetalert.css') }}" rel="stylesheet" />
@@ -86,14 +86,14 @@
                             <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a>
 
                             <a class="header-brand" href="/home">
-                                <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img desktop-logo" alt="Solic logo">
-                                <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img mobile-view-logo" alt="Solic logo">
+                                <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img desktop-logo" alt="JSS logo">
+                                <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img mobile-view-logo" alt="JSS logo">
                             </a><!-- LOGO -->
 
-                            <a class="header-brand header-brand2" href="/home">
+                            <!-- <a class="header-brand header-brand2" href="/home">
                                 <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img desktop-logo" alt="Solic logo">
                                 <img src="{{ asset('assets\images\vector.png') }}" class="header-brand-img mobile-view-logo" alt="Solic logo">
-                            </a><!-- LOGO -->
+                            </a>LOGO -->
                             <div class="d-flex order-lg-2 ml-auto header-right-icons header-search-icon">
                                 <div class="dropdown d-md-flex">
                                     <a class="nav-link icon full-screen-link nav-link-bg" id="fullscreen-button">
@@ -108,8 +108,8 @@
                                     
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <div class="drop-heading  text-center border-bottom pb-3">
-                                            <h5 class="text-dark mb-1">Intaji</h5>
-                                            <small class="text-muted">Logiciel De Gestion de Production</small>
+                                            <h5 class="text-dark mb-1">MY JSS</h5>
+                                            <small class="text-muted">Logiciel De Gestion De Votre Club</small>
                                         </div>
 
                                         <a class="dropdown-item" onclick="event.preventDefault();
@@ -147,142 +147,104 @@
                                         <li aria-haspopup="true">
                                             
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-outline"></i>Produit 
+                                                <i class="mdi mdi-cube-outline"></i>Sport 
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
                                             
                                             <ul class="sub-menu">
-                                                    
                                                 <li aria-haspopup="true">
-                                                    <a href="/categorie">Catégories</a>
+                                                    <a href="/admin/sports">Sports</a>
+                                                </li>        
+
+                                                <li aria-haspopup="true">
+                                                    <a href="/admin/categories">Catégories</a>
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/produit">Produits</a>
+                                                    <a href="/admin/groupes">Groupes</a>
+                                                </li>
+                                            </ul>
+                                        </li>                                    
+                                    
+                                        <li aria-haspopup="true">
+                                            
+                                            <a style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-cube-outline"></i>Gestion 
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+                                            
+                                            <ul class="sub-menu">
+                                                <li aria-haspopup="true">
+                                                    <a href="/admin/sports">Adherants</a>
+                                                                            
+                                                    
+                                                </li>        
+
+                                                <li aria-haspopup="true">
+                                                    <a href="/admin">Coachs</a>
+                                                </li>
+
+                                                <li aria-haspopup="true">
+                                                    <a href="/admin/groupes">Gestionnaires</a>
                                                 </li>
                                             </ul>
                                         </li>                                    
                                     
                                     
-                                        <li aria-haspopup="true"><a href="/home/mes_depot" class=""><i class="mdi mdi-home-map-marker"></i> Dépots</a></li>
 
                                         <li aria-haspopup="true">
                                             
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Tickets 
+                                                <i class="mdi mdi-ticket-confirmation"></i>Planning 
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
                                             
-                                            <ul class="sub-menu">
-                                                
-                                                    <li aria-haspopup="true">
-                                                        <a href="/impression">Impression</a>
-                                                    </li>
-                                                
-                                                <li aria-haspopup="true">
-                                                    <a href="/ticket">Mes Tickets</a>
-                                                </li>
-
-                                                    <li aria-haspopup="true">
-                                                        <a href="/ticket/vers_depot/annuler">Annuler Tickets</a>
-                                                    </li>
-
-                                                
-                                            </ul>
+                                           
                                         </li>
                                         <li aria-haspopup="true">
                                             
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-account-multiple"></i>Agents
+                                                <i class="mdi mdi-ticket-confirmation"></i>Abonnement
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+                                            
+                                           
+                                        </li>
+                                        <li aria-haspopup="true">
+                                            
+                                            <a style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-account-multiple"></i>Comptabilité
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
                                             
                                             <ul class="sub-menu">
                                                     
-                                                {{-- <li aria-haspopup="true">
-                                                    <a href="/production">Agents Production</a>
-                                                </li> --}}
+                                              
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/depot">Dépots</a>
+                                                    <a href="/admin/factures">Facture</a>
                                                 </li>
 
-                                                <li aria-haspopup="true">
-                                                    <a href="/livreur" >Livreurs</a>
-                                                </li>
+                                                
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/commercial" >Commercial</a>
+                                                    <a href="/commercial" >Stat</a>
                                                 </li>
 
                                             </ul>
                                         </li>
-
                                         <li aria-haspopup="true">
                                             
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-send"></i>Envoyer/Recevoir
+                                                <i class="mdi mdi-ticket-confirmation"></i>Aide
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
                                             
-                                            <ul class="sub-menu">
-                                                    
-                                                <li aria-haspopup="true">
-                                                    <a href="/ticket/vers_depot">Envoyer vers dépot</a>
-                                                </li>
-
-                                                <li aria-haspopup="true">
-                                                    <a href="/ticket/au_depot">Recevoir au dépot</a>
-                                                </li>
-
-
-                                            </ul>
-                                        </li>  
-
-                                        <li aria-haspopup="true"><a href="/" class=""><i class="mdi mdi-account-plus "></i>Clients</a></li>
-
-
-                                        <li aria-haspopup="true"><a href="/" class=""><i class="mdi mdi-truck-fast"></i>Commandes</a></li>
-
-
-                                    
-                                        <li aria-haspopup="true"><a href="/home/livraisons" class=""><i class="mdi mdi-forklift"></i>Livraisons</a></li>
-
-                                        <li aria-haspopup="true" data-toggle="modal" data-target="#livreurModal">
-                                            
-                                            <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-account-multiple"></i>Livreurs
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
-                                            </a>
-                                            
+                                           
                                         </li>
 
-                                        <li aria-haspopup="true"><a href="/home/caisse" class=""><i class="ion-cash"></i> Caisse</a></li>
-
-                                        <li aria-haspopup="true">
-                                            
-                                            <a href="/rapport" style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-chart-line"></i> Stats
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
-                                            </a>
-                                            
-                                            <ul class="sub-menu">
-                                                    
-                                                <li aria-haspopup="true">
-                                                    <a href="/rapport">Rapport</a>
-                                                </li>
-
-                                                <li aria-haspopup="true">
-                                                    <a href="/rapport_speciaux">Rapports spéciaux</a>
-                                                </li>
-
-                                                <li aria-haspopup="true">
-                                                    <a href="/statistiques">Statistiques</a>
-                                                </li>
-
-
-                                            </ul>
-                                        </li>
+                                        
+                                        
                                     {{--  --}}                                        
                                 </ul>
                             </nav>
@@ -320,7 +282,7 @@
                 <div class="container">
                     <div class="row align-items-center flex-row-reverse">
                         <div class="col-md-12 col-sm-12 text-center">
-                            Copyright © 2022 <a href="#">Intaji</a> Designed by <a href="#">Power Evo</a> All rights reserved.
+                            Copyright © 2024 <a href="#">My JSS</a> Designed by <a href="#">GIRLS</a> All rights reserved.
                         </div>
                     </div>
                 </div>

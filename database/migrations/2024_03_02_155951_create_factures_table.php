@@ -18,7 +18,7 @@ class CreateFacturesTable extends Migration
             $table->unsignedBigInteger('id_gestionnaire');
             $table->foreign('id_gestionnaire')->references('id')->on('gestionnaires');
             $table->double('ht', 10, 6);
-            $table->double('tva', 4, 4);
+            $table->double('tva', 10, 6);
             $table->double('versement', 10, 6);
             $table->double('droit_timbre', 10, 6);
             $table->string('etat_paiement', 100);

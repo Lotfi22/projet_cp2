@@ -3340,6 +3340,7 @@ button.bg-dark-gradient:focus {
 
 .mt-4,
 .my-4 {
+    
     margin-top: 1rem !important;
 }
 
@@ -10530,8 +10531,8 @@ input[type="button"].btn-block {
 
 .btn-loading:after {
     content: '';
-    -webkit-animation: loader 500ms infinite linear;
-    animation: loader 500ms infinite linear;
+    -webkit-animation: loader 100ms infinite linear;
+    animation: loader 100ms infinite linear;
     border: 2px solid #fff;
     border-radius: 50%;
     border-right-color: transparent !important;
