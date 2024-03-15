@@ -3,7 +3,7 @@
 @section('content')
 
 
-<a href="#" class="btn btn-primary col-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Ajouter un Coach</a>
+<a href="#" class="btn btn-primary col-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Ajouter un Adhérant</a>
 
 
 
@@ -15,7 +15,7 @@
             <!--begin::Modal header-->
             <div class="modal-header">
                 <!--begin::Modal title-->
-                <h2>Ajouter un Coach</h2>
+                <h2>Ajouter un Adhérant</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -30,7 +30,7 @@
             <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                 <!--begin::Form-->
                 
-                <form id="kt_modal_new_card_form" class="form" method="POST" action="/admin/coachs/create">
+                <form id="kt_modal_new_card_form" class="form" method="POST" action="/admin/adherants/create">
                     
                     {{ csrf_field() }}
 
@@ -42,7 +42,7 @@
                         </label>
                         
                         
-                        <input required id="nom" type="text" class="form-control form-control-solid" placeholder="Nom du Coach"  name="nom"/>
+                        <input required id="nom" type="text" class="form-control form-control-solid" placeholder="Nom de l'adherant"  name="nom"/>
                     </div>
 
                     <!--end::Input group-->
@@ -109,11 +109,11 @@
 
                     <div class="d-flex flex-column mb-7 fv-row">
                         <!--begin::Label-->
-                        <label for="nbr_telephone" class="required fs-6 fw-bold form-label mb-2">Numéro téléphone</label>
+                        <label for="num_tel" class="required fs-6 fw-bold form-label mb-2">Numéro téléphone</label>
 
                         <div class="position-relative">
 
-                            <input required id="nbr_telephone" placeholder="numero tel" type="text" class="form-control form-control-solid" name="nbr_telephone"/>
+                            <input required id="num_tel" placeholder="num_tel" type="text" class="form-control form-control-solid" name="num_tel"/>
                             <!--end::Card logos-->
                         </div>
                         <!--end::Input wrapper-->
@@ -124,11 +124,11 @@
 
                     <div class="d-flex flex-column mb-7 fv-row">
                         <!--begin::Label-->
-                        <label for="nbr_telephone_urgence">Numéro d'urgence</label>
+                        <label for="num_tel_urgence">Numéro d'urgence</label>
 
                         <div class="position-relative">
 
-                            <input id="nbr_telephone_urgence" placeholder="numero tel urgence" type="text" class="form-control form-control-solid" name="nbr_telephone_urgence"/>
+                            <input id="num_tel_urgence" placeholder="num_tel_urgence" type="text" class="form-control form-control-solid" name="num_tel_urgence"/>
                             <!--end::Card logos-->
                         </div>
                         <!--end::Input wrapper-->
@@ -139,11 +139,26 @@
 
                     <div class="d-flex flex-column mb-7 fv-row">
                         <!--begin::Label-->
-                        <label for="adress" class="required fs-6 fw-bold form-label mb-2">Adresse</label>
+                        <label for="dossier_medical" class="required fs-6 fw-bold form-label mb-2">Dossier médical</label>
 
                         <div class="position-relative">
 
-                            <input required id="adress" placeholder="adresse" type="text" class="form-control form-control-solid" name="adress"/>
+                            <input required id="dossier_medical" placeholder="dossier_medical" type="text" class="form-control form-control-solid" name="dossier_medical"/>
+                            <!--end::Card logos-->
+                        </div>
+                        <!--end::Input wrapper-->
+                    </div>
+
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label for="adresse" class="required fs-6 fw-bold form-label mb-2">Adresse</label>
+
+                        <div class="position-relative">
+
+                            <input required id="adresse" placeholder="adresse" type="text" class="form-control form-control-solid" name="adresse"/>
                             <!--end::Card logos-->
                         </div>
                         <!--end::Input wrapper-->
@@ -159,6 +174,21 @@
                         <div class="position-relative">
 
                             <input required id="email" placeholder="email" type="email" class="form-control form-control-solid" name="num_tel"/>
+                            <!--end::Card logos-->
+                        </div>
+                        <!--end::Input wrapper-->
+                    </div>
+
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label for="type_abonnement" class="required fs-6 fw-bold form-label mb-2">Type d'abonnement</label>
+
+                        <div class="position-relative">
+
+                            <input required id="type_abonnement" placeholder="type_abonnement" type="text" class="form-control form-control-solid" name="type_abonnement"/>
                             <!--end::Card logos-->
                         </div>
                         <!--end::Input wrapper-->
@@ -195,11 +225,14 @@
                     <th class="min-w-125px">NOM</th>
                     <th class="min-w-125px">PRENOM</th>
                     <th class="min-w-125px">DATE DE NAISSANCE</th>
+                    <th class="min-w-125px">QR CODE</th>                    
                     <th class="min-w-125px">GENRE</th>
                     <th class="min-w-125px">NUMERO TELEPHONE</th>
                     <th class="min-w-125px">NUMERO D'URGENCE</th>
+                    <th class="min-w-125px">DOSSIER MEDICAL</th>
                     <th class="min-w-125px">ADRESSE</th>
                     <th class="min-w-125px">EMAIL</th>
+                    <th class="min-w-125px">TYPE D'ABONNEMENT</th>
                     <th class="text-end min-w-70px">Actions</th>
                 </tr>
                 <!--end::Table row-->
@@ -207,19 +240,22 @@
 
             <tbody class="fw-bold text-gray-600">
 
-                @foreach ($coachs as $coach)
+                @foreach ($adherants as $adherant)
                     
                     <tr>
                         
-                        <td>{{ $coach->id }}</td>
-                        <td>{{ $coach->nom }}</td>
-                        <td>{{ $coach->prenom }}</td>
-                        <td>{{ $coach->date_naissance }}</td>
-                        <td>{{ $coach->genre }}</td>
-                        <td>{{ $coach->nbr_telephone }}</td>
-                        <td>{{ $coach->nbr_telephone_urgence }}</td>
-                        <td>{{ $coach->adress }}</td>
-                        <td>{{ $coach->email }}</td>
+                        <td>{{ $adherant->id }}</td>
+                        <td>{{ $adherant->nom }}</td>
+                        <td>{{ $adherant->prenom }}</td>
+                        <td>{{ $adherant->date_naissance }}</td>
+                        <td>{{ $adherant->id_qr }}</td>
+                        <td>{{ $adherant->genre }}</td>
+                        <td>{{ $adherant->num_tel }}</td>
+                        <td>{{ $adherant->num_tel_urgence }}</td>
+                        <td>{{ $adherant->dossier_medical }}</td>
+                        <td>{{ $adherant->adresse }}</td>
+                        <td>{{ $adherant->email }}</td>
+                        <td>{{ $adherant->type_abonnement }}</td>
                         <td>Modifer , supprimer</td>
                     </tr>    
 
