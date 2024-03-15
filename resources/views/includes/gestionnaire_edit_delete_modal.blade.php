@@ -55,29 +55,29 @@
                     method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Nom</label>
+                        <label for="nom">Nom</label>
                         <input type="text" value="{{ $gestionnaire->nom ?? ''}}"
-                            name="nom" class="form-control"
-                            id="exampleInputEmail1">
+                            name="nom" required class="form-control"
+                            id="nom">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Prenom</label>
+                        <label for="prenom">Prenom</label>
                         <input type="text" value="{{ $gestionnaire->prenom ?? '' }}"
-                            name="prenom" class="form-control"
-                            id="exampleInputEmail1">
+                            name="prenom"  required class="form-control"
+                            id="prenom">
                     </div>
 
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Date naissance </label>
+                        <label for="date_naissance">Date naissance </label>
                         <input type="date"
                             value="{{ $gestionnaire->date_naissance?? '' }}"
-                            name="date_naissance" class="form-control"
-                            id="exampleInputEmail1">
+                            name="date_naissance"  required  class="form-control"
+                            id="date_naissance">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Genre</label>
+                        <label for="genre">Genre</label>
                         <select id="genre" name="genre" required class="form-control">
                             <option disabled>Genre</option>
                             <option value="Homme" class="form-control" {{ $gestionnaire->genre == 'Homme' ? 'selected' : '' }}>Homme</option>
@@ -86,28 +86,28 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" value="{{ $gestionnaire->email ?? ''}}"
-                            name="email" class="form-control"
-                            id="exampleInputEmail1" >
+                            name="email"  required class="form-control"
+                            id="email" >
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Numéro de  téléphone</label>
+                        <label for="num_tel">Numéro de  téléphone</label>
                         <input type="texte" value="{{ $gestionnaire->num_tel ?? ''}}"
-                            name="num_tel" class="form-control"
-                            id="exampleInputEmail1" >
+                            name="num_tel"  required class="form-control"
+                            id="num_tel" >
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Numéro de téléphone d'urgence </label>
+                        <label for="num_tel_urgence">Numéro de téléphone d'urgence </label>
                         <input type="texte" value="{{ $gestionnaire->num_tel_urgence ?? ''}}"
                             name="num_tel_urgence" class="form-control"
-                            id="exampleInputEmail1" >
+                            id="num_tel_urgence" >
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Adresse </label>
+                        <label for="adresse">Adresse </label>
                         <input type="texte" value="{{ $gestionnaire->adresse ?? ''}}"
-                            name="adresse" class="form-control"
-                            id="exampleInputEmail1" >
+                            name="adresse" required class="form-control"
+                            id="adresse" >
                     </div>
 
                     <div class="btn-group col-md-6" role="group">

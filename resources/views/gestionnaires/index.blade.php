@@ -117,19 +117,19 @@
                         </div>
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="num_tel">Numéro de téléphone</label>
-                            <input required type="tel"  value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="num_tel" placeholder="Numero de telephpne de gestionnaire">
+                            <input required type="tel"  value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="num_tel" placeholder="Numéro de téléphone de gestionnaire">
                         </div>
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="num_tel_urgence">Numéro de téléphone  d'urgence </label>
-                            <input  type="tel"  value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="num_tel_urgence" placeholder="Numero de telephpne  d'urgence de gestionnaire">
+                            <input  type="tel"  value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="num_tel_urgence" placeholder="Numéro de téléphone  d'urgence de gestionnaire">
                         </div>
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="adresse">Adresse</label>
-                            <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Numero de telephpne de gestionnaire">
+                            <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Adresse de gestionnaire">
                         </div>
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="id_qr">Id QR</label>
-                            <input required type="text"  name="id_qr" class="form-control" id="id_qr">
+                            <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder="entrer id_qr du gestionnaire">
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
