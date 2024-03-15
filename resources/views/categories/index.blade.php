@@ -89,7 +89,6 @@
                             <label class="label label-default" for="description">Description</label>
                             
                             <textarea rows="4" class="form-control" name="description" placeholder="Entrez la description de la catégorie" id="description"></textarea>
->>>>>>> c72c0edd687502af66c0e11ba5eab22b96cc6b06
 
                         </div>
 

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Create Sport</title>
+		<title>Create Categorie</title>
 	</head>
 
 	<body>

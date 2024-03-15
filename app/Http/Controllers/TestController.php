@@ -3,38 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 class TestController extends Controller
+
+
+//NB : THIS FILE SHOULD BE DELETED LATER, ITS JUST FOR INITIAL TEST
+
 {
-
-    public function index()
-    {
-
-        return view('sports.create');
-
-        // code...
-    }
-    
-    //
-    
-
-    public function create(Request $request)
-    {
-
-        dd("ani lha9t");
-
-        // code...
-    }
-
-
-    public function lotfi()
-    {
-
-        dd('Lotfi \'s routes ' );
-
-        // code...
-    }
-
     public function afaf()
     {
 

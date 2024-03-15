@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
+
 
 
 /*
@@ -25,9 +27,9 @@ Route::post('/sports/create','TestController@create');
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 Route::get('/admin', 'AdminController@index')->name('admin.home');
-Route::get('/password',function(){ dd(Hash::make('ADMIN')); });
+Route::get('/password',function(){ dd(Hash::make('ADMIN')); }); //should be deleted later
 
-//Categiries routes :
+//Categories routes :
 Route::get('/admin/categories','CategorieController@index');
 Route::post('/admin/categories/create','CategorieController@create')->name('categorie.create');;
 Route::post('/admin/categories/update','CategorieController@update');

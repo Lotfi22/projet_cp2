@@ -34,5 +34,23 @@ class Facture extends Model
 
         // code...
     }
+    public static function misajour(Request $request)
+    {
+
+
+        return DB::update("
+        UPDATE factures
+        SET ht = '$request->ht',
+            tva = '$request->tva',
+            versement = '$request->versement',
+            droit_timbre = '$request->droit_timbre',
+            etat_paiement = '$request->etat_paiement',
+            id_gestionnaire = '$request->id_gestionnaire'
+        WHERE id = $request->id
+    ");
+
+
+        // code...
+    }
 
 }

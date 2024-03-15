@@ -161,6 +161,10 @@
                                                 </li>
 
                                                 <li aria-haspopup="true">
+                                                    <a href="/admin/evenements">Evenements</a>
+                                                </li>
+
+                                                <li aria-haspopup="true">
                                                     <a href="/admin/groupes">Groupes</a>
                                                 </li>
                                             </ul>
