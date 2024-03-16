@@ -18,6 +18,7 @@ class CreateSallesTable extends Migration
             $table->bigInteger('capacite');
             $table->bigInteger('nb_machine');
             $table->double('superficie', 8, 6);
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

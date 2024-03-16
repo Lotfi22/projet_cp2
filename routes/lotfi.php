@@ -27,13 +27,16 @@ Route::post('/sports/create','TestController@create');
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 Route::get('/admin', 'AdminController@index')->name('admin.home');
-Route::get('/password',function(){ dd(Hash::make('ADMIN')); }); //should be deleted later
+Route::get('/password',function(){ dd(Hash::make('ADMIN')); }); 
+//should be deleted later
 
 //Categories routes :
 Route::get('/admin/categories','CategorieController@index');
 Route::post('/admin/categories/create','CategorieController@create')->name('categorie.create');;
 Route::post('/admin/categories/update','CategorieController@update');
 Route::get('/admin/categories/delete/{id}','CategorieController@delete');
+
+Route::get('/admin/categories/{id}/sous_categorie','Sous_categorieController@home');
 
 
 

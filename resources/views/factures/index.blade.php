@@ -12,7 +12,7 @@
             <div class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
-                     Ajouter Facture
+                       Ajouter Facture
                 </button>
             </div>
 
@@ -36,7 +36,7 @@
 
                          </thead>
 
-                         <tbody>
+                          <tbody>
                                @foreach ($factures as $facture)
                   
                                     <tr>

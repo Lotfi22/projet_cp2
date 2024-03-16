@@ -26,6 +26,7 @@ class CreateAdminsTable extends Migration
             $table->string('adresse',100);
             $table->string('email',100);
             $table->string('password',100);
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

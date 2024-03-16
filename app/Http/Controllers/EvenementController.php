@@ -50,5 +50,21 @@ class EvenementController extends Controller
 
     }
 
+    public function update( Request $request,$id)
+    {
+        $evenement = Evenement::modifier($request, $id);
+
+        if ($evenement) {
+            session()->flash('notification.message', 'Evenement ' . $id . ' modifié avec succès');
+            session()->flash('notification.type', 'warning');
+        } else {
+            session()->flash('notification.message', 'Evenement non trouvé');
+            session()->flash('notification.type', 'error');
+        }
+    
+        return back();
+        // code...
+    }
+
 }
 
