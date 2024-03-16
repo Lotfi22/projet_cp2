@@ -29,7 +29,7 @@ class CategorieController extends Controller
 
     public function create(Request $request)
     {
-        
+
         DB::insert("insert into categories(nom,description,age_min,age_max)
                     values('$request->nom','$request->description','$request->age_min','$request->age_max')");
 
