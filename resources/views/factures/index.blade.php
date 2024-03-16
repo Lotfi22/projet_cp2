@@ -36,7 +36,7 @@
 
                          </thead>
 
-                         <tbody>
+                          <tbody>
                                @foreach ($factures as $facture)
                   
                                     <tr>
