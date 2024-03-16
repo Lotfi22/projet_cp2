@@ -52,21 +52,49 @@
             </div>
 
             <div class="modal-body">
-                <form action="/"
-                    method="post" enctype="multipart/form-data">
+                <form action="/admin/factures/update" method="post" enctype="multipart/form-data">
                     @csrf
-                   
-                    <div class="btn-group col-md-6" role="group">
-                        <button type="submit" class="btn btn-primary col-md-12">
-                            Enregistrer 
-                        </button>
-                    </div>
-                    <div class="btn-group col-md-6" role="group">
+                        <div class="form-group ">
+                            
+                            <input type="hidden" name="id" value="{{ $facture->id }}" class="form-control" name="id">  
 
-                        <button type="button" class=" col-md-12 btn btn-danger"
-                            data-dismiss="modal" role="button">Fermer
-                        </button>
-                    </div>
+                        </div>
+
+                     <div class="form-group ">
+                            <label class="label label-default" for="ht">Montant Hors Tax </label>
+                            <input  type="number" value="{{ $facture->ht ?? '' }}" name="ht" placeholder="Montant hors tax" class="form-control" id="ht">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label class="label label-default" for="tva">Tva </label>
+                            <input  type="number" value="{{  $facture->tva ?? ''  }}" name="tva" placeholder="TVA" class="form-control" id="tva">
+
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="versement">Versement </label>
+                            <input  type="number" value="{{ $facture->versement ?? '' }}" name="versement" placeholder="Versement" class="form-control" id="versement">
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="droit_timbre">Droit Timbre </label>
+                            <input  type="number" value="{{ $facture->droit_timbre ?? '' }}" name="droit_timbre" placeholder="Droit Timbre" class="form-control" id="droit_timbre">
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="etat_paiement">Etat paiement</label>
+                            <input  type="text" value="{{ $facture->droit_timbre ?? '' }}" name="etat_paiement" placeholder="Etat paiement" class="form-control" id="etat_paiement">
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="id_gestionnaire">Id gestionnaire</label>
+                            <input  type="text" value="{{ $facture->id_gestionnaire ?? '' }}" name="id_gestionnaire" placeholder="Id Gestionnaire" class="form-control" id="id_gestionnaire">
+                        </div>
+                        <div class="btn-group col-md-6" role="group">
+                            <button type="submit" class="btn btn-primary col-md-12">
+                                Enregistrer </button>
+                        </div>
+                        <div class="btn-group col-md-6" role="group">
+
+                            <button type="button" class=" col-md-12 btn btn-danger"
+                                data-dismiss="modal" role="button">Fermer</button>
+                        </div>
                 </form>
             </div>
         </div>

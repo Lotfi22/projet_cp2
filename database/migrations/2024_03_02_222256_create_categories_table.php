@@ -17,6 +17,9 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom', 100);
             $table->text('description');
+            $table->integer('age_min');
+            $table->integer('age_max');
+            $table->boolean('visible')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

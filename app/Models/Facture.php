@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 
 class Facture extends Model
@@ -30,6 +30,24 @@ class Facture extends Model
                     values('$request->ht','$request->tva','$request->versement','$request->droit_timbre','$request->etat_paiement','$request->id_gestionnaire')");
 
 
+        
+
+        // code...
+    }
+    public static function misajour(Request $request)
+    {
+
+       
+        return DB::update("
+        UPDATE factures
+        SET ht = '$request->ht',
+            tva = '$request->tva',
+            versement = '$request->versement',
+            droit_timbre = '$request->droit_timbre',
+            etat_paiement = '$request->etat_paiement',
+            id_gestionnaire = '$request->id_gestionnaire'
+        WHERE id = $request->id
+    ");
         
 
         // code...
