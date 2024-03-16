@@ -1,150 +1,127 @@
-@extends('layouts.layout_admin')
+@extends('layouts.solic')
 
 @section('content')
 
 
-<a href="#" class="btn btn-primary col-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Ajouter un nouveau evenement</a>
+    <div class="container-fluid">
 
+        <h1 class="mt-4 text-white" > Mes evenements</h1>
 
+        <div class="card mb-4">
 
-<div class="modal fade" id="kt_modal_new_card" tabindex="-1" aria-hidden="true">
-    <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-650px">
-        <!--begin::Modal content-->
-        <div class="modal-content">
-            <!--begin::Modal header-->
-            <div class="modal-header">
-                <!--begin::Modal title-->
-                <h2>>Ajouter un nouveau evenement</h2>
-                <!--end::Modal title-->
-                <!--begin::Close-->
-                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+            <div class="card-header">
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
+                        class="fa fa-plus"></i>
+                     Ajouter Evenement
+                </button>
+            </div>
 
-                    <!--end::Svg Icon-->
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    <table class="table card-table table-vcenter text-nowrap table-striped" id="datable-1" width="100%" cellspacing="0">
+
+                        <thead style="cursor:pointer;" class="bg-secondary text-white">
+                            <tr>
+                                <th>ID evenement</th>
+                                <th>Nom</th>
+                                <th>Date debut</th>
+                                <th>Date fin</th>
+                                <th>Description</th>
+                                <th>Lieu</th>
+                                <th>Date création</th>
+                                <th>actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach ($evenements as $evenement)
+                                <tr>
+                                    <td>{{ $evenement->id }}</td>
+                                    <td>{{ $evenement->nom ?? '' }}</td>
+                                    <td>{{ $evenement->date_debut ?? '' }}</td>
+                                    <td>{{ $evenement->date_fin ?? '' }}</td>
+                                    <td>{{ $evenement->description ?? '' }}</td>
+                                    <td>{{ $evenement->lieu ?? '' }}</td>
+                                    <td>{{ $evenement->created_at ?? '' }}</td>
+                                    <td>
+                                        <div class="table-action">
+
+                                            @include('includes.evenement_edit_delete_modal',compact('evenement'))
+
+                                            {{--  --}}
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-                <!--end::Close-->
             </div>
-            <!--end::Modal header-->
-            <!--begin::Modal body-->
-            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-                <!--begin::Form-->
-                
-                <form id="kt_modal_new_card_form" class="form" method="POST" action="/admin/evenements/create">
-                    
-                    {{ csrf_field() }}
-
-
-                    <div class="d-flex flex-column mb-7 fv-row">
-                        
-                        <label for="Nom_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Nom d'évenement</span>
-                        </label>
-                        
-                        
-                        <input required id="Nom_evenemt" type="string" class="form-control form-control-solid" name="nom"/>
-                    </div>
-                    <div class="d-flex flex-column mb-7 fv-row">
-                        
-                        <label for="DateDebut_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Date debut</span>
-                        </label>
-                        
-                        
-                        <input required id="DateDebut_evenemt" type="datetime-local" class="form-control form-control-solid" name="date debut"/>
-                    </div>
-                    <div class="d-flex flex-column mb-7 fv-row">
-                        
-                        <label for="DateFin_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Date fin</span>
-                        </label>
-                        
-                        
-                        <input required id="DateFin_evenemt" type="datetime-local" class="form-control form-control-solid" name="date fin"/>
-                    </div>                    
-                    <div class="d-flex flex-column mb-7 fv-row">
-                        
-                        <label for="Description_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Description</span>
-                        </label>
-                        
-                        
-                        <input required id="Description_evenemt" type="text" class="form-control form-control-solid" name="description"/>
-                    </div>
-                    <div class="d-flex flex-column mb-7 fv-row">
-                        
-                        <label for="Lieu_evenemt" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                            <span class="required">Lieu</span>
-                        </label>
-                        
-                        
-                        <input required id="Lieu_evenemt" type="string" class="form-control form-control-solid" name="lieu"/>
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-
-                    <button class="col-md-12 btn btn-info">Submit</button>
-                    <!--end::Actions-->
-                </form>
-                <!--end::Form-->
-            </div>
-            <!--end::Modal body-->
         </div>
-        <!--end::Modal content-->
     </div>
-    <!--end::Modal dialog-->
-</div>
 
 
 
 
-<div class="card-body pt-0">
 
-    <div style="margin-top: 5%;" class="card-body pt-0">
-        <!--begin::Table-->
-        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-            <!--begin::Table head-->
-            <thead>
-                <!--begin::Table row-->
-                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                    <th class="min-w-125px">Nom</th>
-                    <th class="min-w-125px">Date debut</th>
-                    <th class="min-w-125px">Date fin</th>
-                    <th class="min-w-125px">Description</th>
-                    <th class="min-w-125px">Lieu</th>
-                    <th class="min-w-125px">Date de creation</th>
-                    <th class="text-end min-w-70px">Actions</th>
-                </tr>
-                <!--end::Table row-->
-            </thead>
-
-            <tbody class="fw-bold text-gray-600">
-
-                @foreach ($evenements as $evenement)
+    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter evenement : </h3>
+                </div>
+                
+                <div class="modal-body">
                     
-                    <tr>
+                    <form action="/admin/evenements/create" method="post" enctype="multipart/form-data" class="row col-md-12">
                         
-                        <td>{{ $evenement->nom}}</td>
-                        <td>{{ $evenement->date_debut}}</td>
-                        <td>{{ $evenement->date_fin}}</td>
-                        <td>{{ $evenement->description}}</td>
-                        <td>{{ $evenement->lieu}}</td>
-                        <td>{{ $evenement->created_at }}</td>
-                        <td>Modifer supprimer</td>
+                        @csrf
+                        
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                            <label class="label label-default" for="Nom_evenemt">Nom d'évenement </label>
+                            <input required type="string" value="{{ old('nom_evenemt') }}" name="nom" placeholder="Entrez le nom de l'evenement" class="form-control" id="Nom_evenemt">
+                        </div>
 
-                    </tr>    
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="DateDebut_evenemt">Date de debut </label>
+                            <input required type="datetime-local" value="{{ old('DateDebut_evenemt') }}" name="date debut" class="form-control" id="DateDebut_evenemt" placeholder="Entrez la date de debut de l'evenement">
+                        </div>
 
-                    {{-- expr --}}
-                @endforeach
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="DateFin_evenemt">Date de fin </label>
+                            <input required type="datetime-local" value="{{ old('DateFin_evenemt') }}" name="date fin" class="form-control" id="DateFin_evenemt" placeholder="Entrez la date de fin de l'evenement">
+                        </div>
 
-                {{--  --}}
-            </tbody>
-            <!--end::Table body-->
-        </table>
-        <!--end::Table-->
+                        <div class="form-group col-md-12">
+                            <label class="label label-default" for="Description_evenemt">Description</label>
+                            
+                            <textarea rows="4" class="form-control" name="description" placeholder="Entrez la description de l'évenement" id="Description_evenemt"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="Lieu_evenemt">Lieu </label>
+                            <input required type="string" value="{{ old('Lieu_evenemt') }}" name="lieu" class="form-control" id="Lieu_evenemt" placeholder="Entrez le lieu de l'evenement">
+                        </div>
+
+                        <div class="btn-group col-md-6" role="group">
+                            
+                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+                        </div>
+
+                        <div class="btn-group col-md-6" role="group">
+                            
+                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-<!--end::Card body-->
-</div>
 
 
 
