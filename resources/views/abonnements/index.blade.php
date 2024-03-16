@@ -43,6 +43,12 @@
                                     <td>{{ $abonnement->tarif ?? '' }}</td>
                                     <td>{{ $abonnement->created_at ?? '' }}</td>
                                     <td>
+                                        <div class="table-action">
+
+                                            @include('includes.abonnement_edit_delete_modal',compact('abonnement'))
+
+                                            {{--  --}}
+                                        </div>
 
 
                                     </td>
@@ -65,6 +71,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title " id="lineModalLabel">Ajouter abonnement : </h3>
+                    <button type="button" class="close"
+                    data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
 
                 <div class="modal-body">
@@ -75,24 +85,27 @@
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="type_abonnement">Type d'Abonnement </label>
-                            <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" placeholder="Entrez le type de l'abonnement " class="form-control" id="type_abonnement">
+                            <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" placeholder="Entrez le type de l'abonnement "
+                             class="form-control" id="type_abonnement">
                         </div>
 
-                        <div class="form-group col-md-12">
-                            <label class="label label-default" for="nbr_seance">Nombre de séances</label>
-                            <input required type="number"  value="{{ old('nbr_seance') }}" name="nbr_seance" class="form-control" id="nbr_seance" placeholder="Entrez le nombre de séances de ce type d'abonnement">
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="nbr_seances">Nombre de séances</label>
+                            <input required type="number"  value="{{ old('nbr_seances') }}" name="nbr_seances" class="form-control" id="nbr_seances"
+                             placeholder="Entrez le nombre de séances de ce type d'abonnement">
                         </div>
 
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="tarif">Tarif</label>
-                            <input required type="number"  value="{{ old('tarif') }}" name="tarif" class="form-control" id="tarif" placeholder="Entrez le tarif de ce type d'abonnement">
+                            <input required type="number"  value="{{ old('tarif') }}" name="tarif" class="form-control" id="tarif"
+                             placeholder="Entrez le tarif de ce type d'abonnement">
                         </div>
 
 
                         <div class="btn-group col-md-6" role="group">
 
-                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+                            <button type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">

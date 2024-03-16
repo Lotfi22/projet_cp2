@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
-
 use App\Models\Categorie;
+
 
 class CategorieController extends Controller
 {
@@ -27,36 +26,46 @@ class CategorieController extends Controller
         // code...
     }
 
+
     public function create(Request $request)
     {
+       Categorie::inserer($request);
+         session()->flash('notification.message' , 'Catégorie '.$request->nom.' Ajoutée avec succés');
 
-        DB::insert("insert into categories(nom,description,age_min,age_max)
-                    values('$request->nom','$request->description','$request->age_min','$request->age_max')");
-
-
-       session()->flash('notification.message' , 'Catégorie '.$request->nom.' Ajoutée avec succés');
-
-       session()->flash('notification.type' , 'success'); 
+          session()->flash('notification.type' , 'success');
 
        return back();
 
         // code...
     }
 
+
     public function delete($id_categorie)
     {
-        
+
         Categorie::supprimer($id_categorie);
 
         session()->flash('notification.message' , 'Catégorie '.$id_categorie.' supprimer avec succés');
 
-        session()->flash('notification.type' , 'warning'); 
+        session()->flash('notification.type' , 'warning');
 
         return back();
 
         // code...
     }
 
+    public function update(Request $request)
+    {
+        Categorie::misajour($request);
+
+        session()->flash('notification.message' , 'Catégorie '.$request->id_categorie.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning');
+
+        return back();
+
+        // code...
+    }
 
     //
 }
