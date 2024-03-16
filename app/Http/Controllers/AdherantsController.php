@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB; 
+
+use DB;
+
+use App\Models\Adherant;
+
 
 class AdherantsController extends Controller
 {
@@ -32,25 +36,38 @@ class AdherantsController extends Controller
     public function create(Request $request)
     {
         
-        DB::insert("insert into adherants(nom, prenom, date_naissance, id_qr, genre, num_tel, num_tel_urgence, dossier_medical, adresse, email, type_abonnement)
-                    values('$request->nom','$request->prenom','$request->date_naissance','$request->id_qr','$request->genre', '$request->num_tel', '$request->num_tel_urgence', '$request->dossier_medical', '$request->adresse', '$request->email', '$request->type_abonnement')");
+        Adherant::inserer($request);
 
         session()->flash('notification.message' , 'Adhérant '.$request->nom.' Ajouté avec succés');
 
-       session()->flash('notification.type' , 'success'); 
-
-       return back();
+        session()->flash('notification.type' , 'success'); 
 
         return back();
 
 
     }
 
+    public function update(Request $request)
+    {
+        
+        Adherant::modifier($request);
+
+        session()->flash('notification.message' , 'Adhérant '.$request->id.' Modifié avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
+
+        return back();
+
+        // code...
+    }
+
+
+    
 
     public function delete($id_adherant)
     {
         
-        Categorie::supprimer($id_adherant);
+        Adherant::supprimer($id_adherant);
 
         session()->flash('notification.message' , 'Adhérant '.$id_adherant.' Supprimé avec succés');
 

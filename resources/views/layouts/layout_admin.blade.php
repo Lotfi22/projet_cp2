@@ -30,21 +30,21 @@
         
         <div class="d-flex flex-column flex-root">
 
-			<div class="page d-flex flex-row flex-column-fluid">
+            <div class="page d-flex flex-row flex-column-fluid">
 
-				<div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
-					<!--begin::Brand-->
-					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
-					  <!--begin::Logo-->
+                <div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
+                    <!--begin::Brand-->
+                    <div class="aside-logo flex-column-auto" id="kt_aside_logo">
+                      <!--begin::Logo-->
                         <a href="/admin">
                             <img alt="Logo" src="../demo1/dist/assets/media/logos/logo-1-dark.png" class="h-80px logo" />
                         </a>
                         <!--end::Logo-->
                        <!--begin::Aside toggler-->
-						<div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
-							<!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
-						</div>
-						<!--end::Aside toggler-->
+                        <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
+                        </div>
+                        <!--end::Aside toggler-->
                     </div>
                     <!--end::Brand-->
                     <!--begin::Aside menu-->
@@ -231,13 +231,6 @@
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/chat/chat.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/create-app.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/upgrade-plan.js') }}"></script>
-<<<<<<< HEAD
-
-
-        <!--end::Global Javascript Bundle-->
-        <!--begin::Page Vendors Javascript(used by this page)-->
-=======
->>>>>>> c72c0edd687502af66c0e11ba5eab22b96cc6b06
         <script src="{{ asset('demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/export.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/list.js') }}"></script>

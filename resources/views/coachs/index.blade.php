@@ -5,14 +5,14 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Mes Adhérants</h1>
+        <h1 class="mt-4 text-white" > Mes Coachs</h1>
 
         <div class="card mb-4">
 
             <div class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
-                     Ajouter Adhérant
+                     Ajouter Coach
                 </button>
             </div>
 
@@ -52,7 +52,15 @@
                                     <td>{{ $coach->nbr_telephone_urgence }}</td>
                                     <td>{{ $coach->adress }}</td>
                                     <td>{{ $coach->email }}</td>
-                                    <td>Modifer , supprimer</td>
+                                    <td>
+                                        <div class="table-action">
+
+                                            @include('includes.coach_edit_delete_modal',compact('coach'))
+
+                                            {{--  --}}
+                                        </div>
+
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -76,7 +84,7 @@
                 
                 <div class="modal-body">
                     
-                    <form action="/admin/adherants/create" method="post" enctype="multipart/form-data" class="row col-md-12">
+                    <form action="/admin/coachs/create" method="post" enctype="multipart/form-data" class="row col-md-12">
                         
                         @csrf
 

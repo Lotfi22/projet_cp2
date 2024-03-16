@@ -56,7 +56,15 @@
                                     <td>{{ $adherant->adresse }}</td>
                                     <td>{{ $adherant->email }}</td>
                                     <td>{{ $adherant->type_abonnement }}</td>
-                                    <td>Modifer , supprimer</td>
+                                    <td>
+                                        <div class="table-action">
+
+                                            @include('includes.adherant_edit_delete_modal',compact('adherant'))
+
+                                            {{--  --}}
+                                        </div>
+
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
