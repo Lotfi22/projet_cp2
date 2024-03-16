@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4"> Gestionnaires</h1>
+        <h1 class="mt-4 text-white" > Gestionnaires</h1>
 
         <div class="card mb-4">
 

@@ -231,13 +231,6 @@
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/chat/chat.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/create-app.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/modals/upgrade-plan.js') }}"></script>
-<<<<<<< HEAD
-
-
-        <!--end::Global Javascript Bundle-->
-        <!--begin::Page Vendors Javascript(used by this page)-->
-=======
->>>>>>> c72c0edd687502af66c0e11ba5eab22b96cc6b06
         <script src="{{ asset('demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/export.js') }}"></script>
         <script src="{{ asset('demo1/dist/assets/js/custom/apps/customers/list/list.js') }}"></script>
