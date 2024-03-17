@@ -30,7 +30,7 @@ Route::get('/admin/categories/delete/{id}','CategorieController@delete');
 
 //Sous_categories routes:
 Route::get('/admin/sous_categories','Sous_categorieController@index');
-Route::post('/admin/sous_categories/create','Sous_categorieController@create');
+Route::post('/admin/sous_categories/{id}/create','Sous_categorieController@create');
 Route::post('/admin/sous_categories/update','Sous_categorieController@update');
 Route::get('/admin/sous_categories/delete/{id}','Sous_categorieController@delete');
 

@@ -11,7 +11,7 @@
 
 		<form method="post" action="/factures/create">
 			
-			{{ csrf_field() }}
+			     {{ csrf_field() }}
 
              <label for="ht_facture">Montant Hors tax:</label>
              <input type="number" id="ht_facture" name="ht_facture" >    

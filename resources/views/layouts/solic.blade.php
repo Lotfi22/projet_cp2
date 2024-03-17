@@ -23,7 +23,7 @@
                 background-color: #f9f9f9;
             }
 
-            /**/
+            //
         </style>
 
 
@@ -143,7 +143,15 @@
                         <div class="horizontal-mainwrapper container barre clearfix">
                             <nav class="horizontalMenu clearfix">
                                 <ul class="horizontalMenu-list">
+                                            <li aria-haspopup="true">
 
+                                                <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
+                                                    <i class="mdi mdi-ticket-confirmation"></i>Admin
+                                                    <i class="fa fa-angle-down horizontal-icon"></i>
+                                                </a>
+
+
+                                            </li>
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
@@ -160,15 +168,14 @@
                                                     <a href="/admin/categories">Catégories</a>
                                                 </li>
 
-                                                <li aria-haspopup="true">
-                                                    <a href="/admin/evenements">Evenements</a>
-                                                </li>
+
 
                                                 <li aria-haspopup="true">
                                                     <a href="/admin/groupes">Groupes</a>
                                                 </li>
                                             </ul>
                                         </li>
+
 
                                         <li aria-haspopup="true">
 
@@ -179,21 +186,30 @@
 
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/sports">Adherants</a>
+                                                    <a href="/admin/adherants">Adherants</a>
 
 
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin">Coachs</a>
+                                                    <a href="/admin/coachs">Coachs</a>
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/groupes">Gestionnaires</a>
+                                                    <a href="/admin/gestionnaires">Gestionnaires</a>
                                                 </li>
                                             </ul>
                                         </li>
 
+                                        <li aria-haspopup="true">
+
+                                            <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-ticket-confirmation"></i>Evenements
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+
+
+                                        </li>
 
 
                                         <li aria-haspopup="true">
@@ -207,7 +223,7 @@
                                         </li>
                                         <li aria-haspopup="true">
 
-                                            <a style="cursor: pointer;" class="sub-icon"  href="/admin/abonnements">
+                                            <a href="/admin/abonnements" style="cursor: pointer;" class="sub-icon">
                                                 <i class="mdi mdi-ticket-confirmation"></i>Abonnement
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
@@ -412,7 +428,7 @@
                 {
 
 
-                    /*console.log("My country is: " + json.country+" city : " + json.city);*/
+                    /console.log("My country is: " + json.country+" city : " + json.city);/
                 },
 
                 error: function(err)

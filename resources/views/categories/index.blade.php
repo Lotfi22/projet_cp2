@@ -38,12 +38,12 @@
 
                             @foreach ($categories as $categorie)
                                 <tr>
-                                    <td>{{ $categorie->id }}</td>
-                                    <td>{{ $categorie->nom ?? '' }}</td>
-                                    <td>{{ $categorie->description ?? '' }}</td>
-                                    <td>{{ $categorie->age_min ?? '' }}</td>
-                                    <td>{{ $categorie->age_max ?? '' }}</td>
-                                    <td>{{ $categorie->created_at ?? '' }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->id }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->nom ?? '' }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->description ?? '' }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->age_min ?? '' }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->age_max ?? '' }}</td>
+                                    <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->created_at ?? '' }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -121,9 +121,23 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 
+    <script>
+        
+
+        function redirect_sous_categorie(id) 
+        {
+            
+            location.href='/admin/categories/'+id+'/sous_categorie';
+
+            // body...
+        }
+
+        //
+    </script>
 
 
 @endsection

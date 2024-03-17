@@ -35,8 +35,7 @@ class Gestionnaire extends Model
 
             // Sauvegarder les modifications
             $gestionnaire->save();
-
-            return $gestionnaire; // Vous pouvez retourner le gestionnaire mis à jour si nécessaire
+            return $gestionnaire; 
         } else {
             return null;
         }
