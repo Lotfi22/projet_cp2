@@ -21,7 +21,7 @@ class CreateSeancesTable extends Migration
             $table->foreign('id_groupe')->references('id')->on('groupes');
             $table->unsignedBigInteger('id_salle');
             $table->foreign('id_salle')->references('id')->on('salles');
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

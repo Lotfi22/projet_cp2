@@ -23,7 +23,7 @@ class CreateGroupesTable extends Migration
             $table->unsignedBigInteger('id_abonnement');
             $table->foreign('id_abonnement')->references('id')->on('abonnements');
             $table->bigInteger('capacite');
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate(); 
         });
