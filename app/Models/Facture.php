@@ -17,7 +17,6 @@ class Facture extends Model
         $facture=Facture::find($id_facture);    
         $facture->delete() ;
          
-
         // code...
     }
     public static function inserer(Request $request)
