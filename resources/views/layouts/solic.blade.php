@@ -174,7 +174,10 @@
                                                     <a href="/admin/groupes">Groupes</a>
                                                 </li>
                                             </ul>
-                                        </li>                                    
+                                        </li>  
+
+                                        <li aria-haspopup="true"><a href="/admin/adherants" class=""><i class="mdi mdi-truck-fast"></i>Gestion des Adhérants</a></li>
+                                        <li aria-haspopup="true"><a href="/admin/coachs" class=""><i class="mdi mdi-truck-fast"></i>Gestion des Coachs</a></li>                                  
                                     
                                         <li aria-haspopup="true">
                                             
