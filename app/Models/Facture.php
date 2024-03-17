@@ -14,9 +14,15 @@ class Facture extends Model
     public static function supprimer($id_facture)
     {
 
+<<<<<<< HEAD
         $facture=Facture::find($id_facture);
         $facture->delete() ;
 
+=======
+        $facture=Facture::find($id_facture);    
+        $facture->delete() ;
+         
+>>>>>>> e1a42e1b8fd0b1885bea1cfbe07c3d003cb9f955
         // code...
     }
     public static function inserer(Request $request)
@@ -36,11 +42,19 @@ class Facture extends Model
     public static function misajour(Request $request)
     {
 
+<<<<<<< HEAD
 
         return DB::update
            ("
                 UPDATE factures
                 SET
+=======
+       
+        return DB::update
+           ("
+                UPDATE factures
+                SET 
+>>>>>>> e1a42e1b8fd0b1885bea1cfbe07c3d003cb9f955
                     ht = '$request->ht',
                     tva = '$request->tva',
                     versement = '$request->versement',
@@ -49,7 +63,11 @@ class Facture extends Model
                     id_gestionnaire = '$request->id_gestionnaire'
                 WHERE id = $request->id
              ");
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> e1a42e1b8fd0b1885bea1cfbe07c3d003cb9f955
 
         // code...
     }
