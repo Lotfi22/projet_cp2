@@ -80,7 +80,7 @@
                         </div>
                         <div class="form-group ">
                             <label class="label label-default" for="etat_paiement">Etat paiement</label>
-                            <input  type="text" value="{{ $facture->droit_timbre ?? '' }}" name="etat_paiement" placeholder="Etat paiement" class="form-control" id="etat_paiement">
+                            <input  type="text" value="{{ $facture->etat_paiement ?? '' }}" name="etat_paiement" placeholder="Etat paiement" class="form-control" id="etat_paiement">
                         </div>
                         <div class="form-group ">
                             <label class="label label-default" for="id_gestionnaire">Id gestionnaire</label>

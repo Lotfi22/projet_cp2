@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQrsTable extends Migration
+class CreateAbonnementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateQrsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qrs', function (Blueprint $table) {
-           $table->bigIncrements('id');
-            $table->string('img');
-            $table->boolean('visible')->default(true);
-            $table->timestamp('created_at')->useCurrent();
+        Schema::create('abonnements', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('type_abonnement');
+            $table->integer('nbr_seances');
+            $table->double('tarif', 12, 2);
+            $table->softDeletes();
+            $table->timestamp('created_at')->useCurrent(); 
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
@@ -29,6 +31,6 @@ class CreateQrsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qrs');
+        Schema::dropIfExists('abonnements');
     }
 }

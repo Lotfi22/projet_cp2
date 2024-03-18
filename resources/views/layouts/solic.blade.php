@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-    
+
     <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -8,25 +8,25 @@
         <!-- Meta data -->
         <meta charset="UTF-8">
         <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-        
+
         <meta content="Solic – Bootstrap Responsive Modern Simple Dashboard Clean HTML Premium Admin Template" name="description">
-        
+
         <!--favicon2 -->
         <link rel="icon" href="{{ asset('assets\images\vector.png') }}" type="image/x-icon"/>
-        
+
         <link rel="shortcut icon" href="{{ asset('assets\images\vector.png') }}" type="image/x-icon"/>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
         <style type="text/css">
-            
 
-            .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th 
+
+            .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th
             {
                 background-color: #f9f9f9;
             }
 
-            /**/
+            //
         </style>
 
 
@@ -68,7 +68,7 @@
         <style>
             .barre{
                 max-width: 1900px !important;
-            }            
+            }
         </style>
     </head>
 
@@ -108,7 +108,7 @@
                                     <a href="#" class="nav-link " data-toggle="dropdown">
                                         <span><img src="{{ asset('assets\images\vector.png') }}" alt="profile-user" class="avatar brround cover-image mb-0 ml-0"></span>
                                     </a>
-                                    
+
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <div class="drop-heading  text-center border-bottom pb-3">
                                             <h5 class="text-dark mb-1">MY JSS</h5>
@@ -130,7 +130,7 @@
                                         {{--  --}}
                                     </div>
                                 </div>
-                                
+
 
                                 <!-- SIDE-MENU -->
                                 {{--  --}}
@@ -146,93 +146,113 @@
                         <div class="horizontal-mainwrapper container barre clearfix">
                             <nav class="horizontalMenu clearfix">
                                 <ul class="horizontalMenu-list">
+                                            <li aria-haspopup="true">
 
+                                                <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
+                                                    <i class="mdi mdi-ticket-confirmation"></i>Admin
+                                                    <i class="fa fa-angle-down horizontal-icon"></i>
+                                                </a>
+
+
+                                            </li>
                                         <li aria-haspopup="true">
-                                            
+
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-outline"></i>Sport 
+                                                <i class="mdi mdi-cube-outline"></i>Sport
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
+
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
                                                     <a href="/admin/sports">Sports</a>
-                                                </li>        
+                                                </li>
 
                                                 <li aria-haspopup="true">
                                                     <a href="/admin/categories">Catégories</a>
                                                 </li>
 
-                                                <li aria-haspopup="true">
-                                                    <a href="/admin/evenements">Evenements</a>
-                                                </li>
+
 
                                                 <li aria-haspopup="true">
                                                     <a href="/admin/groupes">Groupes</a>
                                                 </li>
                                             </ul>
-                                        </li>                                    
-                                    
+                                        </li>
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1a42e1b8fd0b1885bea1cfbe07c3d003cb9f955
                                         <li aria-haspopup="true">
-                                            
+
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-outline"></i>Gestion 
+                                                <i class="mdi mdi-cube-outline"></i>Gestion
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
+
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/sports">Adherants</a>
-                                                                            
-                                                    
-                                                </li>        
+                                                    <a href="/admin/adherants">Adherants</a>
 
-                                                <li aria-haspopup="true">
-                                                    <a href="/admin">Coachs</a>
+
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/groupes">Gestionnaires</a>
+                                                    <a href="/admin/coachs">Coachs</a>
+                                                </li>
+
+                                                <li aria-haspopup="true">
+                                                    <a href="/admin/gestionnaires">Gestionnaires</a>
                                                 </li>
                                             </ul>
-                                        </li>                                    
-                                    
-                                    
+                                        </li>
 
                                         <li aria-haspopup="true">
-                                            
-                                            <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Planning 
+
+                                            <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-ticket-confirmation"></i>Evenements
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
-                                           
+
+
+                                        </li>
+
+
+                                        <li aria-haspopup="true">
+
+                                            <a style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-ticket-confirmation"></i>Planning
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+
+
                                         </li>
                                         <li aria-haspopup="true">
-                                            
-                                            <a style="cursor: pointer;" class="sub-icon">
+
+                                            <a href="/admin/abonnements" style="cursor: pointer;" class="sub-icon">
                                                 <i class="mdi mdi-ticket-confirmation"></i>Abonnement
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
-                                           
+
+
                                         </li>
                                         <li aria-haspopup="true">
-                                            
+
                                             <a style="cursor: pointer;" class="sub-icon">
                                                 <i class="mdi mdi-account-multiple"></i>Comptabilité
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
+
                                             <ul class="sub-menu">
-                                                    
-                                              
+
+
 
                                                 <li aria-haspopup="true">
                                                     <a href="/admin/factures">Facture</a>
                                                 </li>
 
-                                                
+
 
                                                 <li aria-haspopup="true">
                                                     <a href="/commercial" >Stat</a>
@@ -241,22 +261,22 @@
                                             </ul>
                                         </li>
                                         <li aria-haspopup="true">
-                                            
+
                                             <a style="cursor: pointer;" class="sub-icon">
                                                 <i class="mdi mdi-ticket-confirmation"></i>Aide
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
-                                            
-                                           
+
+
                                         </li>
 
-                                        
-                                        
-                                    {{--  --}}                                        
+
+
+                                    {{--  --}}
                                 </ul>
                             </nav>
                             <!-- NAV END -->
-                            
+
                         </div>
                     </div>
                 </div>
@@ -270,7 +290,7 @@
                     </div>
 
                   {{--  --}}
-                @endif               
+                @endif
 
 
                 <!-- CONTAINER -->
@@ -348,7 +368,7 @@
         <!-- STICKY JS -->
         <script src="{{ asset('solic/assets/js/stiky.js') }}"></script>
 
-        
+
 
         <!-- C3.JS CHART PLUGIN -->
         <script src="{{ asset('solic/assets/plugins/charts-c3/d3.v5.min.js') }}"></script>
@@ -387,7 +407,7 @@
 
         <!-- SWEET-ALERT PLUGIN -->
         <script src="{{ asset('solic/assets/plugins/sweet-alert/sweetalert.min.js') }}"></script>
-        <script src="{{ asset('solic/assets/js/sweet-alert.js') }}"></script>        
+        <script src="{{ asset('solic/assets/js/sweet-alert.js') }}"></script>
 
         <!-- NOTIFICATIONS JS -->
         <script src="{{ asset('solic/assets/plugins/notify/js/rainbow.js') }}"></script>
@@ -402,8 +422,8 @@
 
         <!-- ECHART PLUGIN -->
         <script src="{{ asset('solic/assets/plugins/echarts/echarts.js') }}"></script>
-        <script src="{{ asset('solic/js/toastr.min.js') }}"></script>        
-        <script src="{{ asset('solic/js/dynamic-form.js') }}"></script>        
+        <script src="{{ asset('solic/js/toastr.min.js') }}"></script>
+        <script src="{{ asset('solic/js/dynamic-form.js') }}"></script>
 
 
         <script>
@@ -413,11 +433,11 @@
                 type: 'GET',
                 success: function(json)
                 {
-                    
 
-                    /*console.log("My country is: " + json.country+" city : " + json.city);*/
+
+                    /console.log("My country is: " + json.country+" city : " + json.city);/
                 },
-                
+
                 error: function(err)
                 {
                     console.log("Request failed, error= " + err);

@@ -23,3 +23,11 @@ Route::post('/participations/create','ParticipationController@create');
 Route::get('/presences','PresenceController@index');
 
 Route::post('/presences/create','PresenceController@create');
+
+Route::get('/admin/evenements','EvenementController@index');
+Route::post('/admin/evenements/create','EvenementController@create')->name('evenement.create');;
+Route::post('/admin/evenements/update/{id}','EvenementController@update');
+Route::get('/admin/evenements/delete/{id}','EvenementController@delete');
+
+
+

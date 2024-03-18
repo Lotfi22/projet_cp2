@@ -17,12 +17,12 @@ class CreateFacturesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_gestionnaire');
             $table->foreign('id_gestionnaire')->references('id')->on('gestionnaires');
-            $table->double('ht', 10, 6);
-            $table->double('tva', 10, 6);
-            $table->double('versement', 10, 6);
-            $table->double('droit_timbre', 10, 6);
+            $table->double('ht');
+            $table->double('tva');
+            $table->double('versement');
+            $table->double('droit_timbre');
             $table->string('etat_paiement', 100);
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

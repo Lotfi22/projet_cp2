@@ -8,7 +8,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir supprimer la catégorie "{{ $categorie->nom }}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir supprimer  "{{ $categorie->nom }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -52,49 +52,41 @@
             </div>
 
             <div class="modal-body">
-                <form action="/"method="post" enctype="multipart/form-data">
+                <form action="/admin/categories/update" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Nom </label>
-                        <input type="text" value="{{ $categorie->name ?? '' }}"
-                            name="name" class="form-control"
-                            id="exampleInputEmail1" placeholder=" ">
-                    </div>
+                        <div class="form-group ">
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Login </label>
-                        <input type="text" value="{{ $categorie->email ?? '' }}"
-                            name="email" class="form-control"
-                            id="exampleInputEmail1" placeholder=" ">
-                    </div>
+                            <input type="hidden" name="id" value="{{ $categorie->id }}" class="form-control" name="id">
 
-                    <div class="form-group">
-                        <label for="categorie">Dépot</label>
-                        
-                        <select name="categorie" id="categorie" class="form-control">
+                        </div>
 
+                        <div class="form-group ">
+                            <label class="label label-default" for="nom">NOM </label>
+                            <input  type="text" value="{{ $categorie->nom ?? '' }}" name="nom" placeholder="Nom de la categorie" class="form-control" id="nom">
+                        </div>
 
-                        </select>
-                        
-                    </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="description">Description </label>
+                            <input  type="text" value="{{  $categorie->description ?? ''  }}" name="description" placeholder="Description" class="form-control" id="description">
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Password </label>
-                        <input type="text"
-                            value="{{ $categorie->password_text ?? '' }}"
-                            name="password" class="form-control"
-                            id="exampleInputEmail1" placeholder=" ">
-                    </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="age_min">Age Minimum </label>
+                            <input  type="number" value="{{ $categorie->age_min ?? '' }}" name="age_min" placeholder="Age Minimum" class="form-control" id="age_min">
+                        </div>
+                        <div class="form-group ">
+                            <label class="label label-default" for="age_max">Age Maximum </label>
+                            <input  type="number" value="{{ $categorie->age_max ?? '' }}" name="age_max" placeholder="Age Maximum" class="form-control" id="age_max">
+                        </div>
+                        <div class="btn-group col-md-6" role="group">
+                            <button type="submit" class="btn btn-primary col-md-12">
+                                Enregistrer </button>
+                        </div>
+                        <div class="btn-group col-md-6" role="group">
 
-                    <div class="btn-group col-md-6" role="group">
-                        <button type="submit" class="btn btn-primary col-md-12">
-                            Enregistrer </button>
-                    </div>
-                    <div class="btn-group col-md-6" role="group">
-
-                        <button type="button" class=" col-md-12 btn btn-danger"
-                            data-dismiss="modal" role="button">Fermer</button>
-                    </div>
+                            <button type="button" class=" col-md-12 btn btn-danger"
+                                data-dismiss="modal" role="button">Fermer</button>
+                        </div>
                 </form>
             </div>
         </div>

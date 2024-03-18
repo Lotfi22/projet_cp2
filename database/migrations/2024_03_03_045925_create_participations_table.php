@@ -21,7 +21,7 @@ class CreateParticipationsTable extends Migration
             $table->foreign('id_adherant')->references('id')->on('adherants');
             $table->timestamp('heure_debut')->nullable()->default(null);
             $table->timestamp('heure_fin')->nullable()->default(null);
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
