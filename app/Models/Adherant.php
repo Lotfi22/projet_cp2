@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Adherant extends Model
 {
-    use HasFactory;
+    
+    use HasFactory, SoftDeletes;
     
     
     public static function inserer(Request $request)
@@ -50,10 +53,11 @@ class Adherant extends Model
     public static function supprimer($id_adherant)
     {
 
-        return DB::delete("delete from adherants where id = \"$id_adherant\" ");
-
+        $adherant=Adherant::find($id_adherant);    
+        $adherant->delete() ;
+         
+        
     }
-
 
 
 

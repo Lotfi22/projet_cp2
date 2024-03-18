@@ -39,6 +39,7 @@
 
                         <tbody>
                             @foreach ($gestionnaires as $gestionnaire)
+                            @if($gestionnaire->de)
                                 <tr>
                                     <td>{{ $gestionnaire->id ?? ''}}</td>
                                     <td>{{ $gestionnaire->nom ?? ''}}</td>
