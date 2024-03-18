@@ -180,10 +180,6 @@
                                         </li>
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e1a42e1b8fd0b1885bea1cfbe07c3d003cb9f955
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
@@ -207,7 +203,15 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li aria-haspopup="true">
 
+                                            <a href="/admin/salles" style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-ticket-confirmation"></i>Salles
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+
+
+                                      </li>
                                         <li aria-haspopup="true">
 
                                             <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">

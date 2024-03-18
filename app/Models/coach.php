@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use DB;
-
+use Illuminate\Support\Facades\DB;
 
 
 class Coach extends Model
 {
     use HasFactory;
 
-     public static function inserer(Request $request)
+  
+      public static function inserer(Request $request)
     {
            
         return DB::insert("insert into coachs(nom, prenom, date_naissance, id_qr, genre, nbr_telephone, nbr_telephone_urgence, adress, email)

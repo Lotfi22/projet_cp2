@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB  ;
 use App\Models\Facture;
-
 class FactureController extends Controller
 {
+    
+
     public function __construct()
     {
         $this->middleware('admin_log:admin');
@@ -17,9 +18,8 @@ class FactureController extends Controller
     public function index()
     {
 
-        $factures = DB::select("select * from factures");
-
-        return view('factures.index',compact('factures'));
+        $factures = Facture::all(); 
+        return view('factures.index', compact('factures'));
 
         // code...
     }
