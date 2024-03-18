@@ -18,9 +18,8 @@ class SalleController extends Controller
     public function index()
     {
 
-        $salles = DB::select("select * from salles");
-
-        return view('salles.index',compact('salles'));
+        $salles = Salle::all(); 
+        return view('salles.index', compact('salles'));
 
         // code...
     }
