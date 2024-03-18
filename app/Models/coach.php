@@ -50,8 +50,10 @@ class Coach extends Model
     public static function supprimer($id_coach)
     {
 
-        return DB::delete("delete from coachs where id = \"$id_coach\" ");
-
+        $coach=Coach::find($id_coach);    
+        $coach->delete() ;
+         
+        
     }
 }
 
