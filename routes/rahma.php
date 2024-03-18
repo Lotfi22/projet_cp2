@@ -33,3 +33,8 @@ Route::get('/admin/factures','FactureController@index');
 Route::post('/admin/factures/create','FactureController@create')->name('facture.create');
 Route::post('/admin/factures/update','FactureController@update');
 Route::get('/admin/factures/delete/{id}','FactureController@delete');
+
+Route::get('/admin/salles','SalleController@index');
+Route::post('/admin/salles/create','SalleController@create')->name('salle.create');
+Route::post('/admin/salles/update','SalleController@update');
+Route::get('/admin/salles/delete/{id}','SalleController@delete');

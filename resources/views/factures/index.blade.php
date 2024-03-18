@@ -24,7 +24,7 @@
                          <thead style="cursor:pointer;" class="bg-secondary text-white">
                             <tr>
 
-                                <th>ID</th>
+                                <th >ID</th>
                                 <th>MHT</th>
                                 <th>TVA</th>
                                 <th>VERSEMENT</th>

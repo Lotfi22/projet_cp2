@@ -200,7 +200,15 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li aria-haspopup="true">
 
+                                            <a href="/admin/salles" style="cursor: pointer;" class="sub-icon">
+                                                <i class="mdi mdi-ticket-confirmation"></i>Salles
+                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                            </a>
+
+
+                                      </li>
                                         <li aria-haspopup="true">
 
                                             <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
