@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Salle;
 
 class SalleController extends Controller

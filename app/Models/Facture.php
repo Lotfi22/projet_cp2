@@ -12,12 +12,13 @@ class Facture extends Model
 {
     use HasFactory  , SoftDeletes;
 
-    public static function supprimer($id_facture)
+    public static function supprimer1($id_facture)
     {
         return DB::delete("delete from factures where id = \"$id_facture\" ");
 
     }
-    public static function supprimer1($id_facture)
+    
+    public static function supprimer($id_facture)
     {
 
         $facture=Facture::find($id_facture);    

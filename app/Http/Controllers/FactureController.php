@@ -18,9 +18,8 @@ class FactureController extends Controller
     public function index()
     {
 
-        $factures = DB::select("select * from factures");
-
-        return view('factures.index',compact('factures'));
+        $factures = Facture::all(); 
+        return view('factures.index', compact('factures'));
 
         // code...
     }
