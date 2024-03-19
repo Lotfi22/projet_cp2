@@ -16,8 +16,8 @@ class CreateGroupesTable extends Migration
         Schema::create('groupes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->unsignedBigInteger('id_coach');
-            $table->foreign('id_coach')->references('id')->on('coachs');
+            $table->unsignedBigInteger('id_coaches');
+            $table->foreign('id_coaches')->references('id')->on('coaches');
             $table->unsignedBigInteger('id_sport');
             $table->foreign('id_sport')->references('id')->on('sports');
             $table->unsignedBigInteger('id_abonnement');

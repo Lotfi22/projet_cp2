@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Coach;
+use App\Models\Facture;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class CoachFactory extends Factory
+class FactureFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Coach::class;
+    protected $model = Facture::class;
 
     /**
      * Define the model's default state.
