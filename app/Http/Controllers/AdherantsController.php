@@ -23,13 +23,10 @@ class AdherantsController extends Controller
     public function index()
     {
 
-        $adherants = DB::select("select * from adherants");
+        $adherants = Adherant::all(); 
+        return view('adherants.index', compact('adherants'));
 
-        return view('adherants.index',compact('adherants'));
-
-
-        //return view('adherants.create');
-
+        // code...
     }
 
     

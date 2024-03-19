@@ -13,7 +13,7 @@ class CreateCoachsTable extends Migration
      */
     public function up()
     {
-        Schema::create('coachs', function (Blueprint $table) {
+        Schema::create('coaches', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_qr');
             $table->foreign('id_qr')->references('id')->on('qrs');
@@ -38,6 +38,6 @@ class CreateCoachsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coachs');
+        Schema::dropIfExists('coaches');
     }
 }
