@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->text('description');
             $table->integer('age_min');
             $table->integer('age_max');
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

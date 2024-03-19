@@ -1,14 +1,14 @@
 <button type="button" class="btn-sm btn btn-danger" data-toggle="modal"
-    data-target="#suppressionModal{{ $categorie->id }}">
+    data-target="#suppressionModal{{ $salle->id }}">
     <i class="fa fa-trash"></i> Supprimer
 </button>
 
-<div class="modal fade" id="suppressionModal{{ $categorie->id }}" tabindex="-1"
+<div class="modal fade" id="suppressionModal{{ $salle->id }}" tabindex="-1"
     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir supprimer  "{{ $categorie->nom }}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir supprimer la salle "{{ $salle->id }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -19,7 +19,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/categories/delete/{{ $categorie->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <a href="/admin/salles/delete/{{ $salle->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 
@@ -34,17 +34,17 @@
 
 
 <button type="button" class="btn-sm btn btn-primary" data-toggle="modal"
-    data-target="#exampleModal{{ $categorie->id }}">
+    data-target="#exampleModal{{ $salle->id }}">
     <i class="fa fa-pencil"></i> Modifier
 </button>
 
-<div class="modal fade" id="exampleModal{{ $categorie->id }}" tabindex="-1"
+<div class="modal fade" id="exampleModal{{ $salle->id }}" tabindex="-1"
     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier Agent
-                    categorie</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier
+                    salle</h5>
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -52,32 +52,28 @@
             </div>
 
             <div class="modal-body">
-                <form action="/admin/categories/update" method="post" enctype="multipart/form-data">
+                <form action="/admin/salles/update" method="post" enctype="multipart/form-data">
                     @csrf
                         <div class="form-group ">
-
-                            <input type="hidden" name="id" value="{{ $categorie->id }}" class="form-control" name="id">
-
-                        </div>
-
-                        <div class="form-group ">
-                            <label class="label label-default" for="nom">NOM </label>
-                            <input  type="text" value="{{ $categorie->nom ?? '' }}" name="nom" placeholder="Nom de la categorie" class="form-control" id="nom">
-                        </div>
-
-                        <div class="form-group ">
-                            <label class="label label-default" for="description">Description </label>
-                            <input  type="text" value="{{  $categorie->description ?? ''  }}" name="description" placeholder="Description" class="form-control" id="description">
+                            
+                            <input type="hidden" name="id" value="{{ $salle->id }}" class="form-control" name="id">  
 
                         </div>
-                        <div class="form-group ">
-                            <label class="label label-default" for="age_min">Age Minimum </label>
-                            <input  type="number" value="{{ $categorie->age_min ?? '' }}" name="age_min" placeholder="Age Minimum" class="form-control" id="age_min">
+
+                       <div class="form-group col-md-12 ">
+                            <label class="label label-default" for="capacite">Capacité</label>
+                            <input  type="number" value="{{ $salle->capacite ?? '' }}" name="capacite" placeholder="Capacité" class="form-control" id="capacite">
                         </div>
-                        <div class="form-group ">
-                            <label class="label label-default" for="age_max">Age Maximum </label>
-                            <input  type="number" value="{{ $categorie->age_max ?? '' }}" name="age_max" placeholder="Age Maximum" class="form-control" id="age_max">
+        
+                        <div class="form-group col-md-12">
+                            <label class="label label-default" for="nb_machine">Nombre machine</label>
+                            <input  type="number" value="{{ $salle->nb_machine ?? '' }}" name="nb_machine" placeholder="Nombre Machine" class="form-control" id="nb_machine">
                         </div>
+                        <div class="form-group col-md-12">
+                            <label class="label label-default" for="superficie">Superficie </label>
+                            <input  type="number" value="{{ $salle->superficie ?? '' }}" name="superficie" placeholder="Superficie" class="form-control" id="superficie">
+                        </div>
+                       
                         <div class="btn-group col-md-6" role="group">
                             <button type="submit" class="btn btn-primary col-md-12">
                                 Enregistrer </button>

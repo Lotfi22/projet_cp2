@@ -20,7 +20,7 @@ class CreateEvenementsTable extends Migration
             $table->string('lieu');
             $table->dateTime('date_debut');
             $table->dateTime('date_fin');
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

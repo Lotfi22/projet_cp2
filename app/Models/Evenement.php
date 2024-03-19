@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Evenement extends Model
 {
-    use HasFactory;
+    use HasFactory  , SoftDeletes;
+
+
     public static function add (Request $request)
     {
         DB::insert("insert into evenements(nom,date_debut,date_fin,description,lieu)
@@ -42,7 +45,15 @@ class Evenement extends Model
     public static function supprimer($id_evenement)
     {
         return DB::delete("delete from evenements where id = \"$id_evenement\" ");
-        // code...
+    }
+
+    
+    public static function supprimer1($id_evenement)
+    {
+
+        $evenement=Evenement::find($id_evenement);    
+        $evenement->delete() ;
+         
     }
 }
 

@@ -8,12 +8,12 @@
         <h1 class="mt-4 text-white" > Mes categories</h1>
 
         <div class="card mb-4">
-
+           
             <div class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
-                        class="fa fa-plus"></i>
-                     Ajouter Catégorie
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>Ajouter Catégorie
                 </button>
+
             </div>
 
             <div class="card-body">
@@ -71,15 +71,19 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title " id="lineModalLabel">Ajouter categorie : </h3>
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter Catégorie : </h3>
+                    <button type="button" class="close"
+                    data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
-                
+
                 <div class="modal-body">
-                    
+
                     <form action="/admin/categories/create" method="post" enctype="multipart/form-data" class="row col-md-12">
-                        
+
                         @csrf
-                        
+
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="name">Nom </label>
                             <input required type="text" value="{{ old('nom') }}" name="nom" placeholder="Entrez le nom de la catégorie" class="form-control" id="nom">
@@ -87,7 +91,7 @@
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="description">Description</label>
-                            
+
                             <textarea rows="4" class="form-control" name="description" placeholder="Entrez la description de la catégorie" id="description"></textarea>
 
                         </div>
@@ -105,14 +109,14 @@
 
 
                         <div class="btn-group col-md-6" role="group">
-                            
-                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+
+                            <button type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
-                            
+
                             <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
-                        </div>    
+                        </div>
                     </form>
                 </div>
             </div>

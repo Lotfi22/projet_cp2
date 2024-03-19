@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class GestionnaireController extends Controller
 {
     public function index() {
-        $gestionnaires = DB::select("select * from gestionnaires");         
+        $gestionnaires = Gestionnaire::all(); 
         return view('gestionnaires.index',compact('gestionnaires'));
         
     }

@@ -18,13 +18,15 @@ Route::get('/imene','TestController@imene');
 
 //Abonnement routes:
 Route::get('/admin/abonnements','AbonnementController@index');
-Route::post('/admin/abonnements/create','AbonnementController@create');
+Route::post('/admin/abonnements/create','AbonnementController@create')->name('abonnement.create');;
 Route::post('/admin/abonnements/update','AbonnementController@update');
 Route::get('/admin/abonnements/delete/{id}','AbonnementController@delete');
 
 //Categories routes:
-Route::get('/categories','CategorieController@index');
-Route::post('/categories/create','CategorieController@create');
+Route::get('/admin/categories','CategorieController@index');
+Route::post('/admin/categories/create','CategorieController@create')->name('categorie.create');;
+Route::post('/admin/categories/update','CategorieController@update');
+Route::get('/admin/categories/delete/{id}','CategorieController@delete');
 
 //Sous_categories routes:
 Route::get('/admin/sous_categories','Sous_categorieController@index');

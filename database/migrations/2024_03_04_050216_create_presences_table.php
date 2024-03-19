@@ -23,7 +23,7 @@ class CreatePresencesTable extends Migration
             $table->timestamp('heure_fin')->nullable()->default(null);
             $table->boolean('evaluation');
             $table->text('description_eve'); 
-            $table->boolean('visible')->default(true);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
