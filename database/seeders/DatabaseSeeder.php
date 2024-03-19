@@ -17,8 +17,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\Qr::factory(15)->create();
         \App\Models\Coach::factory(15)->create();
         \App\Models\Gestionnaire::factory(15)->create();
-       
-
+        \App\Models\Sport::factory(15)->create();
+        \App\Models\Facture::factory(15)->create();
+        \App\Models\Abonnement::factory(15)->create();
         
     }
 }
