@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sous_categorie extends Model
 {
-    use HasFactory;
+    use HasFactory ,SoftDeletes;
 
 
     public static function get_all_sous_categories($id_categorie)
@@ -32,7 +32,7 @@ class Sous_categorie extends Model
         // code...
     }
 
-
+    
 
     //
 }

@@ -17,20 +17,20 @@ class Facture extends Model
         return DB::delete("delete from factures where id = \"$id_facture\" ");
 
     }
-    
+
     public static function supprimer($id_facture)
     {
 
-        $facture=Facture::find($id_facture);    
+        $facture=Facture::find($id_facture);
         $facture->delete() ;
-         
+
         // code...
     }
     public static function inserer(Request $request)
     {
 
 
-        
+
         return DB::insert("insert into factures(ht,tva,versement,droit_timbre,etat_paiement,id_gestionnaire)
 
                     values('$request->ht','$request->tva','$request->versement','$request->droit_timbre','$request->etat_paiement','$request->id_gestionnaire')");
@@ -43,11 +43,11 @@ class Facture extends Model
     public static function misajour(Request $request)
     {
 
-       
+
         return DB::update
            ("
                 UPDATE factures
-                SET 
+                SET
                     ht = '$request->ht',
                     tva = '$request->tva',
                     versement = '$request->versement',
@@ -56,7 +56,6 @@ class Facture extends Model
                     id_gestionnaire = '$request->id_gestionnaire'
                 WHERE id = $request->id
              ");
-        
 
         // code...
     }
