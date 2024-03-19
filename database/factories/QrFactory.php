@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Facture;
+use App\Models\Qr;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class FactureFactory extends Factory
+class QrFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Facture::class;
+    protected $model = Qr::class;
 
     /**
      * Define the model's default state.
@@ -23,15 +23,9 @@ class FactureFactory extends Factory
     public function definition()
     {
         return [
-            'id_gestionnaire' => function () {
-                return \App\Models\Gestionnaire::inRandomOrder()->first()->id;
-            },
-            'ht' => $this->faker->numberBetween(1000,10000),
-            'tva' => $this->faker->numberBetween(1000,10000),
-            'versement' => $this->faker->numberBetween(1000,10000),
-            'droit_timbre' => $this->faker->numberBetween(1000,10000),
-            'etat_paiement' => Str::random(10),
-        ];
+        
+        'img' =>$this->faker->imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null),
+    ];
     }
 
     /**
