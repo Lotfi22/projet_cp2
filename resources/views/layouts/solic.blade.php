@@ -435,35 +435,6 @@
         <script>
 
 
-
-            $("#btn1").on("click", function(e) {
-                swal({
-                    title: "Attention!",
-                    text: "Danger alert",
-                    type: "error",
-                    showCancelButton: true,
-                    confirmButtonText: 'Li nhabb',
-                    cancelButtonText: 'Stay on the page'
-                });
-
-
-            $.ajax({
-                url: "http://ip-api.com/json",
-                type: 'GET',
-                success: function(json)
-                {
-
-
-                    /console.log("My country is: " + json.country+" city : " + json.city);/
-                },
-
-                error: function(err)
-                {
-                    console.log("Request failed, error= " + err);
-                }
-
-            });
-
             //
         </script>
 

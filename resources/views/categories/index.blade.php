@@ -99,18 +99,24 @@
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="age_min">Age Min </label>
-                            <input required type="number" min="3" max="99" value="{{ old('age_min') }}" name="age_min" class="form-control" id="age_min" placeholder="Entrez l'age minimum pour cette catégorie">
+                            <input onchange="verif_ages();" required type="number" min="3" max="99" value="{{ old('age_min') }}" name="age_min" class="form-control" id="ajout_age_min" placeholder="Entrez l'age minimum pour cette catégorie">
+
+                            <p class="invalid-feedback"></p>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="age_max">Age Max </label>
-                            <input required type="number" min="3" max="99" value="{{ old('age_max') }}" name="age_max" class="form-control" id="age_max" placeholder="Entrez l'age minimum pour cette catégorie">
+                            <input onchange="verif_ages();" required type="number" min="3" max="99" value="{{ old('age_max') }}" name="age_max" class="form-control" id="ajout_age_max" placeholder="Entrez l'age minimum pour cette catégorie">
+
+                            <p class="invalid-feedback"></p>
+
+                            {{--  --}}
                         </div>
 
 
                         <div class="btn-group col-md-6" role="group">
 
-                            <button type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
+                            <button id="ajout_enregistrer" type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
@@ -123,6 +129,9 @@
         </div>
 
     </div>
+
+
+    <script src="{{ asset('My_js/categories.js') }}"></script>
 
 
     <script>
