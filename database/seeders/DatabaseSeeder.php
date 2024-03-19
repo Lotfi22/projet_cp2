@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
        // \App\Models\Coach::factory(15)->create();
         \App\Models\Sport::factory(15)->create();
+        \App\Models\Facture::factory(15)->create();
     }
 }

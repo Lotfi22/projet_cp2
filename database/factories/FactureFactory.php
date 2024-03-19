@@ -23,15 +23,14 @@ class FactureFactory extends Factory
     public function definition()
     {
         return [
-            'nom' => $this->faker->name(),
-            'prenom' => $this->faker->name(),
-            'date_naissance' => $this->faker->dateTime($max = 'now', $timezone = null),
-            'email' => $this->faker->unique()->safeEmail(),
-            'adress' => $this->faker->address(),
-            'id_qr' => $this->faker->numberBetween(1,100),
-            'genre' => $this->faker->numberBetween(1,100),
-            'nbr_telephone' => $this->faker->phoneNumber(),
-            'nbr_telephone_urgence' => $this->faker->phoneNumber(),
+            'id_gestionnaire' => function () {
+                return \App\Models\Gestionnaire::inRandomOrder()->first()->id;
+            },
+            'ht' => $this->faker->numberBetween(1000,10000),
+            'tva' => $this->faker->numberBetween(1000,10000),
+            'versement' => $this->faker->numberBetween(1000,10000),
+            'droit_timbre' => $this->faker->numberBetween(1000,10000),
+            'etat_paiement' => Str::random(10),
         ];
     }
 
