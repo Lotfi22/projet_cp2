@@ -146,7 +146,7 @@
                                             <li aria-haspopup="true">
 
                                                 <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
-                                                    <i class="mdi mdi-ticket-confirmation"></i>Admin
+                                                    <i ></i>Admin
                                                     <i class="fa fa-angle-down horizontal-icon"></i>
                                                 </a>
 
@@ -155,7 +155,7 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-outline"></i>Sport
+                                                <i ></i>Sport
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
@@ -180,7 +180,7 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-cube-outline"></i>Gestion
+                                                <i></i>Gestion
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
@@ -203,8 +203,8 @@
                                         <li aria-haspopup="true">
 
                                             <a href="/admin/salles" style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Salles
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                                <i ></i>Salles
+                                                
                                             </a>
 
 
@@ -212,8 +212,8 @@
                                         <li aria-haspopup="true">
 
                                             <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Evenements
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                                <i></i>Evenements
+                                               
                                             </a>
 
 
@@ -223,8 +223,8 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Planning
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                                <i ></i>Planning
+                                                
                                             </a>
 
 
@@ -232,8 +232,8 @@
                                         <li aria-haspopup="true">
 
                                             <a href="/admin/abonnements" style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Abonnement
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                                <i ></i>Abonnement
+                                                
                                             </a>
 
 
@@ -241,7 +241,7 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-account-multiple"></i>Comptabilité
+                                                <i ></i>Comptabilité
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
@@ -264,7 +264,7 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i class="mdi mdi-ticket-confirmation"></i>Aide
+                                                <i ></i>Aide
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
