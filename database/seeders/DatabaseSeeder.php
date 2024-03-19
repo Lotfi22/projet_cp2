@@ -12,7 +12,13 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
+        \App\Models\Qr::factory(15)->create();
         \App\Models\Coach::factory(15)->create();
+        \App\Models\Gestionnaire::factory(15)->create();
+       
+
+        
     }
 }
