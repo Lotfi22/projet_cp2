@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Abonnement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Groupe;
 use App\Models\Coach;
+use App\Models\Sport;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
 class GroupeController extends Controller
@@ -13,9 +15,9 @@ class GroupeController extends Controller
     public function index()
     {
         $groupes = Groupe::all();
-        $coaches = Groupe::coaches();
-        $sports = Groupe::sports();
-        $abonnements = Groupe::abonnements();
+        $coaches = Coach::all();
+        $sports = Sport::all();
+        $abonnements = Abonnement::all();
 
         return view('groupes.index',compact('groupes','coaches','sports','abonnements'));
 
@@ -57,6 +59,7 @@ class GroupeController extends Controller
         // code...
     }
 
+    //hed la fonction mzel mrahich tmchi
     public function show($id)
 {
     $coach_record = Coach::findOrFail($id);

@@ -20,23 +20,6 @@ class Groupe extends Model
                     values('$request->nom','$request->id_coach','$request->id_sport','$request->id_abonnement','$request->capacite')");
     }
 
-    public static function groupes()
-    {
-        return DB::select("select * from groupes");
-    }
-    public static function coaches()
-    {
-        return DB::select("select * from coaches");
-    }
-    public static function sports()
-    {
-        return DB::select("select * from sports");
-    }
-    public static function abonnements()
-    {
-        return DB::select("select * from abonnements");
-    }
-
     public static function supprimer($id_groupe)
     {
 
