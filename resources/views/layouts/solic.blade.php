@@ -64,7 +64,9 @@
         <link rel="stylesheet" href="{{ asset('solic/assets/plugins/multipleselect/multiple-select.css') }}">
 
         <link href="{{ asset('solic/assets/plugins/sweet-alert/sweetalert.css') }}" rel="stylesheet" />
+        
         @yield('styles')
+        
         <style>
             .barre{
                 max-width: 1900px !important;
@@ -432,21 +434,7 @@
 
         <script>
 
-            $.ajax({
-                url: "http://ip-api.com/json",
-                type: 'GET',
-                success: function(json)
-                {
 
-
-                    /console.log("My country is: " + json.country+" city : " + json.city);/
-                },
-
-                error: function(err)
-                {
-                    console.log("Request failed, error= " + err);
-                }
-            });
             //
         </script>
 
