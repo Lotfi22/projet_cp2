@@ -75,6 +75,11 @@ class AdherantsController extends Controller
         // code...
     }
 
+    public function profile($id_adherant)
+    {
+        dd(($id_adherant));
+    }
+
 
 }
 

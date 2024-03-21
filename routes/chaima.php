@@ -25,6 +25,7 @@ Route::get('/admin/adherants','AdherantsController@index');
 Route::post('/admin/adherants/create','AdherantsController@create')->name('adherants.create');;
 Route::post('/admin/adherants/update','AdherantsController@update');
 Route::get('/admin/adherants/delete/{id}','AdherantsController@delete');
+Route::get('/admin/adherants/{id}','AdherantsController@profile');
 
 //Coachs routes :
 Route::get('/admin/coaches','CoachController@index');

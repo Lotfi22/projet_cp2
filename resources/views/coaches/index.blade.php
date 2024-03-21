@@ -42,16 +42,16 @@
 
                             @foreach ($coaches as $coach)
                                 <tr>
-                                    <td>{{ $coach->id }}</td>
-                                    <td>{{ $coach->nom }}</td>
-                                    <td>{{ $coach->prenom }}</td>
-                                    <td>{{ $coach->date_naissance }}</td>
-                                    <td>{{ $coach->id_qr }}</td>
-                                    <td>{{ $coach->genre }}</td>
-                                    <td>{{ $coach->nbr_telephone }}</td>
-                                    <td>{{ $coach->nbr_telephone_urgence }}</td>
-                                    <td>{{ $coach->adress }}</td>
-                                    <td>{{ $coach->email }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->prenom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->date_naissance }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id_qr }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->genre }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone_urgence }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->adress }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->email }}</td>
                                     <td>
                                         <div class="table-action">
 

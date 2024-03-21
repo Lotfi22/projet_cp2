@@ -44,18 +44,18 @@
 
                             @foreach ($adherants as $adherant)
                                 <tr>
-                                    <td>{{ $adherant->id }}</td>
-                                    <td>{{ $adherant->nom }}</td>
-                                    <td>{{ $adherant->prenom }}</td>
-                                    <td>{{ $adherant->date_naissance }}</td>
-                                    <td>{{ $adherant->id_qr }}</td>
-                                    <td>{{ $adherant->genre }}</td>
-                                    <td>{{ $adherant->num_tel }}</td>
-                                    <td>{{ $adherant->num_tel_urgence }}</td>
-                                    <td>{{ $adherant->dossier_medical }}</td>
-                                    <td>{{ $adherant->adresse }}</td>
-                                    <td>{{ $adherant->email }}</td>
-                                    <td>{{ $adherant->type_abonnement }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->dossier_medical }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->adresse }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->email }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->type_abonnement }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -168,7 +168,20 @@
         </div>
     </div>
 
+<script>
+    
 
+    function redirect_adherant_profile(id) 
+    {
+        location.href='/admin/adherants/'+id;
+    }
+
+
+
+
+
+
+</script>
 
 
 @endsection

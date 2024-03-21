@@ -17,7 +17,7 @@ class CreateGroupesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->unsignedBigInteger('id_coach');
-            $table->foreign('id_coach')->references('id')->on('coachs');
+            $table->foreign('id_coach')->references('id')->on('coaches');
             $table->unsignedBigInteger('id_sport');
             $table->foreign('id_sport')->references('id')->on('sports');
             $table->unsignedBigInteger('id_abonnement');

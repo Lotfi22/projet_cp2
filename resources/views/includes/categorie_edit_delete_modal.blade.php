@@ -72,11 +72,11 @@
                         </div>
                         <div class="form-group ">
                             <label class="label label-default" for="age_min">Age Minimum </label>
-                            <input  type="number" value="{{ $categorie->age_min ?? '' }}" name="age_min" placeholder="Age Minimum" class="form-control" id="age_min">
+                            <input onchange="verif_ages();" type="number" value="{{ $categorie->age_min ?? '' }}" name="age_min" placeholder="Age Minimum" class="form-control" id="age_min">
                         </div>
                         <div class="form-group ">
                             <label class="label label-default" for="age_max">Age Maximum </label>
-                            <input  type="number" value="{{ $categorie->age_max ?? '' }}" name="age_max" placeholder="Age Maximum" class="form-control" id="age_max">
+                            <input onchange="verif_ages();" type="number" value="{{ $categorie->age_max ?? '' }}" name="age_max" placeholder="Age Maximum" class="form-control" id="age_max">
                         </div>
                         <div class="btn-group col-md-6" role="group">
                             <button type="submit" class="btn btn-primary col-md-12">
