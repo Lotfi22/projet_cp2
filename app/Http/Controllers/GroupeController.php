@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Groupe;
+use App\Models\Coach;
+use PHPUnit\TextUI\XmlConfiguration\Group;
+
 class GroupeController extends Controller
 {
     public function index()
     {
-        $groupes = Groupe::groupes();
-        $coachs = Groupe::coachs();
+        $groupes = Groupe::all();
+        $coaches = Groupe::coaches();
         $sports = Groupe::sports();
         $abonnements = Groupe::abonnements();
 
-        return view('groupes.index',compact('groupes','coachs','sports','abonnements'));
+        return view('groupes.index',compact('groupes','coaches','sports','abonnements'));
 
         // code...
     }
@@ -26,6 +29,40 @@ class GroupeController extends Controller
         return back();
     }
 
+    public function delete($id_groupe)
+    {
+
+        Groupe::supprimer($id_groupe);
+
+        session()->flash('notification.message' , 'Groupe '.$id_groupe.' supprimer avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
+
+        return back();
+
+        // code...
+    }
+
+    public function update(Request $request)
+    {
+        
+        Groupe::misajour($request);
+
+        session()->flash('notification.message' , 'Groupe '.$request->id.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning');
+
+        return back();
+
+        // code...
+    }
+
+    public function show($id)
+{
+    $coach_record = Coach::findOrFail($id);
+
+    return view('groupes.index', compact('coach_record'));
+}
 
     //
 }
