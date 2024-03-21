@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Mes Coachs</h1>
+        <h1 class="mt-4 text-white" > Mes Coaches</h1>
 
         <div class="card mb-4">
 
@@ -40,7 +40,7 @@
 
                         <tbody>
 
-                            @foreach ($coachs as $coach)
+                            @foreach ($coaches as $coach)
                                 <tr>
                                     <td>{{ $coach->id }}</td>
                                     <td>{{ $coach->nom }}</td>
@@ -84,7 +84,7 @@
                 
                 <div class="modal-body">
                     
-                    <form action="/admin/coachs/create" method="post" enctype="multipart/form-data" class="row col-md-12">
+                    <form action="/admin/coaches/create" method="post" enctype="multipart/form-data" class="row col-md-12">
                         
                         @csrf
 

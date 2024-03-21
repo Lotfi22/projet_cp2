@@ -28,6 +28,7 @@
                                 <th>Coach</th>
                                 <th>Sport</th>
                                 <th>Abonnement</th>
+                                <th>Capacite</th>
                                 <th>Date création</th>
                                 <th>actions</th>
                             </tr>
@@ -39,7 +40,12 @@
                                 <tr>
                                     <td>{{ $groupe->id }}</td>
                                     <td>{{ $groupe->nom }}</td>
-                                    <td>{{ $groupe->id_coach }}</td>
+                                    <td>
+                                    {{--<a href="{{ route('show_name', ['id' => $groupe->id_coach]) }}"></a>
+                                    <p>{{$coach_record->nom}}</p>
+                                    --}}
+                                    {{ $groupe->id_coach }}
+                                    </td>
                                     <td>{{ $groupe->id_sport }}</td>
                                     <td>{{ $groupe->id_abonnement }}</td>
                                     <td>{{ $groupe->capacite }}</td>
@@ -47,7 +53,7 @@
                                     <td>
 
                                         <div class="table-action">
-                                            {{--  @include('includes.groupe_edit_delete_modal',compact('groupe')) --}}
+                                            @include('includes.groupe_edit_delete_modal',compact('groupe'))
                                         </div>
 
                                     </td>
@@ -86,7 +92,7 @@
                         <div class="col-md-6">
                         <label class="label label-default" for="coach">selectionner un coach </label> <br>
                                     <select required name="id_coach" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Coach">                                      
-                                    @foreach ($coachs as $coach)
+                                    @foreach ($coaches as $coach)
                                         <option value="{{ $coach->id }}">{{ $coach->id }}</option>
                                     @endforeach 
                                        
