@@ -19,7 +19,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/categories/delete/{{ $categorie->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_categorie(this);" data-dismiss="modal" identifiant="{{ $categorie->id }}"> Oui </button>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 
