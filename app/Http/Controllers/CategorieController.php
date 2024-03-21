@@ -19,7 +19,7 @@ class CategorieController extends Controller
     public function index()
     {
 
-        $categories = DB::select("select * from categories");
+        $categories = Categorie::all();
 
         return view('categories.index',compact('categories'));
 
@@ -40,7 +40,7 @@ class CategorieController extends Controller
     }
 
 
-    public function delete($id_categorie)
+    public function delete1($id_categorie)
     {
 
         Categorie::supprimer($id_categorie);
@@ -63,6 +63,21 @@ class CategorieController extends Controller
         session()->flash('notification.type' , 'warning');
 
         return back();
+
+        // code...
+    }
+
+    public function delete(Request $request)
+    {
+
+
+        $id_categorie=($request->id_categorie);
+        
+        Categorie::supprimer($id_categorie);
+
+        $categorie = Categorie::find($id_categorie);
+
+        return response()->json($categorie[0] ?? "Message");
 
         // code...
     }

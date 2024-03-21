@@ -36,6 +36,8 @@ Route::post('/admin/categories/create','CategorieController@create')->name('cate
 Route::post('/admin/categories/update','CategorieController@update');
 Route::get('/admin/categories/delete/{id}','CategorieController@delete');
 
+Route::post('/admin/categories/delete/ajax','CategorieController@delete');
+
 Route::get('/admin/categories/{id}/sous_categorie','Sous_categorieController@home');
 
 
