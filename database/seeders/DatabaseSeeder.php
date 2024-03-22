@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Gestionnaire::factory(15)->create();
         \App\Models\Sport::factory(15)->create();
         \App\Models\Facture::factory(15)->create();
+        \App\Models\Salle::factory(15)->create();
+        \App\Models\Seance::factory(15)->create();
         \App\Models\Abonnement::factory(15)->create();
         \App\Models\Groupe::factory(15)->create();
         \App\Models\Admin::factory(2)->create();
