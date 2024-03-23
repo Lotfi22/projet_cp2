@@ -44,18 +44,18 @@
 
                             @foreach ($adherants as $adherant)
                                 <tr>
-                                    <td>{{ $adherant->id }}</td>
-                                    <td>{{ $adherant->nom }}</td>
-                                    <td>{{ $adherant->prenom }}</td>
-                                    <td>{{ $adherant->date_naissance }}</td>
-                                    <td>{{ $adherant->id_qr }}</td>
-                                    <td>{{ $adherant->genre }}</td>
-                                    <td>{{ $adherant->num_tel }}</td>
-                                    <td>{{ $adherant->num_tel_urgence }}</td>
-                                    <td>{{ $adherant->dossier_medical }}</td>
-                                    <td>{{ $adherant->adresse }}</td>
-                                    <td>{{ $adherant->email }}</td>
-                                    <td>{{ $adherant->type_abonnement }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->dossier_medical }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->adresse }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->email }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->type_abonnement }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -94,59 +94,60 @@
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="nom">Nom</label>
-                            <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="nom" placeholder="Entrez le nom">
+                            <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="prenom">Prénom</label>
-                            <input required type="text" value="{{ old('prenom') }}" name="prenom" class="form-control" id="prenom" placeholder="Entrez le prénom">
+                            <input required type="text" value="{{ old('prenom') }}" name="prenom" class="form-control" id="ajout_prenom" placeholder="Entrez le prénom">
                         </div>
                         
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="date_naissance">Date de naissance</label>
-                            <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="date_naissance" placeholder="Entrez la date de naissance">
+                            <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="ajout_date_naissance" placeholder="Entrez la date de naissance">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="id_qr">QR code</label>
-                            <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="id_qr" placeholder="Entrez le QR code">
+                            <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="ajout_id_qr" placeholder="Entrez le QR code">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="genre">Genre</label>
-                            <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="genre" placeholder="Entrez le genre">
+                            <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="ajout_genre" placeholder="Entrez le genre">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="num_tel">Numéro téléphone</label>
-                            <input required type="text" value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="num_tel" placeholder="Entrez le numéro téléphone">
+                            <input required type="text" value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="ajout_num_tel" placeholder="Entrez le numéro téléphone">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="num_tel_urgence">Numéro d'urgence</label>
-                            <input required type="text" value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="num_tel_urgence" placeholder="Entrez le numéro d'urgence">
+                            <input type="text" value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="ajout_num_tel_urgence" placeholder="Entrez le numéro d'urgence">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="dossier_medical">Dossier médical</label>
                             
-                            <textarea rows="4" class="form-control" name="dossier_medical" placeholder="Entrez le dossier médical" id="dossier_medical"></textarea>
+                            <textarea rows="4" class="form-control" name="dossier_medical" placeholder="Entrez le dossier médical" id="ajout_dossier_medical"></textarea>
 
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="adresse">Adresse</label>
-                            <input required type="text" value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Entrez l'adresse">
+                            <input required type="text" value="{{ old('adresse') }}" name="adresse" class="form-control" id="ajout_adresse" placeholder="Entrez l'adresse">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="email">Email</label>
-                            <input required type="email" value="{{ old('email') }}" name="email" class="form-control" id="email" placeholder="Entrez l'email">
+                            <input onchange="verif_email();" required type="email" value="{{ old('email') }}" name="email" class="form-control" id="ajout_email" placeholder="Entrez l'email">
+                            <p class="invalid-feedback"></p>
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="type_abonnement">Type d'abonnement</label>
-                            <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" class="form-control" id="type_abonnement" placeholder="Entrez le type d'abonnement">
+                            <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" class="form-control" id="ajout_type_abonnement" placeholder="Entrez le type d'abonnement">
                         </div>
 
 
@@ -155,12 +156,12 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+                            <button id="ajout_enregistrer" type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         </div>    
                     </form>
                 </div>
@@ -169,6 +170,24 @@
     </div>
 
 
+<script src= "{{ asset('My_js/adherants.js') }}" ></script>
+
+
+
+<script>
+    
+
+    function redirect_adherant_profile(id) 
+    {
+        location.href='/admin/adherants/'+id;
+    }
+
+
+
+
+
+
+</script>
 
 
 @endsection

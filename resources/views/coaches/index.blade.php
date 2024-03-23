@@ -42,16 +42,16 @@
 
                             @foreach ($coaches as $coach)
                                 <tr>
-                                    <td>{{ $coach->id }}</td>
-                                    <td>{{ $coach->nom }}</td>
-                                    <td>{{ $coach->prenom }}</td>
-                                    <td>{{ $coach->date_naissance }}</td>
-                                    <td>{{ $coach->id_qr }}</td>
-                                    <td>{{ $coach->genre }}</td>
-                                    <td>{{ $coach->nbr_telephone }}</td>
-                                    <td>{{ $coach->nbr_telephone_urgence }}</td>
-                                    <td>{{ $coach->adress }}</td>
-                                    <td>{{ $coach->email }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->prenom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->date_naissance }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id_qr }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->genre }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone_urgence }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->adress }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->email }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -90,58 +90,59 @@
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="nom">Nom</label>
-                            <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="nom" placeholder="Entrez le nom">
+                            <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label class="label label-default" for="prenom">Prénom</label>
-                            <input required type="text" value="{{ old('prenom') }}" name="prenom" class="form-control" id="prenom" placeholder="Entrez le prénom">
+                            <input required type="text" value="{{ old('prenom') }}" name="prenom" class="form-control" id="ajout_prenom" placeholder="Entrez le prénom">
                         </div>
                         
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="date_naissance">Date de naissance</label>
-                            <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="date_naissance" placeholder="Entrez la date de naissance">
+                            <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="ajout_date_naissance" placeholder="Entrez la date de naissance">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="id_qr">QR code</label>
-                            <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="id_qr" placeholder="Entrez le QR code">
+                            <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="ajout_id_qr" placeholder="Entrez le QR code">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="genre">Genre</label>
-                            <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="genre" placeholder="Entrez le genre">
+                            <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="ajout_genre" placeholder="Entrez le genre">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="nbr_telephone">Numéro téléphone</label>
-                            <input required type="text" value="{{ old('nbr_telephone') }}" name="nbr_telephone" class="form-control" id="nbr_telephone" placeholder="Entrez le numéro téléphone">
+                            <input required type="text" value="{{ old('nbr_telephone') }}" name="nbr_telephone" class="form-control" id="ajout_nbr_telephone" placeholder="Entrez le numéro téléphone">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="nbr_telephone_urgence">Numéro d'urgence</label>
-                            <input required type="text" value="{{ old('nbr_telephone_urgence') }}" name="nbr_telephone_urgence" class="form-control" id="nbr_telephone_urgence" placeholder="Entrez le numéro d'urgence">
+                            <input type="text" value="{{ old('nbr_telephone_urgence') }}" name="nbr_telephone_urgence" class="form-control" id="ajout_nbr_telephone_urgence" placeholder="Entrez le numéro d'urgence">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="adress">Adresse</label>
-                            <input required type="text" value="{{ old('adress') }}" name="adress" class="form-control" id="adress" placeholder="Entrez l'adresse">
+                            <input required type="text" value="{{ old('adress') }}" name="adress" class="form-control" id="ajout_adress" placeholder="Entrez l'adresse">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="email">Email</label>
-                            <input required type="email" value="{{ old('email') }}" name="email" class="form-control" id="email" placeholder="Entrez l'email">
+                            <input onchange="verif_email();" required type="email" value="{{ old('email') }}" name="email" class="form-control" id="ajout_email" placeholder="Entrez l'email">
+                            <p class="invalid-feedback"></p>
                         </div>
 
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button type="submit" class="col-md-12 btn btn-primary">Save</button>
+                            <button id="ajout_enregistrer" type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         </div>    
                     </form>
                 </div>
@@ -150,6 +151,7 @@
     </div>
 
 
+<script src= "{{ asset('My_js/coaches.js') }}" ></script>
 
 
 @endsection
