@@ -8,7 +8,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">êtes vous sur de vouloir supprimer le gestionnaire"{{  $gestionnaire->nom }} {{$gestionnaire->prenom}}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">souhaitez-vous supprimer le gestionnaire"{{  $gestionnaire->nom }} {{$gestionnaire->prenom}}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -19,7 +19,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/gestionnaires/delete/{{ $gestionnaire->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <a href="/admin/gestionnaires/delete/{{ $gestionnaire->id }}" type="submit" class="btn btn-danger col-md-12"> Supprimer </a>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 
@@ -111,14 +111,14 @@
                     </div>
 
                     <div class="btn-group col-md-6" role="group">
-                        <button type="submit" class="btn btn-primary col-md-12">
-                            Enregistrer </button>
-                    </div>
-                    <div class="btn-group col-md-6" role="group">
 
                         <button type="button" class=" col-md-12 btn btn-danger"
-                            data-dismiss="modal" role="button">Fermer</button>
+                            data-dismiss="modal" role="button">Annuler</button>
                     </div>
+                    <div class="btn-group col-md-6" role="group">
+                        <button type="submit" class="btn btn-primary col-md-12">Enregistrer </button>
+                    </div>
+                   
                 </form>
             </div>
         </div>

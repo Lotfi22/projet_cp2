@@ -22,12 +22,16 @@ class CoachController extends Controller
     public function index()
     {
 
+
+        $coaches = Coach::all(); 
+        return view('coaches.index', compact('coaches'));
         $coaches = DB::select("select * from coaches");
 
         return view('coaches.index',compact('coaches'));
 
 
 
+        // code...
     }
 
     

@@ -40,14 +40,9 @@
                                 <tr>
                                     <td>{{ $groupe->id }}</td>
                                     <td>{{ $groupe->nom }}</td>
-                                    <td>
-                                    {{--<a href="{{ route('show_name', ['id' => $groupe->id_coach]) }}"></a>
-                                    <p>{{$coach_record->nom}}</p>
-                                    --}}
-                                    {{ $groupe->id_coach }}
-                                    </td>
-                                    <td>{{ $groupe->id_sport }}</td>
-                                    <td>{{ $groupe->id_abonnement }}</td>
+                                    <td>{{ $groupe->coach ? $groupe->coach->nom : '' }}</td>
+                                    <td>{{ $groupe->sport ? $groupe->sport->nom : '' }}</td>
+                                    <td>{{ $groupe->abonnement ? $groupe->abonnement->type_abonnement : '' }}</td>
                                     <td>{{ $groupe->capacite }}</td>
                                     <td>{{ $groupe->created_at }}</td>
                                     <td>
@@ -91,40 +86,33 @@
 
                         <div class="col-md-6">
                         <label class="label label-default" for="coach">selectionner un coach </label> <br>
-                                    <select required name="id_coach" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Coach">                                      
+                        <select required name="id_coach" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Coach">                                      
                                     @foreach ($coaches as $coach)
-                                        <option value="{{ $coach->id }}">{{ $coach->id }}</option>
+                                        <option value="{{ $coach->id }}">{{ $coach->nom }}</option>
                                     @endforeach 
-                                       
-                                            {{-- <option value="{{ $coach->nom }}">{{ $coach->nom }}</option>
-                                        <option value="{{ $coach->prenom }}">{{ $coach->prenom }}</option> --}}                                   
-                                    </select>
+                        </select>
                         </div> 
 
                         <div class="col-md-6">
                         <label class="label label-default" for="sport">selectionner un sport </label> <br>
-                                    <select required name="id_sport" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="sport">                                      
+                        <select required name="id_sport" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="sport">                                      
                                     @foreach ($sports as $sport)
-                                        <option value="{{ $sport->id }}">{{ $sport->id }}</option>
-                                    @endforeach                                   
-                                    </select>
+                                        <option value="{{ $sport->id }}">{{ $sport->nom }}</option>
+                                    @endforeach 
+                        </select>
                         </div> 
                         <div class="col-md-6">
                         <label class="label label-default" for="abonnement">selectionner un abonnement </label> <br>
-                                    <select required name="id_abonnement" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="abonnement">                                      
+                        <select required name="id_abonnement" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="abonnement">                                      
                                     @foreach ($abonnements as $abonnement)
-                                        <option value="{{ $abonnement->id }}">{{ $abonnement->id }}</option>
-                                    @endforeach                                   
-                                    </select>
+                                        <option value="{{ $abonnement->id }}">{{ $abonnement->type_abonnement }}</option>
+                                    @endforeach 
+                        </select>
                         </div>
 
                         <div class="col-md-6">
-                        <label class="label label-default" for="capacite"> capacite maximale du groupe</label> <br>
-                                    <select required name="capacite" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="capacite">                                      
-                                        @for ($i = 1; $i < 60; $i++)                                        
-                                                <option value="{{ $i }}">{{ $i }}</option>
-                                        @endfor                     
-                                    </select>
+                            <label class="label label-default" for="capacite">Capacité du groupe</label>
+                            <input required type="text" value="{{ $groupe->capacite ?? '' }}" name="capacite" placeholder="Etat paiement" class="form-control" id="capacite">
                         </div>
 
                         <div class="btn-group col-md-6" role="group">

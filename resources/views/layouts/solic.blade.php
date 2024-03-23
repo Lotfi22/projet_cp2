@@ -195,7 +195,7 @@
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/coachs">Coachs</a>
+                                                    <a href="/admin/coaches">Coaches</a>
                                                 </li>
 
                                                 <li aria-haspopup="true">
