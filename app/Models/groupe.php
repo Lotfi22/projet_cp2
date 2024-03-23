@@ -48,5 +48,19 @@ class Groupe extends Model
 
         // code...
     }
+    public function coach()
+    {
+        return $this->belongsTo(Coach::class, 'id_coach');
+    }
+
+    public function sport()
+    {
+        return $this->belongsTo(Sport::class, 'id_sport');
+    }
+    
+    public function abonnement()
+    {
+        return $this->belongsTo(Abonnement::class, 'id_abonnement');
+    }
 }
 
