@@ -75,7 +75,7 @@ class CategorieController extends Controller
         
         $categorie = Categorie::find($id_categorie);
         
-        //Categorie::supprimer($id_categorie);
+        Categorie::supprimer($id_categorie);
         
         $categorie = ($categorie->getAttributes());
         
