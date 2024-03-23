@@ -34,8 +34,6 @@
         <title> JSS </title>
 
 
-        <link href="{{asset('css/toastr.css')}}" rel="stylesheet" />
-
         <!-- DASHBOARD CSS -->
 
         <link href="{{ asset('solic/assets/css/style.css') }}" rel="stylesheet"/>
@@ -348,10 +346,7 @@
         <script src="{{ asset('solic/assets/plugins/select2/select2.full.min.js') }}"></script>
         <script src="{{ asset('solic/assets/js/select2.js') }}"></script>
 
-        <!-- CHARTJS CHART -->
-{{--         <script src="{{ asset('solic/assets/plugins/chart/Chart.bundle.js') }}"></script>
-        <script src="{{ asset('solic/assets/plugins/chart/utils.js') }}"></script>
- --}}
+
         <!-- PIETY CHART -->
         <script src="{{ asset('solic/assets/plugins/peitychart/jquery.peity.min.js') }}"></script>
         <script src="{{ asset('solic/assets/plugins/peitychart/peitychart.init.js') }}"></script>
@@ -428,15 +423,10 @@
 
         <!-- ECHART PLUGIN -->
         <script src="{{ asset('solic/assets/plugins/echarts/echarts.js') }}"></script>
-        <script src="{{ asset('solic/js/toastr.min.js') }}"></script>
+        
         <script src="{{ asset('solic/js/dynamic-form.js') }}"></script>
 
 
-        <script>
-
-
-            //
-        </script>
 
 
         <!--  -->

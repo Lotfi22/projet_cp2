@@ -60,15 +60,13 @@ function supprimer_categorie(objet)
         success:function(data)
         {
         	
-        	var id_ligne = "#ligne"+data.id;
+        	console.log(data);
 
+        	var id_ligne = "#ligne"+data.id;
 
 			$(id_ligne).css({ 'color': 'red', 'color': 'red'});
 			
 			/*<div id="nnotif" class="alert alert-{{ session()->get('notification.type') }}" style="text-align: center;">*/
-
-			
-
 
 			setTimeout(function()
 			{

@@ -73,11 +73,13 @@ class CategorieController extends Controller
 
         $id_categorie=($request->id_categorie);
         
-        Categorie::supprimer($id_categorie);
-
         $categorie = Categorie::find($id_categorie);
-
-        return response()->json($categorie[0] ?? "Message");
+        
+        //Categorie::supprimer($id_categorie);
+        
+        $categorie = ($categorie->getAttributes());
+        
+        return response()->json($categorie ?? "Message");
 
         // code...
     }
