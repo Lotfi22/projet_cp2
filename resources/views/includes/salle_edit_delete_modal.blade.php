@@ -62,16 +62,16 @@
 
                        <div class="form-group col-md-12 ">
                             <label class="label label-default" for="capacite">Capacité</label>
-                            <input  type="number" value="{{ $salle->capacite ?? '' }}" name="capacite" placeholder="Capacité" class="form-control" id="capacite">
+                            <input required type="number" value="{{ $salle->capacite ?? '' }}" name="capacite" placeholder="Capacité" class="form-control" id="capacite">
                         </div>
         
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="nb_machine">Nombre machine</label>
-                            <input  type="number" value="{{ $salle->nb_machine ?? '' }}" name="nb_machine" placeholder="Nombre Machine" class="form-control" id="nb_machine">
+                            <input required type="number" value="{{ $salle->nb_machine ?? '' }}" name="nb_machine" placeholder="Nombre Machine" class="form-control" id="nb_machine">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="label label-default" for="superficie">Superficie </label>
-                            <input  type="number" value="{{ $salle->superficie ?? '' }}" name="superficie" placeholder="Superficie" class="form-control" id="superficie">
+                            <input required type="number" value="{{ $salle->superficie ?? '' }}" name="superficie" placeholder="Superficie" class="form-control" id="superficie">
                         </div>
                        
                         <div class="btn-group col-md-6" role="group">
