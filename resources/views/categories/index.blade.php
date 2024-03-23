@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="card mb-4">
            
             <div class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary">
+                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary">
                     <i class="fa fa-plus"></i>Ajouter Catégorie
                 </button>
 
@@ -66,14 +66,15 @@
 
 
 
-    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
+
+
+    <div class="modal fade" id="Ajout_modal" role="dialog"  aria-modal="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header pd-x-20">
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Catégorie : </h3>
                     <button type="button" class="close"
-                    data-dismiss="modal" aria-label="Close">
+                    data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
@@ -121,7 +122,7 @@
 
                         <div class="btn-group col-md-6" role="group">
 
-                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                            <button type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
                         </div>
                     </form>
                 </div>
