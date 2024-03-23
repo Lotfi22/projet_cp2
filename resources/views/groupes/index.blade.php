@@ -40,9 +40,9 @@
                                 <tr>
                                     <td>{{ $groupe->id }}</td>
                                     <td>{{ $groupe->nom }}</td>
-                                    <td>{{ $groupe->coach->nom }}</td>
-                                    <td>{{ $groupe->sport->nom }}</td>
-                                    <td>{{ $groupe->abonnement->type_abonnement }}</td>
+                                    <td>{{ $groupe->coach ? $groupe->coach->nom : '' }}</td>
+                                    <td>{{ $groupe->sport ? $groupe->sport->nom : '' }}</td>
+                                    <td>{{ $groupe->abonnement ? $groupe->abonnement->type_abonnement : '' }}</td>
                                     <td>{{ $groupe->capacite }}</td>
                                     <td>{{ $groupe->created_at }}</td>
                                     <td>
