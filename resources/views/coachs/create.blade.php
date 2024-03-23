@@ -13,7 +13,7 @@
 
     <body>
 
-    <form method="post" action="/coachs/create">
+    <form method="post" action="/coaches/create">
 			
 			{{ csrf_field() }}
 

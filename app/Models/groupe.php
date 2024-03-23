@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 
 class Groupe extends Model
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
     
     public static function add(Request $request)
     {
@@ -19,21 +20,33 @@ class Groupe extends Model
                     values('$request->nom','$request->id_coach','$request->id_sport','$request->id_abonnement','$request->capacite')");
     }
 
-    public static function groupes()
+    public static function supprimer($id_groupe)
     {
-        return DB::select("select * from groupes");
+
+        $groupe=Groupe::find($id_groupe);
+        $groupe->delete() ;
+
+        // code...
     }
-    public static function coachs()
+
+    public static function misajour(Request $request)
     {
-        return DB::select("select * from coachs");
-    }
-    public static function sports()
-    {
-        return DB::select("select * from sports");
-    }
-    public static function abonnements()
-    {
-        return DB::select("select * from abonnements");
+
+
+        return DB::update
+           ("
+                UPDATE groupes
+                SET
+                    nom = '$request->nom',
+                    id_coach = '$request->id_coach',
+                    id_coach = '$request->id_coach',
+                    id_sport = '$request->id_sport',
+                    id_abonnement = '$request->id_abonnement',
+                    capacite = '$request->capacite'
+                WHERE id = $request->id
+             ");
+
+        // code...
     }
 }
 

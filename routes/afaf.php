@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/afaf','TestController@afaf');
-//Coach
-Route::get('/coachs','CoachController@index');
-Route::post('/coachs/create','CoachController@create');
 //Groupe
-Route::get('/groupes','GroupeController@index');
-Route::post('/groupes/create','GroupeController@create');
-//Sport
-Route::get('/sports','SportsController@index');
-Route::post('/sports/create','SportsController@create');
-
 Route::get('/admin/groupes','groupeController@index');
 Route::post('/admin/groupes/create','GroupeController@create');
+Route::get('/admin/groupes/delete/{id}','GroupeController@delete');
+Route::post('/admin/groupes/update','GroupeController@update');
+
+Route::get('/groupes/{id}', 'GroupeController@show')->name('show_name');
+
+//Sport
+Route::get('/admin/sports','SportsController@index');
+Route::post('admin/sports/create','SportsController@create');
+Route::get('/admin/sports/delete/{id}','SportsController@delete');
+Route::post('/admin/sports/update','SportsController@update');

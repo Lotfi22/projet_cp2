@@ -29,5 +29,10 @@ Route::post('/admin/evenements/create','EvenementController@create')->name('even
 Route::post('/admin/evenements/update/{id}','EvenementController@update');
 Route::get('/admin/evenements/delete/{id}','EvenementController@delete');
 
+Route::get('/admin/seances','SeanceController@index');
+Route::post('/admin/seances/create','SeanceController@create')->name('seance.create');;
+Route::post('/admin/seances/update/{id}','SeanceController@update');
+Route::get('/admin/seances/delete/{id}','SeanceController@delete');
+
 
 
