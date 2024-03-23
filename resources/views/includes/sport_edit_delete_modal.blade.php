@@ -64,11 +64,11 @@
 
                      <div class="form-group ">
                             <label class="label label-default" for="nom">Nom du sport </label>
-                            <input  type="string" value="{{ $sport->nom ?? '' }}" name="nom" placeholder="Nom du sport" class="form-control" id="nom">
+                            <input required type="string" value="{{ $sport->nom ?? '' }}" name="nom" placeholder="Nom du sport" class="form-control" id="nom">
                         </div>
                         <div class="form-group ">
                             <label class="label label-default" for="nom">Description </label>
-                            <input  type="text" value="{{ $sport->description ?? '' }}" name="description" placeholder="Description" class="form-control" id="description">
+                            <input required type="text" value="{{ $sport->description ?? '' }}" name="description" placeholder="Description" class="form-control" id="description">
                         </div>
                         
                         <div class="btn-group col-md-6" role="group">

@@ -65,25 +65,38 @@
 
                      <div class="form-group ">
                             <label class="label label-default" for="nom">Nom du groupe </label>
-                            <input  type="string" value="{{ $groupe->nom ?? '' }}" name="nom" placeholder="Nom du groupe" class="form-control" id="nom">
+                            <input required type="string" value="{{ $groupe->nom ?? '' }}" name="nom" placeholder="Nom du groupe" class="form-control" id="nom">
                         </div>
 
-                        <div class="form-group col-md-12">
-                            <label class="label label-default" for="id_coach">Coach </label>
-                            <input  type="number" value="{{  $groupe->id_coach ?? ''  }}" name="id_coach" placeholder="id_coach" class="form-control" id="id_coach">
+                        <div class="col-md-6">
+                        <label class="label label-default" for="coach">selectionner un coach </label> <br>
+                        <select required name="id_coach" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Coach">                                      
+                                    @foreach ($coaches as $coach)
+                                        <option value="{{ $coach->id }}">{{ $coach->nom }}</option>
+                                    @endforeach 
+                        </select>
+                        </div> 
 
+                        <div class="col-md-6">
+                        <label class="label label-default" for="sport">selectionner un sport </label> <br>
+                        <select required name="id_sport" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="sport">                                      
+                                    @foreach ($sports as $sport)
+                                        <option value="{{ $sport->id }}">{{ $sport->nom }}</option>
+                                    @endforeach 
+                        </select>
+                        </div> 
+                        <div class="col-md-6">
+                        <label class="label label-default" for="abonnement">selectionner un abonnement </label> <br>
+                        <select required name="id_abonnement" class="form-control" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="abonnement">                                      
+                                    @foreach ($abonnements as $abonnement)
+                                        <option value="{{ $abonnement->id }}">{{ $abonnement->type_abonnement }}</option>
+                                    @endforeach 
+                        </select>
                         </div>
-                        <div class="form-group ">
-                            <label class="label label-default" for="id_sport">Sport </label>
-                            <input  type="number" value="{{ $groupe->id_sport ?? '' }}" name="id_sport" placeholder="id_sport" class="form-control" id="id_sport">
-                        </div>
-                        <div class="form-group ">
-                            <label class="label label-default" for="id_abonnement">L'abonnement </label>
-                            <input  type="number" value="{{ $groupe->id_abonnement ?? '' }}" name="id_abonnement" placeholder="Droit Timbre" class="form-control" id="id_abonnement">
-                        </div>
+
                         <div class="form-group ">
                             <label class="label label-default" for="capacite">Capacité du groupe</label>
-                            <input  type="text" value="{{ $groupe->capacite ?? '' }}" name="capacite" placeholder="Etat paiement" class="form-control" id="capacite">
+                            <input required type="text" value="{{ $groupe->capacite ?? '' }}" name="capacite" placeholder="Etat paiement" class="form-control" id="capacite">
                         </div>
                         <div class="btn-group col-md-6" role="group">
                             <button type="submit" class="btn btn-primary col-md-12">
