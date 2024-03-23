@@ -52,7 +52,7 @@
             </div>
 
             <div class="modal-body">
-                <form action="/admin/coachs/update" method="post" enctype="multipart/form-data">
+                <form action="/admin/coaches/update" method="post" enctype="multipart/form-data">
 
                     @csrf
 

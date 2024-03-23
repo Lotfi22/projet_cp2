@@ -1,14 +1,16 @@
+
+
 <button type="button" class="btn-sm btn btn-danger" data-toggle="modal"
-    data-target="#suppressionModal{{ $categorie->id }}">
+    data-target="#suppressionModal{{ $sport->id }}">
     <i class="fa fa-trash"></i> Supprimer
 </button>
 
-<div class="modal fade" id="suppressionModal{{ $categorie->id }}" tabindex="-1"
+<div class="modal fade" id="suppressionModal{{ $sport->id }}" tabindex="-1"
     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir supprimer  "{{ $categorie->nom }}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Êtes vous sur de vouloir supprimer le sport "{{ $sport->id }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -19,7 +21,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_categorie(this);" data-dismiss="modal" identifiant="{{ $categorie->id }}"> Oui </button>
+                    <a href="/admin/sports/delete/{{ $sport->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 
@@ -34,17 +36,17 @@
 
 
 <button type="button" class="btn-sm btn btn-primary" data-toggle="modal"
-    data-target="#exampleModal{{ $categorie->id }}">
+    data-target="#exampleModal{{ $sport->id }}">
     <i class="fa fa-pencil"></i> Modifier
 </button>
 
-<div class="modal fade" id="exampleModal{{ $categorie->id }}" tabindex="-1"
+<div class="modal fade" id="exampleModal{{ $sport->id }}" tabindex="-1"
     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier Agent
-                    categorie</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier
+                    sport</h5>
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -52,32 +54,23 @@
             </div>
 
             <div class="modal-body">
-                <form action="/admin/categories/update" method="post" enctype="multipart/form-data">
+                <form action="/admin/sports/update" method="post" enctype="multipart/form-data">
                     @csrf
                         <div class="form-group ">
-
-                            <input type="hidden" name="id" value="{{ $categorie->id }}" class="form-control" name="id">
+                            
+                            <input type="hidden" name="id" value="{{ $sport->id }}" class="form-control" name="id">  
 
                         </div>
 
-                        <div class="form-group ">
-                            <label class="label label-default" for="nom">NOM </label>
-                            <input  type="text" value="{{ $categorie->nom ?? '' }}" name="nom" placeholder="Nom de la categorie" class="form-control" id="nom">
-                        </div>
-
-                        <div class="form-group ">
-                            <label class="label label-default" for="description">Description </label>
-                            <input  type="text" value="{{  $categorie->description ?? ''  }}" name="description" placeholder="Description" class="form-control" id="description">
-
+                     <div class="form-group ">
+                            <label class="label label-default" for="nom">Nom du sport </label>
+                            <input required type="string" value="{{ $sport->nom ?? '' }}" name="nom" placeholder="Nom du sport" class="form-control" id="nom">
                         </div>
                         <div class="form-group ">
-                            <label class="label label-default" for="age_min">Age Minimum </label>
-                            <input onchange="verif_ages();" type="number" value="{{ $categorie->age_min ?? '' }}" name="age_min" placeholder="Age Minimum" class="form-control" id="age_min">
+                            <label class="label label-default" for="nom">Description </label>
+                            <input required type="text" value="{{ $sport->description ?? '' }}" name="description" placeholder="Description" class="form-control" id="description">
                         </div>
-                        <div class="form-group ">
-                            <label class="label label-default" for="age_max">Age Maximum </label>
-                            <input onchange="verif_ages();" type="number" value="{{ $categorie->age_max ?? '' }}" name="age_max" placeholder="Age Maximum" class="form-control" id="age_max">
-                        </div>
+                        
                         <div class="btn-group col-md-6" role="group">
                             <button type="submit" class="btn btn-primary col-md-12">
                                 Enregistrer </button>

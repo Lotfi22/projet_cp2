@@ -5,14 +5,14 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Mes Adhérants</h1>
+        <h1 class="mt-4 text-white" > Mes Coaches</h1>
 
         <div class="card mb-4">
 
             <div class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
-                     Ajouter Adhérant
+                     Ajouter Coach
                 </button>
             </div>
 
@@ -31,10 +31,8 @@
                                 <th>GENRE</th>
                                 <th>NUMERO TELEPHONE</th>
                                 <th>NUMERO D'URGENCE</th>
-                                <th>DOSSIER MEDICAL</th>
                                 <th>ADRESSE</th>
                                 <th>EMAIL</th>
-                                <th>TYPE D'ABONNEMENT</th>
                                 <th text-end min-w-70px">Actions</th>
                             </tr>
 
@@ -42,24 +40,22 @@
 
                         <tbody>
 
-                            @foreach ($adherants as $adherant)
+                            @foreach ($coaches as $coach)
                                 <tr>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->dossier_medical }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->adresse }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->email }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->type_abonnement }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->prenom }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->date_naissance }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->id_qr }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->genre }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone_urgence }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->adress }}</td>
+                                    <td style="cursor:pointer;">{{ $coach->email }}</td>
                                     <td>
                                         <div class="table-action">
 
-                                            @include('includes.adherant_edit_delete_modal',compact('adherant'))
+                                            @include('includes.coach_edit_delete_modal',compact('coach'))
 
                                             {{--  --}}
                                         </div>
@@ -83,12 +79,12 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter Coach : </h3>
                 </div>
                 
                 <div class="modal-body">
                     
-                    <form action="/admin/adherants/create" method="post" enctype="multipart/form-data" class="row col-md-12">
+                    <form action="/admin/coaches/create" method="post" enctype="multipart/form-data" class="row col-md-12">
                         
                         @csrf
 
@@ -118,25 +114,18 @@
                         </div>
 
                         <div class="form-group col-md-12">
-                            <label class="label label-default" for="num_tel">Numéro téléphone</label>
-                            <input required type="text" value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="ajout_num_tel" placeholder="Entrez le numéro téléphone">
+                            <label class="label label-default" for="nbr_telephone">Numéro téléphone</label>
+                            <input required type="text" value="{{ old('nbr_telephone') }}" name="nbr_telephone" class="form-control" id="ajout_nbr_telephone" placeholder="Entrez le numéro téléphone">
                         </div>
 
                         <div class="form-group col-md-12">
-                            <label class="label label-default" for="num_tel_urgence">Numéro d'urgence</label>
-                            <input type="text" value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="ajout_num_tel_urgence" placeholder="Entrez le numéro d'urgence">
+                            <label class="label label-default" for="nbr_telephone_urgence">Numéro d'urgence</label>
+                            <input type="text" value="{{ old('nbr_telephone_urgence') }}" name="nbr_telephone_urgence" class="form-control" id="ajout_nbr_telephone_urgence" placeholder="Entrez le numéro d'urgence">
                         </div>
 
                         <div class="form-group col-md-12">
-                            <label class="label label-default" for="dossier_medical">Dossier médical</label>
-                            
-                            <textarea rows="4" class="form-control" name="dossier_medical" placeholder="Entrez le dossier médical" id="ajout_dossier_medical"></textarea>
-
-                        </div>
-
-                        <div class="form-group col-md-12">
-                            <label class="label label-default" for="adresse">Adresse</label>
-                            <input required type="text" value="{{ old('adresse') }}" name="adresse" class="form-control" id="ajout_adresse" placeholder="Entrez l'adresse">
+                            <label class="label label-default" for="adress">Adresse</label>
+                            <input required type="text" value="{{ old('adress') }}" name="adress" class="form-control" id="ajout_adress" placeholder="Entrez l'adresse">
                         </div>
 
                         <div class="form-group col-md-12">
@@ -144,14 +133,6 @@
                             <input onchange="verif_email();" required type="email" value="{{ old('email') }}" name="email" class="form-control" id="ajout_email" placeholder="Entrez l'email">
                             <p class="invalid-feedback"></p>
                         </div>
-
-                        <div class="form-group col-md-12">
-                            <label class="label label-default" for="type_abonnement">Type d'abonnement</label>
-                            <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" class="form-control" id="ajout_type_abonnement" placeholder="Entrez le type d'abonnement">
-                        </div>
-
-
-
 
 
                         <div class="btn-group col-md-6" role="group">
@@ -170,24 +151,7 @@
     </div>
 
 
-<script src= "{{ asset('My_js/adherants.js') }}" ></script>
-
-
-
-<script>
-    
-
-    function redirect_adherant_profile(id) 
-    {
-        location.href='/admin/adherants/'+id;
-    }
-
-
-
-
-
-
-</script>
+<script src= "{{ asset('My_js/coaches.js') }}" ></script>
 
 
 @endsection

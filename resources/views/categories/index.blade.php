@@ -37,7 +37,7 @@
                         <tbody>
 
                             @foreach ($categories as $categorie)
-                                <tr>
+                                <tr id="ligne{{$categorie->id}}">
                                     <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->id }}</td>
                                     <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->nom ?? '' }}</td>
                                     <td onclick="redirect_sous_categorie({{ $categorie->id }});" style="cursor:pointer;" >{{ $categorie->description ?? '' }}</td>
