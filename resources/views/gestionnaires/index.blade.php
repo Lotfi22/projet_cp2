@@ -53,7 +53,7 @@
                                     <td>{{ $gestionnaire->created_at ?? ''}}</td>
                                     <td>
                                         <div class="table-action">
-                                            {{--  @include('includes.gestionnaire_edit_delet_modal',compact('gestionnaire'))  --}}
+            
                                             @include('includes.gestionnaire_edit_delete_modal',compact('gestionnaire')) 
                                            
                                         </div>
@@ -77,7 +77,7 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="lineModalLabel">Ajouter gestionnaire </h3>
+                    <h3 class="modal-title" id="lineModalLabel">Ajouter un gestionnaire </h3>
                 </div>
                 
                 <div class="modal-body">
@@ -130,7 +130,7 @@
                         </div>
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="id_qr">Id QR</label>
-                            <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder="entrer id_qr du gestionnaire">
+                            <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder=" Id_qr du gestionnaire">
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
@@ -140,7 +140,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button type="submit" class="col-md-12 btn btn-primary">Sauvegarder</button>
+                            <button type="submit" class="col-md-12 btn btn-primary">Enregistrer</button>
                         </div>    
                 
                     </form>
