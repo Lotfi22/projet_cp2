@@ -26,6 +26,14 @@ class Facture extends Model
 
         // code...
     }
+
+    public static function restored($id_facture)
+   {
+    $facture = Facture::withTrashed()->find($id_facture);
+    $facture->restore(); // 
+
+    // Additional logic...
+   }
     public static function inserer(Request $request)
     {
 

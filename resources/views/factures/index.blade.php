@@ -9,13 +9,23 @@
 
         <div class="card mb-4">
 
-            <div class="card-header">
+            <span class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
                        Ajouter Facture
                 </button>
-            </div>
- 
+                
+                <button   style="margin-left: 1100px;"  class="btn btn-warning">
+         
+                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/factures/viewdeleted"  >
+                Corbeille
+                </a>
+               
+               </button> 
+               
+           </span>
+           
+            
             <div class="card-body">
                 <div class="table-responsive">
                     
@@ -51,7 +61,7 @@
                                         <td>{{ $facture->created_at ?? ''}}</td>
                                         <td>
                                             <div class="table-action">
-
+                                              
                                                 @include('includes.facture_edit_delete_modal',compact('facture'))
 
                                                 {{--  --}}

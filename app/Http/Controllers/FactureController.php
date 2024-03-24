@@ -24,6 +24,16 @@ class FactureController extends Controller
         // code...
     }
 
+    public function viewdeleted()
+    {
+        $deletedfactures = Facture::onlyTrashed()->get();
+       
+        return view('factures.restore', compact('deletedfactures'));
+
+        // code...
+    }
+   
+
     public function create(Request $request)
     {
          Facture::inserer($request);
@@ -44,6 +54,19 @@ class FactureController extends Controller
         session()->flash('notification.message' , 'Facture '.$id_facture.' supprimer avec succés');
 
         session()->flash('notification.type' , 'warning'); 
+
+        return back();
+
+        // code...
+    }
+    public function restore($id_facture)
+    {
+
+        Facture::restored($id_facture);
+
+        session()->flash('notification.message' , 'Facture '.$id_facture.' restore avec succés');
+
+        session()->flash('notification.type' , 'success'); 
 
         return back();
 
