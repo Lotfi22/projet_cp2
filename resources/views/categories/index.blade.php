@@ -64,12 +64,8 @@
 
 
 
-
-
-
-
     <div class="modal fade" id="Ajout_modal" role="dialog"  aria-modal="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header pd-x-20">
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Catégorie : </h3>

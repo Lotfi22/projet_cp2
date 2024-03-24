@@ -29,10 +29,12 @@ class CategorieController extends Controller
 
     public function create(Request $request)
     {
-       Categorie::inserer($request);
-         session()->flash('notification.message' , 'Catégorie '.$request->nom.' Ajoutée avec succés');
 
-          session()->flash('notification.type' , 'success');
+        Categorie::inserer($request);
+         
+        session()->flash('notification.message' , 'Catégorie '.$request->nom.' Ajoutée avec succés');
+
+        session()->flash('notification.type' , 'success');
 
        return back();
 
