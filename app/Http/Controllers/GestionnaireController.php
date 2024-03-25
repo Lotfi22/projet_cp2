@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class GestionnaireController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('gestionnaire_log:gestionnaire');
+    }
+
+
     public function index() {
         $gestionnaires = Gestionnaire::all(); 
         return view('gestionnaires.index',compact('gestionnaires'));

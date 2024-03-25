@@ -51,6 +51,17 @@ return [
             'provider' => 'admins',
         ],
 
+       'gestionnaire' => [
+            'driver' => 'session',
+            'provider' => 'gestionnaires',
+        ],
+
+        'gestionnaire-api' => [
+            'driver' => 'token',
+            'provider' => 'gestionnaires',
+        ],
+
+
 
     ],
 
@@ -80,6 +91,12 @@ return [
        'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+
+       'gestionnaires' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Gestionnaire::class,
         ],
 
 
@@ -118,7 +135,13 @@ return [
             'expire' => 60,
         ],
 
+       'gestionnaires' => [
+            'provider' => 'gestionnaires',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
 
+        //
     ],
 
     /*

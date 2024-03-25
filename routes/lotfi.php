@@ -37,8 +37,17 @@ Route::post('/admin/categories/update','CategorieController@update');
 Route::get('/admin/categories/delete/{id}','CategorieController@delete');
 
 Route::post('/admin/categories/delete/ajax','CategorieController@delete');
-
 Route::get('/admin/categories/{id}/sous_categorie','Sous_categorieController@home');
+
+//Gestionnaire Auth : 
+Route::get('/gestionnaire/login', 'Auth\GestionnaireLoginController@showLoginForm')->name('gestionnaire.login');
+Route::post('/gestionnaire/login', 'Auth\GestionnaireLoginController@login')->name('gestionnaire.login.submit');
+Route::get('/gestionnaire/', 'GestionnaireController@index')->name('gestionnaire.home');
+
+
+
+
+
 
 
 

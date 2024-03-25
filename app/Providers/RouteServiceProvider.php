@@ -99,6 +99,8 @@ class RouteServiceProvider extends ServiceProvider
         {
             case 'admin':  return '/admin'; break;
              
+            case 'gestionnaire':  return '/gestionnaire'; break;
+
             default: return '/home'; break;
 
         }

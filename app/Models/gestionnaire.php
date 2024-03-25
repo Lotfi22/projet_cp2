@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Gestionnaire extends Model
 {
     use HasFactory , SoftDeletes;
+
+    protected $guard='gestionnaire';
+
     public static function add (Request $request)
     {
         DB::insert("insert into gestionnaires(nom,prenom,date_naissance,genre,email,num_tel,num_tel_urgence,adresse,id_qr)
