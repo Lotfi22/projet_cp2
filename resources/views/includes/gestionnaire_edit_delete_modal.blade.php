@@ -8,7 +8,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">souhaitez-vous supprimer le gestionnaire"{{  $gestionnaire->nom }} {{$gestionnaire->prenom}}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">souhaitez-vous supprimer le gestionnaire"{{  $gestionnaire->nom }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -19,7 +19,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/gestionnaires/delete/{{ $gestionnaire->id }}" type="submit" class="btn btn-danger col-md-12"> Supprimer </a>
+                    <button type="submit" class="btn btn-danger col-md-12"  identifiant="{{ $gestionnaire->id }}"data-dismiss="modal" onclick="supprimer_gestionnaire(this);"> Supprimer </button>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 

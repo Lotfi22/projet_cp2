@@ -24,7 +24,7 @@ class GestionnaireController extends Controller
         return back();
         
     }
-    public function delete( $id_gestionnaire )
+    public function delete1( $id_gestionnaire )
     {
 
         Gestionnaire::supprimer($id_gestionnaire);
@@ -37,6 +37,17 @@ class GestionnaireController extends Controller
 
         // code...
     }
+    public function delete( Request $request )
+    {
+       
+        $id_gestionnaire=($request->id_gestionnaire);
+        $gestionnaire = Gestionnaire::find($id_gestionnaire);
+        Gestionnaire::supprimer($id_gestionnaire);
+        $gestionnaire = ($gestionnaire->getAttributes());
+        return response()->json($gestionnaire ?? "Message");
+        // code...
+    }
+    
     public function update( Request $request,$id)
     {
         $gestionnaire = Gestionnaire::modifier($request, $id);
