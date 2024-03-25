@@ -63,8 +63,8 @@ class Adherant extends Model
     public static function restaurer($id_adherant)
     {
 
-    $adherant = Adherant::withTrashed()->find($id_adherant);
-    $adherant->restore(); // 
+    $id_adherant = Adherant::withTrashed()->find($id_adherant);
+    $id_adherant->restore(); // 
 
     }
 

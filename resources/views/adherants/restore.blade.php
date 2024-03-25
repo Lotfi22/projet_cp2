@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -32,13 +32,13 @@
                                 <th>ADRESSE</th>
                                 <th>EMAIL</th>
                                 <th>TYPE D'ABONNEMENT</th>
-                                <th text-end min-w-70px">Actions</th>
+                                <th>Actions</th>
                             </tr>
 
                          </thead>
 
                           <tbody>
-                               @foreach ($deletedfactures as $facture)
+                               @foreach ($deletedadherants as $adherant)
 
                                     <tr>
                                         <td>{{ $adherant->id }}</td>
@@ -57,33 +57,30 @@
                                         <td>
                                         <div class="table-action">
 
-                                            <button type="button" class="btn-sm btn btn-warning" data-toggle="modal"
-                                                data-target="#RestoreModal{{ $facture->id }}">
+                                            <button type="button" class="btn-sm btn ripple btn-warning" data-bs-toggle="modal"
+                                                data-bs-target="#RestoreModal{{ $adherant->id }}">
                                                 <i class='fa fa-trash-restore'></i> Restaurer
                                             </button>
 
-                                            <div class="modal fade" id="RestoreModal{{ $facture->id }}" tabindex="-1"
-                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content" >
+                                            <div class="modal fade forget-modal" id="RestoreModal{{ $adherant->id }}" tabindex="-1"
+                                                role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content modal-content-demo" >
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Voulez-vous vraiment restaurer l'adhérant "{{ $adherant->nom }}" ?</h5>
 
-                                                            <button type="button" class="close"
-                                                                data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                                            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                                         </div>
 
-                                                        <div class="modal-body  row col-md-12">
+                                                        <div class="modal-body row col-md-12">
 
                                                             <div class="btn-group col-md-6" role="group">
-                                                                <a href="/admin/factures/restore/{{ $facture->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                                                                <button type="submit" class="btn btn-primary col-md-12"  identifiant="{{ $adherant->id }}"data-bs-dismiss="modal" onclick="restaurer_adherant(this);"> OUI </button>
                                                             </div>
                                                             <div class="btn-group col-md-6" role="group">
 
                                                                 <button type="button" class=" col-md-12 btn btn-primary"
-                                                                    data-dismiss="modal" role="button">NON</button>
+                                                                    data-bs-dismiss="modal" role="button">NON</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -104,6 +101,8 @@
         
           
     </div>
+
+<script src="{{ asset('My_js/adherants.js') }}"></script>
 
 
 

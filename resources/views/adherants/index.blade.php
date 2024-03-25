@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -9,21 +9,21 @@
 
         <div class="card mb-4">
 
-            <span class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
-                        class="fa fa-plus"></i>
-                     Ajouter Adhérant
+            <div class="card-header">
+
+                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary"> 
+
+                    <i class="fa fa-plus"></i> Ajouter Adhérant
+
                 </button>
 
-                <button   style="margin-left: 1000px;"  class="btn btn-warning">
-         
-                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/adherants/viewdeleted"  >
-                Corbeille
-                </a>
+                <button   style="margin-left: 880px;"  class="btn btn-warning"class="fa fa-trash"> 
+
+                    <a style="color : #fff" href="/admin/adherants/viewdeleted">Corbeille</a>
                
                </button> 
                
-            </span>
+            </div>
 
 
             <div class="card-body">
@@ -45,7 +45,7 @@
                                 <th>ADRESSE</th>
                                 <th>EMAIL</th>
                                 <th>TYPE D'ABONNEMENT</th>
-                                <th text-end min-w-70px">Actions</th>
+                                <th>Actions</th>
                             </tr>
 
                         </thead>
@@ -54,6 +54,7 @@
 
                             @foreach ($adherants as $adherant)
                                 <tr id="ligne{{$adherant->id}}">
+
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
@@ -88,12 +89,18 @@
 
 
 
-    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
+    <div class="modal fade " id="Ajout_modal" aria-modal="true">
+
         <div class="modal-dialog modal-lg">
+
             <div class="modal-content">
-                <div class="modal-header">
+
+                <div class="modal-header pd-x-20">
+
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 
                 <div class="modal-body">
@@ -102,66 +109,94 @@
                         
                         @csrf
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                           
                             <label class="label label-default" for="nom">Nom</label>
+                           
                             <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
+                        
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+
                             <label class="label label-default" for="prenom">Prénom</label>
+
                             <input required type="text" value="{{ old('prenom') }}" name="prenom" class="form-control" id="ajout_prenom" placeholder="Entrez le prénom">
+
                         </div>
                         
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+
                             <label class="label label-default" for="date_naissance">Date de naissance</label>
+                            
                             <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="ajout_date_naissance" placeholder="Entrez la date de naissance">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="id_qr">QR code</label>
+                        
                             <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="ajout_id_qr" placeholder="Entrez le QR code">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="genre">Genre</label>
+                        
                             <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="ajout_genre" placeholder="Entrez le genre">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="num_tel">Numéro téléphone</label>
+                        
                             <input required type="text" value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="ajout_num_tel" placeholder="Entrez le numéro téléphone">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="num_tel_urgence">Numéro d'urgence</label>
+                        
                             <input type="text" value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="ajout_num_tel_urgence" placeholder="Entrez le numéro d'urgence">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="dossier_medical">Dossier médical</label>
                             
                             <textarea rows="4" class="form-control" name="dossier_medical" placeholder="Entrez le dossier médical" id="ajout_dossier_medical"></textarea>
 
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="adresse">Adresse</label>
+                        
                             <input required type="text" value="{{ old('adresse') }}" name="adresse" class="form-control" id="ajout_adresse" placeholder="Entrez l'adresse">
+                        
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="email">Email</label>
+                        
                             <input onchange="verif_email();" required type="email" value="{{ old('email') }}" name="email" class="form-control" id="ajout_email" placeholder="Entrez l'email">
+                        
                             <p class="invalid-feedback"></p>
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        
                             <label class="label label-default" for="type_abonnement">Type d'abonnement</label>
+                        
                             <input required type="text" value="{{ old('type_abonnement') }}" name="type_abonnement" class="form-control" id="ajout_type_abonnement" placeholder="Entrez le type d'abonnement">
                         </div>
-
-
-
 
 
                         <div class="btn-group col-md-6" role="group">
@@ -171,12 +206,18 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
+                        
                         </div>    
+
                     </form>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
 

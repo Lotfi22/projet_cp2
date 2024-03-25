@@ -25,6 +25,8 @@ Route::get('/admin/adherants','AdherantsController@index');
 Route::post('/admin/adherants/create','AdherantsController@create')->name('adherants.create');;
 Route::post('/admin/adherants/update','AdherantsController@update');
 Route::get('/admin/adherants/delete/{id}','AdherantsController@delete');
+Route::post('/admin/adherants/delete/ajax','AdherantsController@delete');
+Route::post('/admin/adherants/restore/ajax','AdherantsController@restore');
 Route::get('/admin/adherants/{id}','AdherantsController@profile');
 Route::get('/admin/adherants/restore/{id}','AdherantsController@restore');
 Route::get('/admin/adherants/viewdeleted','AdherantsController@viewdeleted');

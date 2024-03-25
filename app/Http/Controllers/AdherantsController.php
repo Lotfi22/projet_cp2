@@ -61,18 +61,14 @@ class AdherantsController extends Controller
 
     
 
-    public function delete($id_adherant)
+    public function delete(Request $request)
     {
         
+        $id_adherant=($request->id_adherant);
+        $adherant = Adherant::find($id_adherant);
         Adherant::supprimer($id_adherant);
-
-        session()->flash('notification.message' , 'Adhérant '.$id_adherant.' Supprimé avec succés');
-
-        session()->flash('notification.type' , 'warning'); 
-
-        return back();
-
-        // code...
+        $adherant = ($adherant->getAttributes());
+        return response()->json($adherant ?? "Adhérant introuvable :(");
     }
 
     public function viewdeleted()
@@ -84,20 +80,20 @@ class AdherantsController extends Controller
         // code...
     }
 
-    public function restore($id_adherant)
+    public function restore(Request $request)
     {
+        $id_adherant = $request->id_adherant;
+        $adherant = Adherant::withTrashed()->find($id_adherant);
 
-        Adherant::restaurer($id_adherant);
+        if ($adherant) {
 
-        session()->flash('notification.message' , 'Adherant '.$id_adherant.' restauré avec succés');
-
-        session()->flash('notification.type' , 'success'); 
-
-        return back();
-
-        // code...
+            $adherant->restore();
+            $adherant = ($adherant->getAttributes()); 
+        } 
+    return response()->json($adherant ?? "Adherant introuvable!");
     }
 
+    
     public function profile($id_adherant)
     {
         dd(($id_adherant));

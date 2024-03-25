@@ -21,10 +21,10 @@
                 
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/adherants/delete/{{ $adherant->id }}" type="submit" class="btn btn-danger col-md-12" onclick="supprimer_adherant(this); identifiant="{{ $adherant->id }}"> Oui </a>
+                    <button type="submit" class="btn btn-danger col-md-12" data-dismiss="modal" onclick="supprimer_adherant(this);" identifiant="{{ $adherant->id }}"> Oui </button>
                 </div>
-                <div class="btn-group col-md-6" role="group">
 
+                <div class="btn-group col-md-6" role="group">
                     <button type="button" class=" col-md-12 btn btn-primary"
                         data-dismiss="modal" role="button">NON</button>
                 </div>
