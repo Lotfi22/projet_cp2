@@ -60,6 +60,15 @@ class Adherant extends Model
     }
 
 
+    public static function restaurer($id_adherant)
+    {
+
+    $adherant = Adherant::withTrashed()->find($id_adherant);
+    $adherant->restore(); // 
+
+    }
+
+
 
 
 

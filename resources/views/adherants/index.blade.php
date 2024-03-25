@@ -9,12 +9,22 @@
 
         <div class="card mb-4">
 
-            <div class="card-header">
+            <span class="card-header">
                 <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
                      Ajouter Adhérant
                 </button>
-            </div>
+
+                <button   style="margin-left: 1000px;"  class="btn btn-warning">
+         
+                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/adherants/viewdeleted"  >
+                Corbeille
+                </a>
+               
+               </button> 
+               
+            </span>
+
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -43,7 +53,7 @@
                         <tbody>
 
                             @foreach ($adherants as $adherant)
-                                <tr>
+                                <tr id="ligne{{$adherant->id}}">
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
