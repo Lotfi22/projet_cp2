@@ -2,8 +2,7 @@
 
     <i class="fa fa-trash"></i> Supprimer
 
-</button>
-                                    
+</button>                                    
 
 <!-- VERTICALLY CENETERED MODAL START -->
 <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-hidden="true" id="suppressionModal{{ $categorie->id }}">
@@ -45,8 +44,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier Agent
-                    categorie</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier categorie</h5>
                 <button type="button" class="close"
                     data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

@@ -31,6 +31,22 @@ data-header-style = "color">
 		<link href="{{ asset('solic_pro/assets/switcher/css/switcher.css')}}" rel="stylesheet" id="switcher-css" type="text/css" media="all" >
 		<link href="{{asset('solic_pro/assets/switcher/demo.css')}}" rel="stylesheet" >
 
+		<style>
+			
+			.modal {
+			     background: rgba(255, 255, 255, 0.3); 
+			}
+			.modal-backdrop {
+			     display: none;
+			};
+
+			//
+		</style>
+
+		<!-- JQUERY SCRIPTS -->
+		<script src="{{  asset('solic_pro/assets/js/vendors/jquery.min.js')}}"></script>
+
+
 	</head>
 
 	<body class="sidebar-mini2 app sidebar-mini">
@@ -187,9 +203,6 @@ data-header-style = "color">
 
 		<!-- BACK-TO-TOP -->
 		<a href="#top" id="back-to-top"><i class="fa fa-level-up"></i></a>
-
-		<!-- JQUERY SCRIPTS -->
-		<script src="{{  asset('solic_pro/assets/js/vendors/jquery.min.js')}}"></script>
 
 		<!-- BOOTSTRAP SCRIPTS -->
 		<script src="{{  asset('solic_pro/assets/plugins/bootstrap/js/popper.min.js')}}"></script>
