@@ -40,7 +40,7 @@
                         <tbody>
                             @foreach ($gestionnaires as $gestionnaire)
                             
-                                <tr>
+                                <tr id="ligne{{$gestionnaire->id}}">
                                     <td>{{ $gestionnaire->id ?? ''}}</td>
                                     <td>{{ $gestionnaire->nom ?? ''}}</td>
                                     <td>{{ $gestionnaire->prenom ?? ''}}</td>
@@ -150,6 +150,6 @@
     </div>
 
 
-
+    <script src="{{ asset('My_js/gestionnaires.js') }}"></script>
 
 @endsection
