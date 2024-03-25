@@ -48,5 +48,12 @@ class Gestionnaire extends Model
         $gestionnaire->delete();
         // code...
     }
+    
+    public static function restaurer($id_gestionnaire)
+   {
+    $id_gestionnaire = Gestionnaire::withTrashed()->find($id_gestionnaire);
+    $id_gestionnaire->restore(); // 
+    // Additional logic...
+   }
 }
 

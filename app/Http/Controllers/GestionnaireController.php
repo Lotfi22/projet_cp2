@@ -44,7 +44,7 @@ class GestionnaireController extends Controller
         $gestionnaire = Gestionnaire::find($id_gestionnaire);
         Gestionnaire::supprimer($id_gestionnaire);
         $gestionnaire = ($gestionnaire->getAttributes());
-        return response()->json($gestionnaire ?? "Message");
+        return response()->json($gestionnaire ?? "Gestionnaire introuvable");
         // code...
     }
     
@@ -63,5 +63,24 @@ class GestionnaireController extends Controller
         return back();
         // code...
     }
+    public function restore(Request $request)
+{
+    $id_gestionnaire = $request->id_gestionnaire;
+    $gestionnaire = Gestionnaire::withTrashed()->find($id_gestionnaire);
+
+    if ($gestionnaire) {
+
+        $gestionnaire->restore();
+        $gestionnaire = ($gestionnaire->getAttributes()); 
+    } 
+    return response()->json($gestionnaire ?? "Gestionnaire introuvable!");
+
+
+}
+
+    public function viewdeleted()  {
+
+        $deletedgestionnaires = Gestionnaire::onlyTrashed()->get();
+        return view('gestionnaires.restore', compact('deletedgestionnaires'));    }
     //
 }

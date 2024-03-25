@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -10,10 +10,14 @@
         <div class="card mb-4">
 
             <div class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
-                        class="fa fa-plus"></i>
-                    Ajouter Gestionnaire
+                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>Ajouter Gestionnaire
                 </button>
+                
+                <button   style="margin-left: 880px"  class="btn btn-warning" class="fa fa-trash">
+                    <a href="/admin/gestionnaires/viewdeleted" style="color : #fff">Corbeille</a>
+                </button> 
+
             </div>
 
             <div class="card-body">
@@ -71,13 +75,15 @@
 
 
 
-
-    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-md">
+    <div class="modal fade " id="Ajout_modal" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+       
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header pd-x-20">
                     <h3 class="modal-title" id="lineModalLabel">Ajouter un gestionnaire </h3>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 
                 <div class="modal-body">
@@ -105,12 +111,13 @@
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="genre">Genre</label>
-                            <select id="genre" name="genre" required class="form-control">
+                            <select id="genre" name="genre" required class="form-control select2 form-select select2-hidden-accessible"  tabindex="-1" aria-hidden="true">
                                 <option value="" disabled selected>Genre</option>
                                 <option value="Homme" >Homme</option>
                                 <option value="Femme">Femme</option>
                             </select>
                         </div>
+                       
                         
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                             <label class="label label-default" for="email">Email</label>
@@ -134,8 +141,8 @@
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
-                            
-                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+
+                            <button type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Annuler</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">

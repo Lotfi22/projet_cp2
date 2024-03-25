@@ -28,6 +28,9 @@ Route::post('/admin/evenements/create','EvenementController@create')->name('even
 Route::get('/admin/gestionnaires/delete/{id}','GestionnaireController@delete');
 Route::post('/admin/gestionnaires/update/{id}','GestionnaireController@update');
 Route::post('/admin/gestionnaires/delete/ajax','GestionnaireController@delete');
+Route::post('/admin/gestionnaires/restore/ajax','GestionnaireController@restore');
+Route::get('/admin/gestionnaires/viewdeleted','GestionnaireController@viewdeleted');
+
 
 
 
