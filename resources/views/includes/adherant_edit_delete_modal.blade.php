@@ -18,8 +18,10 @@
 
             <div class="modal-body row col-md-12">
 
+                
+
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/adherants/delete/{{ $adherant->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <a href="/admin/adherants/delete/{{ $adherant->id }}" type="submit" class="btn btn-danger col-md-12" onclick="supprimer_adherant(this); identifiant="{{ $adherant->id }}"> Oui </a>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 

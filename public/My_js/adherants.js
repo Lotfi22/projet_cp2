@@ -36,3 +36,50 @@ function verif_email()
 
   }
 }
+
+
+
+function supprimer_adherant(objet)
+{
+
+  var id = $(objet).attr('identifiant');
+
+    $.ajax({
+        headers: 
+        {
+           'X-CSRF-TOKEN': $('input[name="_token"]').val()
+        },                    
+        type:"POST",
+        url:"/admin/adherants/delete/ajax",
+        data:{id_adherant:id},
+        /*fin FrontEnd*/
+
+        success:function(data)
+        {
+          
+          console.log(data);
+
+          var id_ligne = "#ligne"+data.id;
+
+      $(id_ligne).css({ 'color': 'red', 'color': 'red'});
+      
+      /*<div id="nnotif" class="alert alert-{{ session()->get('notification.type') }}" style="text-align: center;">*/
+
+      setTimeout(function()
+      {
+          
+        $(id_ligne).hide(1000);
+
+          //
+      }, 1000);     
+
+
+          //
+    }
+    
+  }); 
+
+  
+
+  // body...
+}

@@ -75,13 +75,39 @@ class AdherantsController extends Controller
         // code...
     }
 
+    public function viewdeleted()
+    {
+        $deletedadherants = Adherant::onlyTrashed()->get();
+       
+        return view('adherants.restore', compact('deletedadherants'));
+
+        // code...
+    }
+
+    public function restore($id_adherant)
+    {
+
+        Adherant::restaurer($id_adherant);
+
+        session()->flash('notification.message' , 'Adherant '.$id_adherant.' restauré avec succés');
+
+        session()->flash('notification.type' , 'success'); 
+
+        return back();
+
+        // code...
+    }
+
     public function profile($id_adherant)
     {
         dd(($id_adherant));
     }
 
 
+
+
 }
+
 
 
 
