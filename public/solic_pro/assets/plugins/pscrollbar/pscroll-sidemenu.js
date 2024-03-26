@@ -2,11 +2,11 @@
 	"use strict";
 	
 	//P-scrolling
-/*	const ps = new PerfectScrollbar('.sidebar-right', {
+	const ps = new PerfectScrollbar('.sidebar-right', {
 	  useBothWheelAxes:true,
 	  suppressScrollX:true,
 	});
-*/
+
 	//P-scrolling
 	const ps2 = new PerfectScrollbar('.app-sidebar', {
 		useBothWheelAxes:true,
@@ -20,9 +20,9 @@
 	});
 
 	//P-scrolling
-/*	const ps4 = new PerfectScrollbar('.header-dropdown-scroll2', {
+	const ps4 = new PerfectScrollbar('.header-dropdown-scroll2', {
 		useBothWheelAxes:true,
 		suppressScrollX:true,
 	});
-*/		
+		
 })(jQuery);

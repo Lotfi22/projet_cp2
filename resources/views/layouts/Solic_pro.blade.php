@@ -223,7 +223,7 @@ data-header-style = "color">
 		<script src="{{  asset('solic_pro/assets/plugins/pscrollbar/pscroll-sidemenu.js')}}"></script>
 
         <!-- SETTINGS JS -->
-		<script src="{{  asset('solic_pro/assets/js/settings.js')}}"></script>
+		{{-- <script src="{{  asset('solic_pro/assets/js/settings.js')}}"></script> --}}
 
 		<!-- SIDEBAR JS -->
 		<script src="{{  asset('solic_pro/assets/plugins/sidebar/sidebar.js')}}"></script>
