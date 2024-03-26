@@ -19,30 +19,28 @@ class EvenementController extends Controller
     public function index() 
     {
 
-        $evenements = DB::select("select * from evenements");        
+        $evenements = Evenement::all();        
         
         return view('evenements.index',compact('evenements'));
-
     }
 
-    public function create (Request $request)
+    public function create(Request $request)
     {
-        DB::insert("insert into evenements(nom,date_debut,date_fin,description,lieu)
-                    values('$request->nom','$request->date_debut','$request->date_fin','$request->description','$request->lieu')");
+        Evenement::inserer($request);
 
-        session()->flash('notification.message' , 'Evenement '.$request->nom.' Ajoutée avec succés');
+           session()->flash('notification.message' , 'Événement '.$request->id.' Ajoutée avec succés');
 
-        session()->flash('notification.type' , 'success');
+           session()->flash('notification.type' , 'success');
 
         return back();
-        
-}
+    }
+
     public function delete($id_evenement)
     {
         
         Evenement::supprimer($id_evenement);
 
-        session()->flash('notification.message' , 'Evenement '.$id_evenement.' supprimer avec succés');
+        session()->flash('notification.message' , 'Événement '.$id_evenement.' supprimer avec succés');
 
         session()->flash('notification.type' , 'warning'); 
 
@@ -50,20 +48,36 @@ class EvenementController extends Controller
 
     }
 
-    public function update( Request $request,$id)
+    public function update(Request $request)
     {
-        $evenement = Evenement::modifier($request, $id);
+        Evenement::misajour($request);
 
-        if ($evenement) {
-            session()->flash('notification.message', 'Evenement ' . $id . ' modifié avec succès');
-            session()->flash('notification.type', 'warning');
-        } else {
-            session()->flash('notification.message', 'Evenement non trouvé');
-            session()->flash('notification.type', 'error');
-        }
-    
+        session()->flash('notification.message' , 'Événement '.$request->id_evenement.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning');
+
         return back();
-        // code...
+    }
+
+    public function viewdeleted()
+    {
+        $deletedevenements = Evenement::onlyTrashed()->get();
+       
+        return view('evenements.restore', compact('deletedevenements'));
+
+    }
+
+    public function restore($id_evenement)
+    {
+
+        evenement::restored($id_evenement);
+
+        session()->flash('notification.message' , 'Événement '.$id_evenement.' restore avec succés');
+
+        session()->flash('notification.type' , 'success'); 
+
+        return back();
+
     }
 
 }

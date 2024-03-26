@@ -1,12 +1,12 @@
 
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Mes évènements</h1>
+        <h1 class="mt-4 text-white" > Mes événements</h1>
 
         <div class="card mb-4">
 
@@ -15,6 +15,14 @@
                         class="fa fa-plus"></i>
                      Ajouter Événement
                 </button>
+
+                <button   style="margin-left: 1100px;"  class="btn btn-warning">
+         
+                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/evenements/viewdeleted"  >
+                Corbeille
+                </a>
+               
+               </button>
             </div>
 
             <div class="card-body">
@@ -74,7 +82,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title " id="lineModalLabel">Ajouter évènement : </h3>
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter événement : </h3>
                 </div>
                 
                 <div class="modal-body">
@@ -84,7 +92,7 @@
                         @csrf
                         
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
-                            <label class="label label-default" for="Nom_evenemt">Nom d'évènement </label>
+                            <label class="label label-default" for="Nom_evenemt">Nom d'événement </label>
                             <input required type="string" value="{{ old('nom_evenemt') }}" name="nom" placeholder="Entrez le nom de l'évènement" class="form-control" id="Nom_evenemt">
                         </div>
 

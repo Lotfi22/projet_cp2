@@ -1,31 +1,30 @@
-<button type="button" class="btn-sm btn btn-danger" data-toggle="modal"
-    data-target="#suppressionModal{{ $evenement->id }}">
+<button type="button" class="btn-sm btn ripple btn-danger" data-bs-target="#suppressionModal{{ $evenement->id }}" data-bs-toggle="modal">
+
     <i class="fa fa-trash"></i> Supprimer
-</button>
 
-<div class="modal fade" id="suppressionModal{{ $evenement->id }}" tabindex="-1"
-    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+</button>                                    
+
+<!-- VERTICALLY CENETERED MODAL START -->
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-hidden="true" id="suppressionModal{{ $evenement->id }}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir supprimer l'evenement "{{ $evenement->nom }}" ?</h5>
-
-                <button type="button" class="close"
-                    data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h6 class="modal-title">êtes vous sûr de vouloir supprimer  "{{ $evenement->nom }}</h6>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
-
-            <div class="modal-body row col-md-12">
+            <div class="modal-body">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/evenements/delete/{{ $evenement->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_evenement(this);" data-bs-dismiss="modal" identifiant="{{ $evenement->id }}"> Oui </button>
                 </div>
+                
                 <div class="btn-group col-md-6" role="group">
 
                     <button type="button" class=" col-md-12 btn btn-primary"
-                        data-dismiss="modal" role="button">NON</button>
+                        data-bs-dismiss="modal" role="button">NON</button>
                 </div>
+
+                {{--  --}}
             </div>
         </div>
     </div>

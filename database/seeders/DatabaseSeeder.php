@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Qr::factory(15)->create();
         \App\Models\Gestionnaire::factory(15)->create();
         \App\Models\Facture::factory(15)->create();
+        \App\Models\Seance::factory(15)->create();
+        \App\Models\Evenement::factory(15)->create();
         
     }
 }
