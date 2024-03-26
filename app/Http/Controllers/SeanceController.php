@@ -17,28 +17,24 @@ class SeanceController extends Controller
         $salles = salle::all();
 
         return view('seances.index',compact('seances','groupes','salles'));
-
-
     }
 
-    public function create (Request $request)
+    public function create(Request $request)
     {
-        DB::insert("insert into seances(heure_debut,heure_fin,id_groupe,id_salle)
-                    values('$request->heure_debut','$request->heure_fin','$request->id_groupe','$request->id_salle')");
+        Seance::inserer($request);
 
-        session()->flash('notification.message' , 'Seance '.$request->id.' Ajoutée avec succés');
+           session()->flash('notification.message' , 'Séance '.$request->id.' Ajoutée avec succés');
 
-        session()->flash('notification.type' , 'success');
+           session()->flash('notification.type' , 'success');
 
         return back();
-        
-}
+    }
     public function delete($id_seance)
     {
         
         seance::supprimer($id_seance);
 
-        session()->flash('notification.message' , 'seance '.$id_seance.' supprimer avec succés');
+        session()->flash('notification.message' , 'Séance '.$id_seance.' supprimer avec succés');
 
         session()->flash('notification.type' , 'warning'); 
 
@@ -46,21 +42,38 @@ class SeanceController extends Controller
 
     }
 
-    public function update( Request $request,$id)
+    public function update(Request $request)
     {
-        $seance = Seance::modifier($request, $id);
+        
+        Seance::misajour($request);
 
-        if ($seance) {
-            session()->flash('notification.message', 'Seance ' . $id . ' modifié avec succès');
-            session()->flash('notification.type', 'warning');
-        } else {
-            session()->flash('notification.message', 'Seance non trouvé');
-            session()->flash('notification.type', 'error');
-        }
-    
+        session()->flash('notification.message' , 'Séance '.$request->id.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning');
+
         return back();
     }
 
+    public function restore($id_seance)
+    {
+
+        Seance::restored($id_seance);
+
+        session()->flash('notification.message' , 'Séance '.$id_seance.' restore avec succés');
+
+        session()->flash('notification.type' , 'success'); 
+
+        return back();
+    }
+
+    public function viewdeleted()
+    {
+        $deletedseances = Seance::onlyTrashed()->get();
+       
+        return view('seances.restore', compact('deletedseances'));
+    }
+
 }
+
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -13,6 +13,14 @@
                         class="fa fa-plus"></i>
                      Ajouter seance
                 </button>
+
+                <button   style="margin-left: 1100px;"  class="btn btn-warning">
+         
+                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/seances/viewdeleted"  >
+                Corbeille
+                </a>
+               
+               </button>
             </div>
 
             <div class="card-body">
