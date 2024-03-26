@@ -27,6 +27,7 @@
 
 
             <div class="card-body">
+
                 <div class="table-responsive">
 
                     <table class="table card-table table-vcenter text-nowrap table-striped" id="datable-1" width="100%" cellspacing="0">
@@ -98,6 +99,7 @@
                 <div class="modal-header pd-x-20">
 
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
+                    
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

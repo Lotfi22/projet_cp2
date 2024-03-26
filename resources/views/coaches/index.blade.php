@@ -1,4 +1,4 @@
-@extends('layouts.solic')
+@extends('layouts.solic_pro')
 
 @section('content')
 
@@ -10,13 +10,17 @@
         <div class="card mb-4">
 
             <div class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
-                        class="fa fa-plus"></i>
-                     Ajouter Coach
+
+                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary"> 
+                    
+                    <i class="fa fa-plus"></i> Ajouter Coach
+                
                 </button>
+            
             </div>
 
             <div class="card-body">
+
                 <div class="table-responsive">
 
                     <table class="table card-table table-vcenter text-nowrap table-striped" id="datable-1" width="100%" cellspacing="0">
@@ -33,7 +37,7 @@
                                 <th>NUMERO D'URGENCE</th>
                                 <th>ADRESSE</th>
                                 <th>EMAIL</th>
-                                <th text-end min-w-70px">Actions</th>
+                                <th text-end min-w-70px>Actions</th>
                             </tr>
 
                         </thead>
@@ -74,12 +78,19 @@
 
 
 
-    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
+    <div class="modal fade " id="Ajout_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+
         <div class="modal-dialog modal-lg">
+
             <div class="modal-content">
+            
                 <div class="modal-header">
+            
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Coach : </h3>
+
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+            
                 </div>
                 
                 <div class="modal-body">
@@ -89,7 +100,9 @@
                         @csrf
 
                         <div class="form-group col-md-6">
+
                             <label class="label label-default" for="nom">Nom</label>
+
                             <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
                         </div>
 
@@ -142,7 +155,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
                         </div>    
                     </form>
                 </div>
