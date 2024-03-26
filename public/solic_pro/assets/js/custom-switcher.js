@@ -58,7 +58,7 @@ let mainContent;
 
     //Closed Layout Styles
     if (!localStorage.getItem("solicverticalstyles")) {
-        // html.setAttribute("data-vertical-style" , "closed") // for Vertical closed style 
+        //z html.setAttribute("data-vertical-style" , "closed") // for Vertical closed style 
         // $('body').addClass('sidenav-toggled');
     }
 
