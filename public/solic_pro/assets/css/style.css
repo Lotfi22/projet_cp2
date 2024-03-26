@@ -1766,7 +1766,7 @@ hr.message-inner-separator {
     display: inline-block;
     padding-inline: 0.5rem;
     color: var(--white-6);
-    content: "/";
+    content: "";
 }
 
 .breadcrumb-item+.breadcrumb-item:hover::before {

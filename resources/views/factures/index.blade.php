@@ -16,7 +16,7 @@
                 </button>
                 
                 <button   style="margin-left: 1100px;"  class="btn btn-warning">
-         
+
                 <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/factures/viewdeleted"  >
                 Corbeille
                 </a>
