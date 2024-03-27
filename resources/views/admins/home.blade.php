@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <h1>cc</h1>
+    <h1></h1>
 
 @endsection
