@@ -1,4 +1,4 @@
-@extends('layouts.solic_pro')
+@extends('layouts.solic')
 
 @section('content')
 

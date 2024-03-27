@@ -4,15 +4,19 @@
 /*Color variables*/
 /*Default header*/
 .default-header .horizontal-main {
-    background: #1a1927;
+    /* Change this value to your desired width */
+    background: #fff;
     border-bottom: 1px solid transparent;
+
     border-top: 1px solid transparent;
 }
 
 .default-header .hor-menu .horizontalMenu>.horizontalMenu-list>li>a.active,
 .default-header .hor-menu .horizontalMenu>.horizontalMenu-list>li>a:hover {
     color: #fff;
-    background: #28273a;
+    height: 50px;
+    background: #d2e8fe;
+    border-radius: 5%;
 }
 
 .default-header .hor-menu .horizontalMenu>.horizontalMenu-list>li>a.active:hover {
@@ -240,7 +244,7 @@
 }
 
 .default-menu .resp-vtabs .resp-tabs-list li {
-    color: #121029;
+    color: #ffffff;
 }
 
 .default-menu .app-sidebar .app-logo {
@@ -322,7 +326,7 @@
 }
 
 .default-leftmenu .app-sidebar ul li a {
-    color: #121029;
+    color: #fff;
 }
 
 .default-leftmenu .side-menu li a {
@@ -422,7 +426,7 @@
 }
 
 .light-leftmenu .app-sidebar ul li a {
-    color: #121029;
+    color: #fff;
 }
 
 .light-leftmenu .side-menu h3,
