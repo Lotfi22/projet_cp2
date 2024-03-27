@@ -1,4 +1,4 @@
-@extends('layouts.solic_pro')
+@extends('layouts.solic')
 
 @section('content')
 
@@ -11,15 +11,15 @@
 
             <div class="card-header">
 
-                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary"> 
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> 
 
                     <i class="fa fa-plus"></i> Ajouter Adhérant
 
                 </button>
 
-                <button   style="margin-left: 880px;"  class="btn btn-warning"class="fa fa-trash"> 
+                <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
 
-                    <a style="color : #fff" href="/admin/adherants/viewdeleted">Corbeille</a>
+                    <a style="color : #fff" href="/adherants/viewdeleted">Corbeille</a>
                
                </button> 
                
@@ -78,6 +78,8 @@
 
                                     </td>
                                 </tr>
+
+                                
                             @endforeach
                         </tbody>
                     </table>
@@ -100,7 +102,7 @@
 
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
                     
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -208,7 +210,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         
                         </div>    
 

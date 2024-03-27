@@ -80,6 +80,35 @@ class CoachController extends Controller
         // code...
     }
 
+    public function viewdeleted()
+    {
+
+        $deletedcoaches = Coach::onlyTrashed()->get();
+       
+        return view('coaches.restore', compact('deletedcoaches'));
+
+        // code...
+    }
+
+    public function restore(Request $request)
+    {
+        $id_adherant = $request->id_adherant;
+        $coach = Coach::withTrashed()->find($id_adherant);
+
+        if ($coach) {
+
+            $coach->restore();
+            $coach = ($coach->getAttributes()); 
+        } 
+    return response()->json($coach ?? "Coach introuvable!");
+    }
+
+
+    public function profile($id_coach)
+    {
+        dd(($id_coach));
+    }
+
 
 
 

@@ -28,7 +28,7 @@
 					</a>
 
 				</li>
-				{{--<li><a href="/solic_pro/HTML/switcher.html" class="slide-item">switcher</a></li>--}}
+				<li><a href="/solic_pro/HTML/switcher.html" class="slide-item">switcher</a></li>
 			    <li class="slide">
 					<a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
 						<span class="side-menu__icon">
