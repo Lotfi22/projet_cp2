@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class SportsController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('admin_log:admin');
+    }
     public function index()
     {
 

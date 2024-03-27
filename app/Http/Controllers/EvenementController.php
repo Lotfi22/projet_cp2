@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
+use DB  ;
 use App\Models\Evenement;
-
 
 class EvenementController extends Controller
 {
@@ -16,47 +14,11 @@ class EvenementController extends Controller
         $this->middleware('admin_log:admin');
     }
 
-    public function index() 
+    public function index()
     {
+        $evenements = Evenement::all(); 
 
-        $evenements = Evenement::all();        
-        
-        return view('evenements.index',compact('evenements'));
-    }
-
-    public function create(Request $request)
-    {
-        Evenement::inserer($request);
-
-           session()->flash('notification.message' , 'Événement '.$request->id.' Ajoutée avec succés');
-
-           session()->flash('notification.type' , 'success');
-
-        return back();
-    }
-
-    public function delete($id_evenement)
-    {
-        
-        Evenement::supprimer($id_evenement);
-
-        session()->flash('notification.message' , 'Événement '.$id_evenement.' supprimer avec succés');
-
-        session()->flash('notification.type' , 'warning'); 
-
-        return back();
-
-    }
-
-    public function update(Request $request)
-    {
-        Evenement::misajour($request);
-
-        session()->flash('notification.message' , 'Événement '.$request->id_evenement.' Modifier avec succés');
-
-        session()->flash('notification.type' , 'warning');
-
-        return back();
+        return view('evenements.index', compact('evenements'));
     }
 
     public function viewdeleted()
@@ -64,21 +26,50 @@ class EvenementController extends Controller
         $deletedevenements = Evenement::onlyTrashed()->get();
        
         return view('evenements.restore', compact('deletedevenements'));
+    }
+   
+    public function create(Request $request)
+    {
+        Evenement::inserer($request);
 
+        session()->flash('notification.message' , 'Evenement '.$request->id.' Ajoutée avec succés');
+
+        session()->flash('notification.type' , 'success');
+
+        return back();
+    }
+
+    public function delete($id_evenement)
+    {
+        Evenement::supprimer($id_evenement);
+
+        session()->flash('notification.message' , 'Evenement '.$id_evenement.' supprimer avec succés');
+
+        session()->flash('notification.type' , 'warning'); 
+
+        return back();
     }
 
     public function restore($id_evenement)
     {
+        Evenement::restored($id_evenement);
 
-        evenement::restored($id_evenement);
-
-        session()->flash('notification.message' , 'Événement '.$id_evenement.' restore avec succés');
+        session()->flash('notification.message' , 'Evenement '.$id_evenement.' restore avec succés');
 
         session()->flash('notification.type' , 'success'); 
 
         return back();
+    }
 
+    public function update(Request $request)
+    {
+        Evenement::misajour($request);
+
+        session()->flash('notification.message' , 'Evenement '.$request->id.' Modifier avec succés');
+
+        session()->flash('notification.type' , 'warning');
+
+        return back();
     }
 
 }
-

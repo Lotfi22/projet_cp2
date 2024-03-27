@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePresencesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
+    /** Run the migrations. @return void */
+
     public function up()
     {
-        Schema::create('presences', function (Blueprint $table) {
+        Schema::create('presences', function (Blueprint $table) 
+        {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_adherant');
             $table->foreign('id_adherant')->references('id')->on('adherants');
@@ -29,13 +28,11 @@ class CreatePresencesTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    /** Reverse the migrations. @return void */
+
     public function down()
     {
         Schema::dropIfExists('presences');
     }
+
 }
