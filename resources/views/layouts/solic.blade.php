@@ -149,7 +149,7 @@
                                 <ul class="horizontalMenu-list">
                                             <li aria-haspopup="true">
 
-                                                <a href="javascript:void(0);" style="cursor: pointer;" class="sub-icon">
+                                                <a href="/admin/index" style="cursor: pointer;" class="sub-icon">
                                                 <span style="color: #003366 ;" >
                                                 <i class="fas fa-user"  style="color:#15c2ce ;"></i>
                                                 Admin  
@@ -226,6 +226,18 @@
                                             </a>
 
                                       </li>
+                                      <li aria-haspopup="true">
+                                        
+ 
+                                        <a style="color: #003366 ;" href="/admin/seances" style="cursor: pointer;" class="sub-icon">
+                                        <span>
+                                        <i  class="fa-solid fa-door-open" style="color:#15c2ce; "></i>
+                                        Seance
+                                        </span>   
+                                            
+                                        </a>
+
+                                  </li>
                                         <li aria-haspopup="true">
 
                                             <a style="color: #003366 ;" href="/admin/evenements" style="cursor: pointer;" class="sub-icon">

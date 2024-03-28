@@ -28,6 +28,7 @@
                         <thead style="cursor:pointer;" class="bg-secondary text-white">
                             <tr>
                                 <th>ID</th>
+                                <th>ID QR</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
                                 <th>Date naissance</th>
@@ -46,6 +47,7 @@
                             
                                 <tr id="ligne{{$admin->id}}">
                                     <td>{{ $admin->id ?? ''}}</td>
+                                    <td>{{ $admin->id_qr ?? ''}}</td>
                                     <td>{{ $admin->nom ?? ''}}</td>
                                     <td>{{ $admin->prenom ?? ''}}</td>
                                     <td>{{ $admin->date_naissance ?? ''}}</td>
@@ -146,10 +148,7 @@
                             <label class="label label-default" for="adresse">Adresse</label>
                             <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Adresse de admin">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label class="label label-default" for="id_qr">Id QR</label>
-                            <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder=" Id_qr du admin">
-                        </div>
+                       
                         <div class="form-group col-md-6">
                         </div>
 

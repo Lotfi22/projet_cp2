@@ -14,6 +14,56 @@ class SalleController extends Controller
         $this->middleware('admin_log:admin');
     }
 
+    public function delete(Request $request)
+    {
+
+
+        $id_salle=($request->id_salle);
+        
+        $salle = Salle::find($id_salle);
+        
+        Salle::supprimer($id_salle);
+        
+        $salle = ($salle->getAttributes());
+        
+        return response()->json($salle ?? "Message");
+
+        // code...
+    }
+    public function restore1($id_salle)
+    {
+
+        Salle::restored($id_salle);
+
+        session()->flash('notification.message' , 'Salle '.$id_salle.' restore avec succés');
+
+        session()->flash('notification.type' , 'success'); 
+
+        return back();
+
+        // code...
+    }
+    public function viewdeleted()
+    {
+        $deletedsalles = Salle::onlyTrashed()->get();
+       
+        return view('salles.restore', compact('deletedsalles'));
+
+        // code...
+    }
+     public function restore(Request $request)
+    {
+        $id_salle = $request->id_salle;
+        $salle = Salle::withTrashed()->find($id_salle);
+
+        if ($salle)
+         {
+
+            $salle->restore();
+            $salle = ($salle->getAttributes()); 
+        } 
+    return response()->json($salle ?? "Salle introuvable!");
+    }
 
     public function index()
     {
@@ -36,7 +86,7 @@ class SalleController extends Controller
 
         // code...
     }
-    public function delete($id_salle)
+    public function delete1($id_salle)
     {
 
         Salle::supprimer($id_salle);

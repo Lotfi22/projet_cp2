@@ -25,6 +25,10 @@
                
             </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e99d8b5923b74609e57824f96cf2a95482401ba
             <div class="card-body">
 
                 <div class="table-responsive">
@@ -119,7 +123,6 @@
                             <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
                         
                         </div>
-                        
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
 

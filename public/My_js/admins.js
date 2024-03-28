@@ -104,14 +104,12 @@ function restaurer_admin(objet){
 	
 
 }
-// Fonction de vérification globale
 function checkValidation(idn) {
 
 	var enregistrer = "#edit_enregistrer"+idn;
     var verifierValue = $(enregistrer).attr('verifier_valeur');
     var validateValue = $(enregistrer).attr('validate_valeur');
 
-    // Vérifiez si les deux valeurs sont "true"
     if (verifierValue === 'true' && validateValue === 'true') {
         $(enregistrer).prop('disabled', false);
     } else {
@@ -119,7 +117,6 @@ function checkValidation(idn) {
     }
 }
 
-// Fonction pour vérifier le mot de passe
 function verifier_password(obj) {
     var idn = $(obj).attr('data-id');
     var idn2 = "old_password" + idn;
@@ -153,33 +150,32 @@ function verifier_password(obj) {
                 $(enregistrer).attr('verifier_valeur', 'false');
                 $(sh).removeClass("is-valid state-valid").addClass("is-invalid state-invalid");
             }
-            checkValidation(idn); // Appel de la fonction de vérification globale
+            checkValidation(idn); 
         }
     });
 }
 
-// Fonction pour valider le mot de passe
 function validatePassword_edit(obj) {
     var idn = $(obj).attr('identifiant');
     var idn2 = "edit_password_confirmation" + idn;
     var idn3 = "new_password" + idn;
     var password = document.getElementById(idn3.toString()).value;
     var confirm_password = document.getElementById(idn2.toString()).value;
-   
+    var enregistrer = "#edit_enregistrer" + idn;
 	var sh="#edit_password_confirmation"+idn;
 	var changementMotDePasse = $("#changement_mot_de_passe" + idn);
 
 
-	// if (!changementMotDePasse.prop('checked')) {
-    //     $(enregistrer).prop('disabled', false);
-    //     return;
-    // }
+	var changementMotDePasse = $("#changement_mot_de_passe" + idn);
+	if (!changementMotDePasse.prop('checked')) {
+        $(enregistrer).prop('disabled', false);
+        return;
+    }
 	if (!password.trim() || !confirm_password.trim()) {
         // Champs vides, désactivez le bouton et colorer le champ
         $(enregistrer).prop('disabled', true);
         $(obj).removeClass("is-valid").addClass("is-invalid");
 		return;
-        
     }
 
     if (password === confirm_password) {
@@ -189,7 +185,6 @@ function validatePassword_edit(obj) {
         $(".valid-feedback").text(msg);
         $(".valid-feedback").show(1000);
         $(".valid-feedback").hide(1000);
-		$(sh).removeClass("is-valid state-valid");
     } else {
 		$(sh).removeClass("is-valid state-valid").addClass("is-invalid state-invalid");
         $(enregistrer).attr('validate_valeur', 'false');
@@ -197,10 +192,9 @@ function validatePassword_edit(obj) {
         $(".invalid-feedback").text(msg);
         $(".invalid-feedback").show(1000);
         $(".invalid-feedback").hide(1000);
-		$(sh).removeClass("is-invalid state-invalid");
-
     }
-    checkValidation(idn); // Appel de la fonction de vérification globale
+    
+    checkValidation(idn); 
 }
 
 function togglePasswordFields(adminId) {
