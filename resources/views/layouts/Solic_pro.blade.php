@@ -40,7 +40,7 @@ data-header-style = "color">
 			     display: none;
 			};
 
-			//
+			
 		</style>
 
 		<!-- JQUERY SCRIPTS -->
