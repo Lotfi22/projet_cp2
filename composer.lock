@@ -671,8 +671,6 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "endroid/qr-code",
             "version": "5.0.7",
             "source": {
@@ -748,7 +746,6 @@
             "time": "2024-03-08T11:24:40+00:00"
         },
         {
->>>>>>> de6907698a692a35f1b9ce9a3765dc9690074f47
             "name": "ezyang/htmlpurifier",
             "version": "v4.17.0",
             "source": {

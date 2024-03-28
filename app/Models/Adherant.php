@@ -15,6 +15,20 @@ class Adherant extends Model
     use HasFactory, SoftDeletes;
     
     
+    public static function get_qr($id_adherant)
+    {
+
+        $id_qr = DB::select("select id_qr from adherants where id = $id_adherant");
+
+        $id_qr = ($id_qr[0]->id_qr);
+
+        $ret = Qr::find($id_qr);
+        
+        return $ret->img;
+
+        // code...
+    }
+
     public static function add(Request $request)
     {
         $adherent = new Adherant();

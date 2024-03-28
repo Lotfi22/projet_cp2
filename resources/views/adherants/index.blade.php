@@ -25,7 +25,10 @@
                
             </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> eb4732e63a5eef177a12eec971269e0896795558
             <div class="card-body">
 
                 <div class="table-responsive">
@@ -51,6 +54,8 @@
 
                         </thead>
 
+                        <div style="display: none;" ><?php  Use App\models\Adherant; ?> </div>
+
                         <tbody>
 
                             @foreach ($adherants as $adherant)
@@ -60,7 +65,9 @@
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
+                                    
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;"> <img width="50%" src="{{ asset(Adherant::get_qr($adherant->id)) }}">  </td>
+                                    
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>

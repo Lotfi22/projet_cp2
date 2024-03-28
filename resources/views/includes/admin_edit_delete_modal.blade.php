@@ -107,7 +107,7 @@
                     <!-- Champ pour le nouveau mot de passe -->
                     <div class="form-group col-md-6">
                         <label for="changement_mot_de_passe{{$admin->id}}" class="label label-default">Changer le mot de passe</label><br>
-                        <input type="checkbox" classe ="check_box_main" id="changement_mot_de_passe{{$admin->id}}" onchange="togglePasswordFields({{ $admin->id }})"> 
+                        <input type="checkbox" classe ="form-control" id="changement_mot_de_passe{{$admin->id}}" onchange="togglePasswordFields({{ $admin->id }})"> 
                     </div>
 
                         <!-- Champ de mot de passe -->
