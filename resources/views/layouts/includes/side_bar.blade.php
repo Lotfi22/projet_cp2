@@ -62,7 +62,7 @@
 						<span class="side-menu__icon">
 						<i class="fa fa-tasks" aria-hidden="true"></i>			
 
-					</span>
+					   </span>
 						<span class="side-menu__label text-truncate">Gestion</span>
 						<i class="angle fa fa-angle-right"></i>
 					</a>

@@ -22,7 +22,7 @@
             <div class="modal-body row col-md-12">
 
                 <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/groupes/delete/{{ $groupe->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                    <a href="/admin/groupes/delete/{{ $groupe->id }}" type="submit" class="btn btn-danger col-md-12" onclick="supprimer_groupe(this);"> Oui </a>
                 </div>
                 <div class="btn-group col-md-6" role="group">
 

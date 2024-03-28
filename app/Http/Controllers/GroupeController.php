@@ -12,6 +12,10 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 
 class GroupeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin_log:admin');
+    }
     public function index()
     {
         $groupes = Groupe::all();
@@ -59,7 +63,7 @@ class GroupeController extends Controller
         // code...
     }
 
-    //hed la fonction mzel mrahich tmchi
+    //hed la fonction mzel mrahich tmchi + nsit 3leh drtha wa9il mns79hech
     public function show($id)
 {
     $coach_record = Coach::findOrFail($id);
@@ -67,5 +71,26 @@ class GroupeController extends Controller
     return view('groupes.index', compact('coach_record'));
 }
 
-    //
+public function viewdeleted()
+    {
+        $deletedgroupes = Groupe::onlyTrashed()->get();
+       
+        return view('groupes.restore', compact('deletedgroupes'));
+
+        // code...
+    }
+
+public function restore($id_groupe)
+    {
+
+        Groupe::restored($id_groupe);
+
+        session()->flash('notification.message' , 'Groupe '.$id_groupe.' restore avec succés');
+
+        session()->flash('notification.type' , 'success'); 
+
+        return back();
+
+        // code...
+    }
 }

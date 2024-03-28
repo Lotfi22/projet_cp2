@@ -17,7 +17,8 @@
         <link rel="shortcut icon" href="{{ asset('assets\images\vector.png') }}" type="image/x-icon"/>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
+        <script src="https://kit.fontawesome.com/6987e7934c.js" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <style type="text/css">
 
 
@@ -121,7 +122,7 @@
 
                                         </a>
 
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="Post" style="display: none;">
 
                                             {{ csrf_field() }}
 
@@ -148,33 +149,40 @@
                                 <ul class="horizontalMenu-list">
                                             <li aria-haspopup="true">
 
-                                                <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
-                                                    <i ></i>Admin
-                                                    <i class="fa fa-angle-down horizontal-icon"></i>
+                                                <a href="javascript:void(0);" style="cursor: pointer;" class="sub-icon">
+                                                <span style="color: #003366 ;" >
+                                                <i class="fas fa-user"  style="color:#15c2ce ;"></i>
+                                                Admin  
+                                               </span>
+                                                
                                                 </a>
-
-
                                             </li>
-                                        <li aria-haspopup="true">
+                                            
+                                           <li aria-haspopup="true">
 
-                                            <a style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Sport
+                                               <a style="cursor: pointer;" class="sub-icon">
+                                                <span style="color: #003366 ;"  >
+                                                   <i class="fas fa-dumbbell" style="color: #15c2ce ;"></i>
+                                                Sport</span>
+                                                 
+                                                
+                                                       
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/sports">Sports</a>
+                                                    <a style="color: #003366 ;" href="/admin/sports">Sports</a>
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/categories">Catégories</a>
+                                                    <a style="color: #003366 ;" href="/admin/categories">Catégories</a>
                                                 </li>
 
 
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/groupes">Groupes</a>
+                                                    <a style="color: #003366 ;" href="/admin/groupes">Groupes</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -183,39 +191,45 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i></i>Gestion
+                                            <span style="color: #003366 ;" >
+						                    <i class="fas fa-tasks" style="color:#15c2ce;" aria-hidden="true"></i>			
+
+					                        Gestion</span>
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/adherants">Adherants</a>
+                                                    <a style="color: #003366 ;" href="/admin/adherants">Adherants</a>
 
 
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/coaches">Coaches</a>
+                                                    <a style="color: #003366 ;"  href="/admin/coaches">Coaches</a>
                                                 </li>
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/gestionnaires">Gestionnaires</a>
+                                                    <a style="color: #003366 ;" href="/admin/gestionnaires">Gestionnaires</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li aria-haspopup="true">
-
-                                            <a href="/admin/salles" style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Salles
+                                        
+ 
+                                            <a style="color: #003366 ;" href="/admin/salles" style="cursor: pointer;" class="sub-icon">
+                                            <span>
+                                            <i  class="fa-solid fa-door-open" style="color:#15c2ce; "></i>
+                                            Salles
+                                            </span>   
                                                 
                                             </a>
-
 
                                       </li>
                                         <li aria-haspopup="true">
 
-                                            <a href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
-                                                <i></i>Evenements
+                                            <a style="color: #003366 ;" href="/admin/evenements" style="cursor: pointer;" class="sub-icon">
+                                            <i class="fa fa-medal "style="color:#15c2ce; " ></i>Evenements
                                                
                                             </a>
 
@@ -225,8 +239,8 @@
 
                                         <li aria-haspopup="true">
 
-                                            <a style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Planning
+                                            <a style="color: #003366 ;" style="cursor: pointer;" class="sub-icon">
+                                            <i class="fa fa-calendar-check-o" style="color:#15c2ce;"></i>Planning
                                                 
                                             </a>
 
@@ -234,8 +248,8 @@
                                         </li>
                                         <li aria-haspopup="true">
 
-                                            <a href="/admin/abonnements" style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Abonnement
+                                            <a style="color: #003366 ;" href="/admin/abonnements" style="cursor: pointer;" class="sub-icon">
+                                                <i class="fa-solid fa-money-check" style="color:#15c2ce;"></i>Abonnement
                                                 
                                             </a>
 
@@ -243,8 +257,13 @@
                                         </li>
                                         <li aria-haspopup="true">
 
-                                            <a style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Comptabilité
+                                           <a style="cursor: pointer;" class="sub-icon">
+                                                <span style="color: #003366 ;"    >
+                                                   <i class="fa fa-dollar" style="color: #15c2ce ;"></i>
+                                                   Comptabilité</span>
+                                                 
+                                                
+                                                       
                                                 <i class="fa fa-angle-down horizontal-icon"></i>
                                             </a>
 
@@ -253,13 +272,13 @@
 
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/admin/factures">Facture</a>
+                                                    <a style="color: #003366 ;" href="/admin/factures">Facture</a>
                                                 </li>
 
 
 
                                                 <li aria-haspopup="true">
-                                                    <a href="/commercial" >Stat</a>
+                                                    <a style="color: #003366 ;" href="/commercial" >Stat</a>
                                                 </li>
 
                                             </ul>
@@ -267,8 +286,10 @@
                                         <li aria-haspopup="true">
 
                                             <a style="cursor: pointer;" class="sub-icon">
-                                                <i ></i>Aide
-                                                <i class="fa fa-angle-down horizontal-icon"></i>
+                                                    <span  style="color: #003366 ;">
+                                                    <i class="fa fa-question-circle" style="color: #15c2ce ;"></i>
+                                                    Aide</span>
+                                                
                                             </a>
 
 

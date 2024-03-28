@@ -14,6 +14,13 @@
                         class="fa fa-plus"></i>
                      Ajouter groupe
                 </button>
+                <button   style="margin-left: 1100px;"  class="btn btn-warning">
+
+                <i class="fa fa-trash"></i> <a  style="color : #fff" href="/admin/groupes/viewdeleted"  >
+                Corbeille
+                </a>
+               
+               </button>
             </div>
 
             <div class="card-body">
@@ -112,7 +119,7 @@
 
                         <div class="col-md-6">
                             <label class="label label-default" for="capacite">Capacité du groupe</label>
-                            <input required type="text" value="{{ $groupe->capacite ?? '' }}" name="capacite" placeholder="Etat paiement" class="form-control" id="capacite">
+                            <input onchange="verif_ages();" required type="number" min="3" max="99" value="{{ $groupe->capacite ?? '' }}" name="capacite" placeholder="Capacite" class="form-control" id="capacite">
                         </div>
 
                         <div class="btn-group col-md-6" role="group">
@@ -131,6 +138,7 @@
     </div>
 
 
+    <script src="{{ asset('My_js/groupes.js') }}"></script>
 
 
 @endsection

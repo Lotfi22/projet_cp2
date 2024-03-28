@@ -31,8 +31,6 @@ class Groupe extends Model
 
     public static function misajour(Request $request)
     {
-
-
         return DB::update
            ("
                 UPDATE groupes
@@ -45,8 +43,6 @@ class Groupe extends Model
                     capacite = '$request->capacite'
                 WHERE id = $request->id
              ");
-
-        // code...
     }
     public function coach()
     {
@@ -61,6 +57,14 @@ class Groupe extends Model
     public function abonnement()
     {
         return $this->belongsTo(Abonnement::class, 'id_abonnement');
+    }
+
+    public static function restored($id_groupe)
+    {
+        
+     $groupe = Groupe::withTrashed()->find($id_groupe);
+     $groupe->restore();
+
     }
 }
 
