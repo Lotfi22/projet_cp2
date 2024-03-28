@@ -149,12 +149,14 @@
                                 <ul class="horizontalMenu-list">
                                             <li aria-haspopup="true">
 
+
                                                 <a href="/admin/index" style="cursor: pointer;" class="sub-icon">
                                                 <span style="color: #003366 ;" >
                                                 <i class="fas fa-user"  style="color:#15c2ce ;"></i>
                                                 Admin  
                                                </span>
                                                 
+
                                                 </a>
                                             </li>
                                             

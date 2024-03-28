@@ -124,7 +124,12 @@ function verifier_password(obj) {
 function validatePassword() {
     var password = document.getElementById("ajout_password").value;
     var confirm_password = document.getElementById("ajout_confirm_password").value;
-	 var enregistrer = "#edit_enregistrer" + idn;
+    if (!password.trim() || !confirm_password.trim()) {
+        // Champs vides, désactivez le bouton et colorer le champ
+        $(enregistrer).prop('disabled', true);
+        $(obj).removeClass("is-valid").addClass("is-invalid");
+		return;
+    }
     if(password !== confirm_password) {
         $("#ajout_confirm_password").removeClass("is-valid state-valid").addClass("is-invalid state-invalid");
 

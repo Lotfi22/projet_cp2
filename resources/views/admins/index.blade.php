@@ -148,9 +148,6 @@
                             <label class="label label-default" for="adresse">Adresse</label>
                             <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Adresse de admin">
                         </div>
-                       
-                        <div class="form-group col-md-6">
-                        </div>
 
                         <div class="btn-group col-md-6" role="group">
 
