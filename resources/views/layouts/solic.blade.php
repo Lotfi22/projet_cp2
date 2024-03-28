@@ -150,10 +150,6 @@
                                             <li aria-haspopup="true">
 
 
-                                                <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
-                                                    <i class="fa fa-user"></i>Admin
-                                                    <i class="fa fa-angle-down horizontal-icon"></i>
-
                                                 <a href="/admin/index" style="cursor: pointer;" class="sub-icon">
                                                 <span style="color: #003366 ;" >
                                                 <i class="fas fa-user"  style="color:#15c2ce ;"></i>
