@@ -19,5 +19,10 @@ class Presence extends Model
         return $Presences;
     }
 
+    // public function adherant()
+    // {
+    //     return $this->belongsTo(Adherant::class);
+    // }
+
 }
 

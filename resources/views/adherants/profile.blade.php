@@ -139,15 +139,32 @@
 														<div class="fa fa-users"></div>
 													</div>
 													<div class="media-body">
-														<h6 class="mb-0 mg-t-9">Groupes</h6>
+														<h6 class="mb-0 mg-t-9">Présences</h6>
 													</div>
 												</div>
 											</div>
 
 											<div class="card-body">
-												<p>Hna n7ot un tableau ta3 les groupes li dakhel fihom (groupe et son coach)</p>
+												<div class="table-responsive">
+													<table class="table card-table text-nowrap table-striped" id="table_presences" width="70%" cellspacing="0">
+														<thead class="bg-secondary text-white">
+															<tr>
+									                            <th>ID</th>
+									                            <th>SÉANCE</th>
+									                            <th>HEURE DÉBUT</th>
+									                            <th>HEURE FIN</th>
+									                            <th>ÉVALUATION</th>
+									                            <th>DATE CRÉATION</th>
+                        									</tr>
+														</thead>
+														<tbody>
+                        								
+                    									</tbody>
+													</table>
+												</div>
 											</div>
 										</div>
+										
 
 										<div class="card">
 											<div class="card-header d-flex justify-content-between">
