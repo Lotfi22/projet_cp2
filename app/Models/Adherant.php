@@ -76,11 +76,11 @@ class Adherant extends Model
 
     }
 
-    // public function presences()
-    // {
-    //     return $this->hasMany(Presence::class);
-        
-    // }
+    public function presences()
+    {
+     return $this->hasMany(Presence::class);
+
+    }
 
 
 

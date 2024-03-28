@@ -44,7 +44,7 @@ Route::post('/admin/coaches/update','CoachController@update');
 Route::get('/admin/coaches/delete/{id}','CoachController@delete');
 Route::post('/admin/coaches/delete/ajax','CoachController@delete');
 Route::post('/admin/coaches/restore/ajax','CoachController@restore');
-Route::get('/admin/coaches/{id}','CoachController@profile');
+Route::get('/admin/coaches/{id_coach}','CoachController@profile');
 Route::get('/admin/coaches/restore/{id}','CoachController@restore');
 Route::get('/coaches/viewdeleted','CoachController@viewdeleted');
 

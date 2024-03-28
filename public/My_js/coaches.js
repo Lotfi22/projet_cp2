@@ -2,7 +2,7 @@ $(".invalid-feedback").hide();
 
 function isEmail(email) 
 {
-  var email_ref = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var email_ref = /^([a-zA-Z0-9_])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
   return email_ref.test(email);
 }

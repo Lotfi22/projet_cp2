@@ -17,7 +17,7 @@
                 
                 </button>
 
-                <button style="margin-left: 880px;" class="btn btn-warning" class="fa fa-trash"> 
+                <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
 
                     <a style="color : #fff" href="/coaches/viewdeleted">Corbeille</a>
                

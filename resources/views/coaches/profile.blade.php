@@ -20,7 +20,7 @@
 					<div class="col-lg-4">
 
 						<div class="card">
-							@if ($adherant)
+							@if ($coach)
 							<div class="card-body">
 								<div class="ps-0">
 									<div class="main-profile-overview">
@@ -32,8 +32,8 @@
 
 											<div>
 												
-												<h5 class="main-profile-name">{{$adherant->nom}} {{$adherant->prenom}}</h5>
-												<p class="main-profile-name-text">Adhérant {{$adherant->id}}</p>
+												<h5 class="main-profile-name">{{$coach->nom}} {{$coach->prenom}}</h5>
+												<p class="main-profile-name-text">Coach {{$coach->id}}</p>
 												
 
 											</div>
@@ -47,7 +47,7 @@
 													
 													<h6>Date de Naissance</h6>
 													
-													<span>{{$adherant->date_naissance}}</span>
+													<span>{{$coach->date_naissance}}</span>
 												</div>
 											</div>
 
@@ -59,7 +59,7 @@
 													
 													<h6>Numéro Téléphone</h6>
 													
-													<span>{{$adherant->num_tel}}</span>	
+													<span>{{$coach->nbr_telephone}}</span>	
 												</div>
 											</div>
 
@@ -71,7 +71,7 @@
 													
 													<h6>Numéro d'Urgence</h6>
 													
-													<span>{{$adherant->num_tel_urgence}}</span>	
+													<span>{{$coach->nbr_telephone_urgence}}</span>	
 
 												</div>
 											</div>
@@ -84,7 +84,7 @@
 													
 													<h6>Email</h6>
 													
-													<span>{{$adherant->email}}</span>	
+													<span>{{$coach->email}}</span>	
 
 												</div>
 											</div>
@@ -96,19 +96,7 @@
 												<div class="media-body">
 													<h6>Adresse</h6>
 													
-													<span>{{$adherant->adresse}}</span>	
-
-												</div>
-											</div>
-
-											<div class="media">
-												<div class="media-logo text-success">
-													<i class="fa fa-certificate"></i>
-												</div>
-												<div class="media-body">
-													<h6>Type d'Abonnement</h6>
-													
-													<span>{{$adherant->type_abonnement}}</span>	
+													<span>{{$coach->adress}}</span>	
 
 												</div>
 											</div>
@@ -136,41 +124,6 @@
 											<div class="card-header d-flex justify-content-between">
 												<div class="media">
 													<div class="media-user me-2">
-														<div class="fa fa-calendar-check-o"></div>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-0 mg-t-9">Présences</h6>
-													</div>
-												</div>
-											</div>
-
-											<div class="card-body">
-												<div class="table-responsive">
-													<table class="table card-table text-nowrap table-striped" id="table_presences" width="70%" cellspacing="0">
-														<thead class="bg-secondary text-white">
-															<tr>
-									                            <th>ID</th>
-									                            <th>SÉANCE</th>
-									                            <th>HEURE DÉBUT</th>
-									                            <th>HEURE FIN</th>
-									                            <th>ÉVALUATION</th>
-									                            <th>DATE CRÉATION</th>
-                        									</tr>
-														</thead>
-														<tbody>
-
-                        								
-                    									</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-										
-
-										<div class="card">
-											<div class="card-header d-flex justify-content-between">
-												<div class="media">
-													<div class="media-user me-2">
 														<div class="fa fa-users"></div>
 													</div>
 													<div class="media-body">
@@ -184,21 +137,21 @@
 													<table class="table card-table text-nowrap table-striped" id="table_presences" width="70%" cellspacing="0">
 														<thead class="bg-secondary text-white">
 															<tr>
-									                            <th>ID GROUPE</th>
-								                                <th>NOM</th>
-								                                <th>COACH</th>
-								                                <th>SPORT</th>
-								                                <th>ABONNEMENT</th>
+																<th>ID groupe</th>
+								                                <th>Nom</th>
+								                                <th>Coach</th>
+								                                <th>Sport</th>
+								                                <th>Abonnement</th>        
                         									</tr>
 														</thead>
 														<tbody>
-
                         								
                     									</tbody>
 													</table>
 												</div>
 											</div>
 										</div>
+										
 									</div>
 								</div>
 							</div>

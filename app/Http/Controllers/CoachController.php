@@ -105,8 +105,10 @@ class CoachController extends Controller
 
 
     public function profile($id_coach)
-    {
-        dd(($id_coach));
+    {    
+
+        $coach = Coach::find($id_coach);
+        return view('coaches.profile', compact('coach'));
     }
 
 
