@@ -29,11 +29,16 @@ class Admin extends Authenticatable
     public static function modifier (Request $request, $id){
         
         $admin = Admin::find($id);
-        $password = Hash::make($request->password);
+        $password = $request->password;
+       //dd($password);
+if ($password != $admin->password && $password != null){
+    $password = Hash::make($request->password);
 
-
+      }else{ 
+        $password= $admin->password ;}
         if ($admin) {
             // Mettre à jour les attributs du admin avec les valeurs du formulaire
+            
             $admin->nom = $request->nom;
             $admin->prenom = $request->prenom;
             $admin->date_naissance = $request->date_naissance;

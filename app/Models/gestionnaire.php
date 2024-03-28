@@ -29,7 +29,15 @@ class Gestionnaire extends Authenticatable
     public static function modifier (Request $request, $id){
         
         $gestionnaire = Gestionnaire::find($id);
-        $password = Hash::make($request->password);
+        $password = $request->password;
+
+
+        if ($password != $gestionnaire->password && $password != null){
+            $password = Hash::make($request->password);
+        
+              }else{ 
+                $password= $gestionnaire->password ;}
+       
 
         if ($gestionnaire) {
             // Mettre à jour les attributs du gestionnaire avec les valeurs du formulaire

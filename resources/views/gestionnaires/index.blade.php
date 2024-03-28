@@ -14,7 +14,7 @@
                     <i class="fa fa-plus"></i>Ajouter Gestionnaire
                 </button>
                 
-                <button   style="margin-left: 880px"  class="btn btn-warning" class="fa fa-trash">
+                <button   style="margin-left: 1100px"  class="btn btn-warning" class="fa fa-trash">
                     <a href="/admin/gestionnaires/viewdeleted" style="color : #fff">Corbeille</a>
                 </button> 
 
