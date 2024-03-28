@@ -12,17 +12,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Qr extends Model
 {
     use HasFactory,SoftDeletes;
+    
     protected $fillable = ['img']; // Assuming 'img' stores the QR code data (base64 encoded string)
+    
     public static function add($qrCodeData)
     {
 
+        $data = explode("," , $qrCodeData);
 
-        $qrCode = QrCode::generate($qrCodeData); 
+        $id_admin = $data[1];
+
+        Qrcode::encoding("UTF-8")
+        ->color(0,0,0)
+        ->backgroundColor(245, 234, 62)
+        ->size(200)
+        ->generate($qrCodeData,'../public/codes-qr/adherants/'.$qrCodeData.'.svg');
+        
         $qr = new Qr();
-        $qr->img = $qrCode;
+        $qr->img = '/codes-qr/adherants/'.$qrCodeData.'.svg';
         $saved = $qr->save();
 
-        return $qr;
+        $last_qr_id = Qr::latest()->first()->id;
+
+        DB::update("update adherants set id_qr = $last_qr_id where id = $id_admin");
+        
+        return true;
     }
 
     public static function supprimer($id_qr)

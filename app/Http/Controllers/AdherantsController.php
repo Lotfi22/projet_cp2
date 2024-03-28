@@ -33,15 +33,8 @@ class AdherantsController extends Controller
     {
         $adherent = Adherant::add($request);
 
-        if ($adherent) 
-        {
-            $qrCodeData = 'Id ' . $adherent->id  ; 
-            $qr = Qr::add($qrCodeData);
-            $adherent->id_qr = $qr->id; 
-            $adherent->save();
-            session()->flash('notification.message', 'Adherent ' . $request->nom . ' Ajouté avec succès');
-            session()->flash('notification.type', 'success');
-        } 
+        session()->flash('notification.message', 'Adherent ' . $request->nom . ' Ajouté avec succès');
+        session()->flash('notification.type', 'success');
 
         return back();
     }
