@@ -5,6 +5,12 @@ $(".valid-feedback").hide();
 function validatePassword() {
     var password = document.getElementById("ajout_password").value;
     var confirm_password = document.getElementById("ajout_confirm_password").value;
+    if (!password.trim() || !confirm_password.trim()) {
+        // Champs vides, désactivez le bouton et colorer le champ
+        $(enregistrer).prop('disabled', true);
+        $(obj).removeClass("is-valid").addClass("is-invalid");
+		return;
+    }
     if(password !== confirm_password) {
         $("#ajout_confirm_password").removeClass("is-valid state-valid").addClass("is-invalid state-invalid");
 
@@ -15,7 +21,6 @@ function validatePassword() {
 		$(".invalid-feedback").text(msg);
 		$(".invalid-feedback").show(1000);
         $(".invalid-feedback").hide(1000);
-      
       
     } else {
 
