@@ -32,10 +32,11 @@ Route::get('/admin/gestionnaires','GestionnaireController@index');
 Route::get('/admin/factures','FactureController@index');
 Route::post('/admin/factures/create','FactureController@create')->name('facture.create');
 Route::post('/admin/factures/update','FactureController@update');
-Route::get('/admin/factures/delete/{id}','FactureController@delete');
-Route::get('/admin/factures/restore/{id}','FactureController@restore');
+Route::get('/admin/factures/delete/{id}','FactureController@delete1');
+Route::get('/admin/factures/restore/{id}','FactureController@restore1');
 Route::get('/admin/factures/viewdeleted','FactureController@viewdeleted');
-
+Route::post('/admin/factures/delete/ajax','FactureController@delete');
+Route::post('/admin/factures/restore/ajax','FactureController@restore');
 
 Route::get('/admin/salles','SalleController@index');
 Route::post('/admin/salles/create','SalleController@create')->name('salle.create');

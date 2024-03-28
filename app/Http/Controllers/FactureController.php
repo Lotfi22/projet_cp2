@@ -46,7 +46,7 @@ class FactureController extends Controller
 
         // code...
     }
-    public function delete($id_facture)
+    public function delete1($id_facture)
     {
 
         Facture::supprimer($id_facture);
@@ -59,7 +59,7 @@ class FactureController extends Controller
 
         // code...
     }
-    public function restore($id_facture)
+    public function restore1($id_facture)
     {
 
         Facture::restored($id_facture);
@@ -72,6 +72,7 @@ class FactureController extends Controller
 
         // code...
     }
+
     public function update(Request $request)
     {
         
@@ -82,6 +83,40 @@ class FactureController extends Controller
         session()->flash('notification.type' , 'warning');
 
         return back();
+
+        // code...
+    }
+    public function delete(Request $request)
+    {
+
+
+        $id_facture=($request->id_facture);
+        
+        $facture = Facture::find($id_facture);
+        
+        Facture::supprimer($id_facture);
+        
+        $facture = ($facture->getAttributes());
+        
+        return response()->json($facture ?? "Message");
+
+        // code...
+    }
+    public function restore(Request $request)
+    {
+
+
+        $id_facture=($request->id_facture);
+        $facture = Facture::withTrashed()->find($id_facture);
+        
+        
+        if ($facture) {
+
+            $facture->restore();
+            $facture = ($facture->getAttributes()); 
+        } 
+        
+        return response()->json($facture ?? "Message");
 
         // code...
     }
