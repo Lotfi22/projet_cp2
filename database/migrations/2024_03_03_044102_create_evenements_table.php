@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateEvenementsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
+    /** Run the migrations. @return void */
+
     public function up()
     {
-        Schema::create('evenements', function (Blueprint $table) {
+        Schema::create('evenements', function (Blueprint $table) 
+        {
             $table->bigIncrements('id');
             $table->string('nom',100);
             $table->text('description');
@@ -26,13 +25,11 @@ class CreateEvenementsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    /** Reverse the migrations. @return void */
+
     public function down()
     {
         Schema::dropIfExists('evenements');
     }
+    
 }
