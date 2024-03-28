@@ -30,6 +30,26 @@ Route::post('/admin/gestionnaires/update/{id}','GestionnaireController@update');
 Route::post('/admin/gestionnaires/delete/ajax','GestionnaireController@delete');
 Route::post('/admin/gestionnaires/restore/ajax','GestionnaireController@restore');
 Route::get('/admin/gestionnaires/viewdeleted','GestionnaireController@viewdeleted');
+Route::post('/admin/gestionnaires/check_password/ajax','GestionnaireController@check_password');
+
+// admin controller
+Route::get('/admin/index','AdminController@index_1');
+Route::post('/admins/create','AdminController@create');
+Route::post('/admins/update/{id}','AdminController@update');
+Route::get('/admins/viewdeleted','AdminController@viewdeleted');
+Route::post('/admins/delete/ajax','AdminController@delete');
+Route::get('/admins/viewdeleted','AdminController@viewdeleted');
+Route::post('/admins/restore/ajax','AdminController@restore');
+Route::post('/admins/check_password/ajax','AdminController@check_password');
+
+
+
+
+
+
+
+
+
 
 
 

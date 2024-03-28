@@ -1,4 +1,4 @@
-@extends('layouts.solic_pro')
+@extends('layouts.solic')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="card mb-4">
 
             <div class="card-header">
-                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary">
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary">
                     <i class="fa fa-plus"></i>Ajouter Gestionnaire
                 </button>
                 
@@ -76,12 +76,12 @@
 
 
     <div class="modal fade " id="Ajout_modal" aria-modal="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
        
             <div class="modal-content">
                 <div class="modal-header pd-x-20">
                     <h3 class="modal-title" id="lineModalLabel">Ajouter un gestionnaire </h3>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -92,26 +92,26 @@
                         
                         @csrf
                         
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="name">Nom</label>
                             <input required type="text" value="{{ old('nom') }}" name="nom" placeholder="Nom de gestionnaire" class="form-control" id="nom">
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="prenom">Prenom</label>
                             <input required type="text" value="{{ old('nom') }}" name="prenom" placeholder="prenom de gestionnaire" class="form-control" id="prenom">
 
                         </div>
 
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="date_naissance">Date de naissance </label>
                             <input required type="date"  value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="date_naissance" placeholder="Date de naissance de gestionnaire">
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="genre">Genre</label>
-                            <select id="genre" name="genre" required class="form-control select2 form-select select2-hidden-accessible"  tabindex="-1" aria-hidden="true">
+                            <select id="genre" name="genre" required class="form-control"  tabindex="-1" aria-hidden="true">
                                 <option value="" disabled selected>Genre</option>
                                 <option value="Homme" >Homme</option>
                                 <option value="Femme">Femme</option>
@@ -119,30 +119,42 @@
                         </div>
                        
                         
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="email">Email</label>
                             <input required type="email"  value="{{ old('email') }}" name="email" class="form-control" id="email" placeholder="Email de gestionnaire">
                         </div>
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="num_tel">Numéro de téléphone</label>
                             <input required type="tel"  value="{{ old('num_tel') }}" name="num_tel" class="form-control" id="num_tel" placeholder="Numéro de téléphone de gestionnaire">
                         </div>
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="ajout_password">Mot de passe</label>
+                            <input required type="password" name="password" class="form-control" id="ajout_password" placeholder="Mot de passe">
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <label class="label label-default" for="ajout_confirm_password">Confirmez le mot de passe</label>
+                            <input required type="password" name="confirm_password" class="form-control" id="ajout_confirm_password" placeholder="Confirmer le mot de passe" onblur="validatePassword()">
+                            <p class="invalid-feedback"></p>
+                            <p class="valid-feedback"></p>
+                        </div>
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="num_tel_urgence">Numéro de téléphone  d'urgence </label>
                             <input  type="tel"  value="{{ old('num_tel_urgence') }}" name="num_tel_urgence" class="form-control" id="num_tel_urgence" placeholder="Numéro de téléphone  d'urgence de gestionnaire">
                         </div>
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="adresse">Adresse</label>
                             <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Adresse de gestionnaire">
                         </div>
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                             <label class="label label-default" for="id_qr">Id QR</label>
                             <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder=" Id_qr du gestionnaire">
                         </div>
-
+                        <div class="form-group col-md-6">
+                        </div>
                         <div class="btn-group col-md-6" role="group">
 
-                            <button type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Annuler</button>
+                            <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Annuler</button>
                         </div>
 
                         <div class="btn-group col-md-6" role="group">

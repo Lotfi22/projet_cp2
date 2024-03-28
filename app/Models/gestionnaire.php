@@ -7,24 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 
-class Gestionnaire extends Model
+
+
+class Gestionnaire extends Authenticatable
 {
     use HasFactory , SoftDeletes;
 
     protected $guard='gestionnaire';
 
-    public static function add (Request $request)
-    {
-        DB::insert("insert into gestionnaires(nom,prenom,date_naissance,genre,email,num_tel,num_tel_urgence,adresse,id_qr)
-                    values('$request->nom','$request->prenom','$request->date_naissance','$request->genre','$request->email','$request->num_tel','$request->num_tel_urgence','$request->adresse','$request->id_qr')");
+    public static function add (Request $request){
+    $password = Hash::make($request->password);        
+    DB::insert("insert into gestionnaires(nom,prenom,date_naissance,genre,email,password,num_tel,num_tel_urgence,adresse,id_qr)
+                    values('$request->nom','$request->prenom','$request->date_naissance','$request->genre','$request->email','$password','$request->num_tel','$request->num_tel_urgence','$request->adresse','$request->id_qr')");
 
     }
 
     public static function modifier (Request $request, $id){
         
         $gestionnaire = Gestionnaire::find($id);
+        $password = Hash::make($request->password);
 
         if ($gestionnaire) {
             // Mettre à jour les attributs du gestionnaire avec les valeurs du formulaire
@@ -36,6 +41,8 @@ class Gestionnaire extends Model
             $gestionnaire->adresse = $request->adresse;
             $gestionnaire->num_tel = $request->num_tel;
             $gestionnaire->num_tel_urgence = $request->num_tel_urgence;
+
+            $gestionnaire->password = $password;
 
             // Sauvegarder les modifications
             $gestionnaire->save();
@@ -58,5 +65,18 @@ class Gestionnaire extends Model
     $id_gestionnaire->restore(); // 
     // Additional logic...
    }
-}
+   public static function verifier_password($request){
+        
+    $oldHashedPassword = $request->old_password;
+    $newPassword = $request->new_password;    
+    // Vérifier si le hachage de l'ancien mot de passe correspond au hachage du nouveau mot de passe
+    if (Hash::check($newPassword, $oldHashedPassword)) {
+        return response()->json(['success' => true]);
+    } else {
+        return response()->json(['success' => false]);
+    }
+    
+    
+
+}}
 
