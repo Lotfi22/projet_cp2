@@ -1,11 +1,9 @@
+
+
 $(".invalid-feedback").hide();
 
-
-
-
-
-//Fonction pour supprimer une facture
-function supprimer_facture(objet)
+//Fonction pour supprimer une salle
+function supprimer_salle(objet)
 {
 
 	var id = $(objet).attr('identifiant');
@@ -16,9 +14,11 @@ function supprimer_facture(objet)
            'X-CSRF-TOKEN': $('input[name="_token"]').val()
         },                    
         type:"POST",
-        url:"/admin/factures/delete/ajax",
-        data:{id_facture:id},
-        
+        url:"/admin/salles/delete/ajax",
+        data:{id_salle:id},
+          
+
+			
 
         success:function(data)
         {
@@ -46,7 +46,7 @@ function supprimer_facture(objet)
 
 }
 
-function restaurer_facture(objet)
+function restaurer_salle(objet)
 {
 
 	var id = $(objet).attr('identifiant');
@@ -57,8 +57,8 @@ function restaurer_facture(objet)
 			 'X-CSRF-TOKEN': $('input[name="_token"]').val()
 		  },                    
 		  type:"POST",
-		  url:"/admin/factures/restore/ajax",
-		  data:{id_facture:id},
+		  url:"/admin/salles/restore/ajax",
+		  data:{id_salle:id},
 		  /*fin FrontEnd*/
   
 		  success:function(data)

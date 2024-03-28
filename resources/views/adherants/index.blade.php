@@ -15,23 +15,17 @@
 
                     <i class="fa fa-plus"></i> Ajouter Adhérant
 
-            <span class="card-header">
-                <button  data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
-                        class="fa fa-plus"></i>
-                       Ajouter Facture
                 </button>
 
                 <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
 
                     <a style="color : #fff" href="/adherants/viewdeleted">Corbeille</a>
                
-                 <a  style="color : #fff ; display: block; margin-left:1090px;" href="/admin/adherants/viewdeleted"  >
-                         <button   style="margin-left: 0px; " class="btn btn-warning">
-                           <i class="fas fa-trash-o"></i> 
-                           Corbeille
                </button> 
-               </a>
-           </span>
+               
+            </div>
+
+
             <div class="card-body">
 
                 <div class="table-responsive">
@@ -62,18 +56,18 @@
                             @foreach ($adherants as $adherant)
                                 <tr id="ligne{{$adherant->id}}">
 
-                                    <td style="cursor:pointer;">{{ $adherant->id }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->nom }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->prenom }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->id_qr }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->genre }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->num_tel }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->dossier_medical }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->adresse }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->email }}</td>
-                                    <td style="cursor:pointer;">{{ $adherant->type_abonnement }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->dossier_medical }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->adresse }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->email }}</td>
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->type_abonnement }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -126,7 +120,6 @@
                             <input required type="text" value="{{ old('nom') }}" name="nom" class="form-control" id="ajout_nom" placeholder="Entrez le nom">
                         
                         </div>
-                        
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
 

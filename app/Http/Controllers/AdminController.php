@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
-
+use App\Models\Qr;
 use Auth;
 
 class AdminController extends Controller
@@ -37,12 +37,19 @@ class AdminController extends Controller
     }
     public function create(Request $request)
     {
-       Admin::add($request);
-        session()->flash('notification.message' , 'Admin '.$request->nom.' Ajoutée avec succés');
+        $admin = Admin::add($request);
 
-       session()->flash('notification.type' , 'success');
+        if ($admin) 
+        {
+            $qrCodeData = 'Id ' . $admin->id  ; 
+            $qr = Qr::add($qrCodeData);
+            $admin->id_qr = $qr->id; 
+            $admin->save();
+            session()->flash('notification.message', 'Admin ' . $request->nom . ' Ajouté avec succès');
+            session()->flash('notification.type', 'success');
+        } 
+
         return back();
-        
     }
     public function update( Request $request,$id)
     {

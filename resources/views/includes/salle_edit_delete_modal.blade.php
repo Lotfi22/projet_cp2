@@ -1,14 +1,14 @@
 <button type="button" class="btn-sm btn btn-danger" data-toggle="modal"
     data-target="#suppressionModal{{ $salle->id }}">
-    <i class="fa fa-trash"></i> Supprimer
+    <i class="fas fa-trash-o"></i> Supprimer
 </button>
 
 <div class="modal fade" id="suppressionModal{{ $salle->id }}" tabindex="-1"
     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" >
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir supprimer la salle "{{ $salle->id }}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir supprimer la salle "{{ $salle->id }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">
@@ -16,10 +16,11 @@
                 </button>
             </div>
 
-            <div class="modal-body row col-md-12">
+            <div class="modal-body  row col-md-12">
 
-                <div class="btn-group col-md-6" role="group">
-                    <a href="/admin/salles/delete/{{ $salle->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                <div class="btn-group col-md-6 " role="group">
+                            <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_salle(this);" data-dismiss="modal" identifiant="{{ $salle->id }}"> Oui </button>
+                  
                 </div>
                 <div class="btn-group col-md-6" role="group">
 

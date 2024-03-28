@@ -41,7 +41,11 @@ Route::post('/admin/factures/restore/ajax','FactureController@restore');
 Route::get('/admin/salles','SalleController@index');
 Route::post('/admin/salles/create','SalleController@create')->name('salle.create');
 Route::post('/admin/salles/update','SalleController@update');
-Route::get('/admin/salles/delete/{id}','SalleController@delete');
-Route::get('/admin/salles/restore/{id}','SalleController@restore');
+Route::get('/admin/salles/delete/{id}','SalleController@delete1');
+Route::get('/admin/salles/restore/{id}','SalleController@restore1');
+Route::get('/admin/salles/viewdeleted','SalleController@viewdeleted');
+
+Route::post('/admin/salles/delete/ajax','SalleController@delete');
+Route::post('/admin/salles/restore/ajax','SalleController@restore');
 
 

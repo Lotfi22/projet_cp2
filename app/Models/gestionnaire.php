@@ -19,9 +19,12 @@ class Gestionnaire extends Authenticatable
 
     protected $guard='gestionnaire';
 
+     
+
     public static function add(Request $request)
     { 
-        $password = Hash::make($request->password); 
+
+        $password = Hash::make($request->password);  
         $gest = new Gestionnaire();
         $gest->nom = $request->nom;
         $gest->prenom = $request->prenom;
@@ -34,9 +37,10 @@ class Gestionnaire extends Authenticatable
         $gest->adresse = $request->adresse;
 
         $saved = $gest->save();
-
         return $gest;
+
     }
+
 
     public static function modifier (Request $request, $id){
         

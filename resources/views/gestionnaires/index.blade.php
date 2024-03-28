@@ -28,6 +28,7 @@
                         <thead style="cursor:pointer;" class="bg-secondary text-white">
                             <tr>
                                 <th>ID</th>
+                                <th>QR Code</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
                                 <th>Date naissance</th>
@@ -46,6 +47,7 @@
                             
                                 <tr id="ligne{{$gestionnaire->id}}">
                                     <td>{{ $gestionnaire->id ?? ''}}</td>
+                                    <td>{{ $gestionnaire->id_qr ?? ''}}</td>
                                     <td>{{ $gestionnaire->nom ?? ''}}</td>
                                     <td>{{ $gestionnaire->prenom ?? ''}}</td>
                                     <td>{{ $gestionnaire->date_naissance ?? ''}}</td>

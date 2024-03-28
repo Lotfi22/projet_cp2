@@ -104,21 +104,15 @@ class FactureController extends Controller
     }
     public function restore(Request $request)
     {
-
-
-        $id_facture=($request->id_facture);
+        $id_facture = $request->id_facture;
         $facture = Facture::withTrashed()->find($id_facture);
-        
-        
+
         if ($facture) {
 
             $facture->restore();
             $facture = ($facture->getAttributes()); 
         } 
-        
-        return response()->json($facture ?? "Message");
-
-        // code...
+    return response()->json($facture ?? "Facture introuvable!");
     }
     //
 }

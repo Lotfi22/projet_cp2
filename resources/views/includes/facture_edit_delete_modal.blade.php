@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" >
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir supprimer la facture "{{ $facture->id }}" ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir supprimer la facture "{{ $facture->id }}" ?</h5>
 
                 <button type="button" class="close"
                     data-dismiss="modal" aria-label="Close">

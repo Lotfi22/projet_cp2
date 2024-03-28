@@ -22,9 +22,20 @@ class Admin extends Authenticatable
     public static function add (Request $request)
     {
           $password = Hash::make($request->password);
-        DB::insert("insert into admins(nom,prenom,date_naissance,genre,email, password,num_telephone,num_urgence,adresse,id_qr)
-                    values('$request->nom','$request->prenom','$request->date_naissance','$request->genre','$request->email','$password','$request->num_telephone','$request->num_urgence','$request->adresse','$request->id_qr')");
 
+        $admin = new Admin();
+        $admin->nom = $request->nom;
+        $admin->prenom = $request->prenom;
+        $admin->date_naissance = $request->date_naissance;
+        $admin->genre = $request->genre;
+        $admin->email = $request->email;
+        $admin->num_telephone = $request->num_telephone;
+        $admin->num_urgence = $request->num_urgence;
+        $admin->password = $request->password;
+        $admin->adresse = $request->adresse;
+
+        $saved = $admin->save();
+        return $admin;
     }
     public static function modifier (Request $request, $id){
         
