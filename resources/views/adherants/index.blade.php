@@ -25,10 +25,7 @@
                
             </div>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7e99d8b5923b74609e57824f96cf2a95482401ba
             <div class="card-body">
 
                 <div class="table-responsive">
@@ -116,7 +113,7 @@
                         
                         @csrf
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                            
                             <label class="label label-default" for="nom">Nom</label>
                            
@@ -124,7 +121,7 @@
                         
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
 
                             <label class="label label-default" for="prenom">Prénom</label>
 
@@ -132,7 +129,7 @@
 
                         </div>
                         
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
 
                             <label class="label label-default" for="date_naissance">Date de naissance</label>
                             
@@ -141,7 +138,7 @@
                         </div>    
                         
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="genre">Genre</label>
                         
@@ -153,7 +150,7 @@
                             </select>
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="num_tel">Numéro téléphone</label>
                         
@@ -161,7 +158,7 @@
                         
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="num_tel_urgence">Numéro d'urgence</label>
                         
@@ -169,7 +166,7 @@
                         
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="dossier_medical">Dossier médical</label>
                             
@@ -177,7 +174,7 @@
 
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="adresse">Adresse</label>
                         
@@ -185,7 +182,7 @@
                         
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="email">Email</label>
                         
@@ -194,7 +191,7 @@
                             <p class="invalid-feedback"></p>
                         </div>
 
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                        <div class="form-group col-md-6">
                         
                             <label class="label label-default" for="type_abonnement">Type d'abonnement</label>
                         
