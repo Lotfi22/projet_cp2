@@ -149,7 +149,7 @@
                                             <li aria-haspopup="true">
 
                                                 <a href="/admin/home" style="cursor: pointer;" class="sub-icon">
-                                                    <i ></i>Admin
+                                                    <i class="fa fa-user"></i>Admin
                                                     <i class="fa fa-angle-down horizontal-icon"></i>
                                                 </a>
 

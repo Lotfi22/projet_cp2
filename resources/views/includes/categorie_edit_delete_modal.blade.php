@@ -1,4 +1,4 @@
-<button type="button" class="btn-sm btn ripple btn-danger" data-bs-target="#suppressionModal{{ $categorie->id }}" data-bs-toggle="modal">
+<button type="button" class="btn-sm btn ripple btn-danger" data-target="#suppressionModal{{ $categorie->id }}" data-toggle="modal">
 
     <i class="fa fa-trash"></i> Supprimer
 
@@ -10,18 +10,18 @@
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
                 <h6 class="modal-title">êtes vous sûr de vouloir supprimer  "{{ $categorie->nom }}</h6>
-                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                <button aria-label="Close" class="btn-close" data-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
 
                 <div class="btn-group col-md-6" role="group">
-                    <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_categorie(this);" data-bs-dismiss="modal" identifiant="{{ $categorie->id }}"> Oui </button>
+                    <button type="submit" class="btn btn-danger col-md-12"  onclick="supprimer_categorie(this);" data-dismiss="modal" identifiant="{{ $categorie->id }}"> Oui </button>
                 </div>
                 
                 <div class="btn-group col-md-6" role="group">
 
                     <button type="button" class=" col-md-12 btn btn-primary"
-                        data-bs-dismiss="modal" role="button">NON</button>
+                        data-dismiss="modal" role="button">NON</button>
                 </div>
 
                 {{--  --}}
@@ -34,8 +34,8 @@
 
 
 
-<button type="button" class="btn-sm btn btn-primary" data-bs-toggle="modal"
-    data-bs-target="#exampleModal{{ $categorie->id }}">
+<button type="button" class="btn-sm btn btn-primary" data-toggle="modal"
+    data-target="#exampleModal{{ $categorie->id }}">
     <i class="fa fa-pencil"></i> Modifier
 </button>
 
@@ -46,7 +46,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Modifier categorie</h5>
                 <button type="button" class="close"
-                    data-bs-dismiss="modal" aria-label="Close">
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -85,7 +85,7 @@
                         <div class="btn-group col-md-6" role="group">
 
                             <button type="button" class=" col-md-12 btn btn-danger"
-                                data-bs-dismiss="modal" role="button">Fermer</button>
+                                data-dismiss="modal" role="button">Fermer</button>
                         </div>
                 </form>
             </div>

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Intervention\Image\Facades\Image;
+use BaconQrCode\Writer as QrCodeWriter; // Import the QrCodeWriter class
+use BaconQrCode\Encoder\Encoders;
 class TestController extends Controller
 
 
@@ -56,6 +60,25 @@ class TestController extends Controller
 
         // code...
     }
+
+        
+
+    public function generate(Request $request)
+    {
+
+        Qrcode::encoding("UTF-8")
+        ->color(0,0,0)
+        ->backgroundColor(245, 234, 62)
+        ->size(200)
+        ->generate("Test",'../public/codes-qr/admins/3.svg');
+
+        dd("done");
+        //
+    }
+
+
+
+
 
     //
 }
