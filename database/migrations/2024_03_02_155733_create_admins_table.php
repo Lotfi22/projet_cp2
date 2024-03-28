@@ -15,14 +15,14 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_qr');
+            $table->unsignedBigInteger('id_qr')->nullable();
             $table->foreign('id_qr')->references('id')->on('qrs');
             $table->string('nom',100);
             $table->string('prenom',100);
             $table->char('genre',100);
             $table->date('date_naissance');
             $table->string('num_telephone',100);
-            $table->string('num_urgence',100);
+            $table->string('num_urgence',100)->nullable();
             $table->string('adresse',100);
             $table->string('email',100);
             $table->string('password',100);

@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Mes factures </h1>
+        <h1 class="mt-4 text-white" > Mes factures Supprimés </h1>
 
         <div class="card mb-4">
 
@@ -36,7 +36,7 @@
                           <tbody>
                                @foreach ($deletedfactures as $facture)
 
-                                    <tr>
+                                    <tr id=" ligne{{$facture->id}}">
 
                                         <td>{{ $facture->id }}</td>
                                         <td>{{ $facture->ht ?? ''}}</td>
@@ -46,42 +46,45 @@
                                         <td>{{ $facture->etat_paiement ?? ''}}</td>
                                         <td>{{ $facture->created_at ?? ''}}</td>
                                         <td>{{ $facture->deleted_at ?? ''}}</td>
-                                        <td>
-                                        <div class="table-action">
+                                      <td>
+                                           <div class="table-action">
+                                              
+                                           <div class="table-action">
 
-                                            <button type="button" class="btn-sm btn btn-warning" data-toggle="modal"
-                                                data-target="#RestoreModal{{ $facture->id }}">
-                                                <i class='fa fa-trash-restore'></i> Restore
-                                            </button>
-
-                                            <div class="modal fade" id="RestoreModal{{ $facture->id }}" tabindex="-1"
-                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content" >
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">etes vous sur de vouloir restorer la facture "{{ $facture->id }}" ?</h5>
-
-                                                            <button type="button" class="close"
-                                                                data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
+                                                            <button type="button" class="btn-sm btn ripple btn-warning" data-toggle="modal"
+                                                                data-target="#RestoreModal{{ $facture->id }}">
+                                                                <i class='fa fa-trash-restore'></i> Restaurer
                                                             </button>
-                                                        </div>
 
-                                                        <div class="modal-body  row col-md-12">
+                                                            <div class="modal fade forget-modal" id="RestoreModal{{ $facture->id }}" tabindex="-1"
+                                                                role="dialog" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal-content modal-content-demo" >
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel">êtes vous sûr de vouloir restaurer la facture "{{ $facture->id }}" ?</h5>
 
-                                                            <div class="btn-group col-md-6" role="group">
-                                                                <a href="/admin/factures/restore/{{ $facture->id }}" type="submit" class="btn btn-danger col-md-12"> Oui </a>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>                                                 
+
+                                                                        <div class="modal-body row col-md-12">
+
+                                                                            <div class="btn-group col-md-6" role="group">
+                                                                                <button type="submit" class="btn btn-primary col-md-12"  identifiant="{{ $facture->id }}"data-dismiss="modal" onclick="restaurer_facture(this);"> OUI </button>
+                                                                            </div>
+                                                                            <div class="btn-group col-md-6" role="group">
+
+                                                                                <button type="button" class=" col-md-12 btn btn-danger"
+                                                                                    data-dismiss="modal" role="button">NON</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="btn-group col-md-6" role="group">
-
-                                                                <button type="button" class=" col-md-12 btn btn-primary"
-                                                                    data-dismiss="modal" role="button">NON</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                         </div>
+                                          </div>
                                       </td>
 
                                     </tr>
@@ -98,6 +101,7 @@
     </div>
 
 
+    <script src="{{ asset('My_js/factures.js') }}"></script>
 
 
 @endsection

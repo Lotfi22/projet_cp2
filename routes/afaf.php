@@ -20,6 +20,12 @@ Route::get('/admin/groupes','groupeController@index');
 Route::post('/admin/groupes/create','GroupeController@create');
 Route::get('/admin/groupes/delete/{id}','GroupeController@delete');
 Route::post('/admin/groupes/update','GroupeController@update');
+Route::get('/admin/groupes/viewdeleted','GroupeController@viewdeleted');
+Route::get('/admin/groupes/restore/{id}','GroupeController@restore');
+Route::get('admin/send', function () {
+Illuminate\Support\Facades\Mail::send(new  \App\Mail\mailfile);
+return view('email.index');
+});
 
 Route::get('/groupes/{id}', 'GroupeController@show')->name('show_name');
 

@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Coach extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
   
       public static function inserer(Request $request)
@@ -53,5 +54,16 @@ class Coach extends Model
         return DB::delete("delete from coaches where id = \"$id_coach\" ");
 
     }
+
+
+    public static function restaurer($id_coach)
+    {
+
+    $id_coach = Coach::withTrashed()->find($id_coach);
+    $id_coach->restore(); // 
+
+    }
+
+
 }
 

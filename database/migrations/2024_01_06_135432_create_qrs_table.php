@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeancesTable extends Migration
+class CreateQrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateSeancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('seances', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->time('heure_debut');
-            $table->time('heure_fin');
-            $table->unsignedBigInteger('id_groupe');
-            $table->foreign('id_groupe')->references('id')->on('groupes');
-            $table->unsignedBigInteger('id_salle');
-            $table->foreign('id_salle')->references('id')->on('salles');
+        Schema::create('qrs', function (Blueprint $table) {
+           $table->bigIncrements('id');
+            $table->longtext('img')->nullable();
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
@@ -34,6 +29,6 @@ class CreateSeancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seances');
+        Schema::dropIfExists('qrs');
     }
 }

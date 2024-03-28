@@ -5,31 +5,43 @@ namespace App\Http\Controllers;
 use App\Models\Gestionnaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Qr;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class GestionnaireController extends Controller
 {
 
+    // public function __construct()
+    // {
+    //     $this->middleware('gestionnaire_log:gestionnaire');
+    // }
     public function __construct()
     {
-        $this->middleware('gestionnaire_log:gestionnaire');
+        $this->middleware('admin_log:admin');
     }
-
 
     public function index() {
         $gestionnaires = Gestionnaire::all(); 
-        return view('gestionnaires.index',compact('gestionnaires'));
-        
+        return view('gestionnaires.index',compact('gestionnaires'));   
     }
 
     public function create(Request $request)
     {
-        Gestionnaire::add($request);
-        session()->flash('notification.message' , 'Gestionnaire '.$request->nom.' Ajoutée avec succés');
+        $gest = Gestionnaire::add($request);
 
-       session()->flash('notification.type' , 'success');
+        if ($gest) 
+        {
+            $qrCodeData = 'Id ' . $gest->id  ; 
+            $qr = Qr::add($qrCodeData);
+            $gest->id_qr = $qr->id; 
+            $gest->save();
+            session()->flash('notification.message', 'Gestionnaire ' . $request->nom . ' Ajouté avec succès');
+            session()->flash('notification.type', 'success');
+        } 
+
         return back();
-        
     }
     public function delete1( $id_gestionnaire )
     {
@@ -81,13 +93,20 @@ class GestionnaireController extends Controller
         $gestionnaire = ($gestionnaire->getAttributes()); 
     } 
     return response()->json($gestionnaire ?? "Gestionnaire introuvable!");
-
-
+    
 }
-
     public function viewdeleted()  {
 
         $deletedgestionnaires = Gestionnaire::onlyTrashed()->get();
-        return view('gestionnaires.restore', compact('deletedgestionnaires'));    }
+        return view('gestionnaires.restore', compact('deletedgestionnaires'));  
+      }
     //
+    public function check_password(Request $request)
+{
+       
+     $response=Gestionnaire::verifier_password($request);
+     return $response;
+    
+    
+}
 }
