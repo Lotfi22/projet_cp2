@@ -28,7 +28,7 @@
 					</a>
 
 				</li>
-				{{--<li><a href="/solic_pro/HTML/switcher.html" class="slide-item">switcher</a></li>--}}
+				<li><a href="/solic_pro/HTML/switcher.html" class="slide-item">switcher</a></li>
 			    <li class="slide">
 					<a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
 						<span class="side-menu__icon">
@@ -62,7 +62,7 @@
 						<span class="side-menu__icon">
 						<i class="fa fa-tasks" aria-hidden="true"></i>			
 
-					</span>
+					   </span>
 						<span class="side-menu__label text-truncate">Gestion</span>
 						<i class="angle fa fa-angle-right"></i>
 					</a>

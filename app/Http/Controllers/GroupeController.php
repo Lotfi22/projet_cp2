@@ -12,6 +12,10 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 
 class GroupeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin_log:admin');
+    }
     public function index()
     {
         $groupes = Groupe::all();

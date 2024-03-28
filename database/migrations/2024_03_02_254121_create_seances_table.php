@@ -6,13 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSeancesTable extends Migration
 {
-
-    /** Run the migrations. @return void */
-
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('seances', function (Blueprint $table) 
-        {
+        Schema::create('seances', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->time('heure_debut');
             $table->time('heure_fin');
@@ -26,11 +27,13 @@ class CreateSeancesTable extends Migration
         });
     }
 
-    /** Reverse the migrations. @return void */
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('seances');
     }
-    
 }
