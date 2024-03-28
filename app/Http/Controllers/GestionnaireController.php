@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gestionnaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Qr;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -28,13 +29,19 @@ class GestionnaireController extends Controller
 
     public function create(Request $request)
     {
-        
-        Gestionnaire::add($request);
-        session()->flash('notification.message' , 'Gestionnaire '.$request->nom.' Ajoutée avec succés');
+        $gest = Gestionnaire::add($request);
 
-       session()->flash('notification.type' , 'success');
+        if ($gest) 
+        {
+            $qrCodeData = 'Id ' . $gest->id  ; 
+            $qr = Qr::add($qrCodeData);
+            $gest->id_qr = $qr->id; 
+            $gest->save();
+            session()->flash('notification.message', 'Gestionnaire ' . $request->nom . ' Ajouté avec succès');
+            session()->flash('notification.type', 'success');
+        } 
+
         return back();
-        
     }
     public function delete1( $id_gestionnaire )
     {

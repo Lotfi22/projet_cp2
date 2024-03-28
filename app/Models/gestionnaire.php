@@ -19,11 +19,23 @@ class Gestionnaire extends Authenticatable
 
     protected $guard='gestionnaire';
 
-    public static function add (Request $request){
-    $password = Hash::make($request->password);        
-    DB::insert("insert into gestionnaires(nom,prenom,date_naissance,genre,email,password,num_tel,num_tel_urgence,adresse,id_qr)
-                    values('$request->nom','$request->prenom','$request->date_naissance','$request->genre','$request->email','$password','$request->num_tel','$request->num_tel_urgence','$request->adresse','$request->id_qr')");
+    public static function add(Request $request)
+    { 
+        $password = Hash::make($request->password); 
+        $gest = new Gestionnaire();
+        $gest->nom = $request->nom;
+        $gest->prenom = $request->prenom;
+        $gest->date_naissance = $request->date_naissance;
+        $gest->genre = $request->genre;
+        $gest->email = $request->email;
+        $gest->num_tel = $request->num_tel;
+        $gest->num_tel_urgence = $request->num_tel_urgence;
+        $gest->password = $request->password;
+        $gest->adresse = $request->adresse;
 
+        $saved = $gest->save();
+
+        return $gest;
     }
 
     public static function modifier (Request $request, $id){

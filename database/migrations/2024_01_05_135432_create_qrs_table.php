@@ -15,7 +15,7 @@ class CreateQrsTable extends Migration
     {
         Schema::create('qrs', function (Blueprint $table) {
            $table->bigIncrements('id');
-            $table->string('img');
+            $table->longtext('img')->nullable();
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

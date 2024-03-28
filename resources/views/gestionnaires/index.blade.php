@@ -146,12 +146,9 @@
                             <label class="label label-default" for="adresse">Adresse</label>
                             <input required type="adresse"  value="{{ old('adresse') }}" name="adresse" class="form-control" id="adresse" placeholder="Adresse de gestionnaire">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label class="label label-default" for="id_qr">Id QR</label>
-                            <input required type="text"  name="id_qr" class="form-control" id="id_qr" placeholder=" Id_qr du gestionnaire">
-                        </div>
-                        <div class="form-group col-md-6">
-                        </div>
+                   
+                        
+
                         <div class="btn-group col-md-6" role="group">
 
                             <button type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Annuler</button>
