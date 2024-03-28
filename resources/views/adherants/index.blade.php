@@ -9,11 +9,22 @@
 
         <div class="card mb-4">
 
+            <div class="card-header">
+
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> 
+
+                    <i class="fa fa-plus"></i> Ajouter Adhérant
+
             <span class="card-header">
                 <button  data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
                         class="fa fa-plus"></i>
                        Ajouter Facture
                 </button>
+
+                <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
+
+                    <a style="color : #fff" href="/adherants/viewdeleted">Corbeille</a>
+               
                  <a  style="color : #fff ; display: block; margin-left:1090px;" href="/admin/adherants/viewdeleted"  >
                          <button   style="margin-left: 0px; " class="btn btn-warning">
                            <i class="fas fa-trash-o"></i> 
@@ -73,6 +84,8 @@
 
                                     </td>
                                 </tr>
+
+                                
                             @endforeach
                         </tbody>
                     </table>
@@ -90,10 +103,15 @@
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content">
-                 <div class="modal-header">
-                    <h3 class="modal-title " id="lineModalLabel">Ajouter facture </h3>
-                 </div>
-                
+
+                <div class="modal-header pd-x-20">
+
+                    <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 
                 <div class="modal-body">
                     
@@ -193,7 +211,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         
                         </div>    
 

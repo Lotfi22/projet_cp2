@@ -112,5 +112,4 @@ function restaurer_adherant(objet){
     
   }); 
 
-  
 }

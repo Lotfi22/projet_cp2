@@ -74,11 +74,12 @@ class AdherantsController extends Controller
         Adherant::supprimer($id_adherant);
      
         $adherant = ($adherant->getAttributes());
-        return response()->json($adherant ?? "Adhérant introuvable :(");
+        return response()->json($adherant ?? "Adhérant introuvable!");
     }
 
     public function viewdeleted()
     {
+
         $deletedadherants = Adherant::onlyTrashed()->get();
        
         return view('adherants.restore', compact('deletedadherants'));
@@ -101,8 +102,10 @@ class AdherantsController extends Controller
 
     
     public function profile($id_adherant)
-    {
-        dd(($id_adherant));
+    {    
+
+        $adherant = Adherant::find($id_adherant);
+        return view('adherants.profile', compact('adherant'));
     }
 
 

@@ -19,8 +19,7 @@ Route::get('/selma','TestController@selma');
 Route::get('/participations','ParticipationController@index');
 Route::post('/participations/create','ParticipationController@create');
 
-Route::get('/presences','PresenceController@index');
-Route::post('/presences/create','PresenceController@create');
+Route::get('/admin/presences','PresenceController@index');
 
 Route::get('/admin/evenements','EvenementController@index');
 Route::post('/admin/evenements/create','EvenementController@create')->name('evenement.create');;
@@ -36,6 +35,8 @@ Route::post('/admin/seances/update','SeanceController@update');
 Route::get('/admin/seances/delete/{id}','SeanceController@delete');
 Route::get('/admin/seances/restore/{id}','SeanceController@restore');
 Route::get('/admin/seances/viewdeleted','SeanceController@viewdeleted');
+Route::post('/admin/seances/delete/ajax','SeanceController@delete');
+Route::get('/admin/seances/{id}/presence','PresenceController@home');
 
 
 

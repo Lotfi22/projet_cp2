@@ -25,6 +25,7 @@ class CreateGestionnairesTable extends Migration
             $table->string('num_tel_urgence')->nullable();
             $table->text('adresse')->nullable();
             $table->text('email')->nullable();
+            $table->string('password',100);
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
