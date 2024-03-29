@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class Adherant extends Model
 {
@@ -15,15 +15,37 @@ class Adherant extends Model
     use HasFactory, SoftDeletes;
     
     
-    public static function inserer(Request $request)
+    public static function get_qr($id_adherant)
     {
-           
-        return DB::insert("insert into adherants(nom, prenom, date_naissance, id_qr, genre, num_tel, num_tel_urgence, dossier_medical, adresse, email, type_abonnement)
-                    values('$request->nom','$request->prenom','$request->date_naissance','$request->id_qr','$request->genre', '$request->num_tel', '$request->num_tel_urgence', '$request->dossier_medical', '$request->adresse', '$request->email', '$request->type_abonnement')");
 
+        $id_qr = DB::select("select id_qr from adherants where id = $id_adherant");
+
+        $id_qr = ($id_qr[0]->id_qr);
+
+        $ret = Qr::find($id_qr);
         
+        return $ret->img;
 
         // code...
+    }
+
+    public static function add(Request $request)
+    {
+        $adherent = new Adherant();
+        $adherent->nom = $request->nom;
+        $adherent->prenom = $request->prenom;
+        $adherent->date_naissance = $request->date_naissance;
+        $adherent->genre = $request->genre;
+        $adherent->email = $request->email;
+        $adherent->num_tel = $request->num_tel;
+        $adherent->num_tel_urgence = $request->num_tel_urgence;
+        $adherent->dossier_medical = $request->dossier_medical;
+        $adherent->adresse = $request->adresse;
+        $adherent->type_abonnement = $request->type_abonnement;
+
+        $saved = $adherent->save();
+
+        return $adherent;
     }
 
 
@@ -65,6 +87,12 @@ class Adherant extends Model
 
     $id_adherant = Adherant::withTrashed()->find($id_adherant);
     $id_adherant->restore(); // 
+
+    }
+
+    public function presences()
+    {
+     return $this->hasMany(Presence::class);
 
     }
 

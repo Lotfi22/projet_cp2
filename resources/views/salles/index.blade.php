@@ -5,15 +5,22 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 text-white" > Salles</h1>
+        <h1 class="mt-4 text-white" > Mes Salles</h1>
 
         <div class="card mb-4">
 
-            <div class="card-header">
-                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i class="fa fa-plus"></i>
+           <span class="card-header">
+                <button  data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> <i
+                        class="fa fa-plus"></i>
                        Ajouter Salle
                 </button>
-            </div>
+                <a  style="color : #fff ; display: block; margin-left:1090px;" href="/admin/salles/viewdeleted"  >
+                         <button   style="margin-left: 0px; " class="btn btn-warning">
+                           <i class="fas fa-trash-o"></i> 
+                           Corbeille
+               </button> 
+               </a>
+           </span>
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -21,7 +28,7 @@
                      <table class="table card-table table-vcenter text-nowrap table-striped" id="datable-1" width="100%" cellspacing="0">
 
                          <thead style="cursor:pointer;" class="bg-secondary text-white">
-                            <tr>
+                            <tr >
 
                                 <th>ID</th>
                                 <th>CAPACITE</th>
@@ -36,7 +43,7 @@
                           <tbody>
                                @foreach ($salles as $salle)
 
-                                    <tr>
+                                    <tr  id=" ligne{{$salle->id}}">
 
                                         <td>{{ $salle->id }}</td>
                                         <td>{{ $salle->capacite ?? ''}}</td>
@@ -118,6 +125,6 @@
     </div>
 
 
-
+    <script src="{{ asset('My_js/salles.js') }}"></script>
 
 @endsection

@@ -15,7 +15,7 @@ class CreateCoachesTable extends Migration
     {
         Schema::create('coaches', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_qr');
+            $table->unsignedBigInteger('id_qr')->nullable();
             $table->foreign('id_qr')->references('id')->on('qrs');
             $table->string('nom', 100);
             $table->string('prenom', 100);

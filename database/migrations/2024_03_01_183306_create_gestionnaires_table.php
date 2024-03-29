@@ -15,7 +15,7 @@ class CreateGestionnairesTable extends Migration
     {
         Schema::create('gestionnaires', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_qr');
+            $table->unsignedBigInteger('id_qr')->nullable();
             $table->foreign('id_qr')->references('id')->on('qrs');
             $table->string('nom', 100);
             $table->string('prenom', 100);
@@ -25,6 +25,7 @@ class CreateGestionnairesTable extends Migration
             $table->string('num_tel_urgence')->nullable();
             $table->text('adresse')->nullable();
             $table->text('email')->nullable();
+            $table->string('password',100);
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

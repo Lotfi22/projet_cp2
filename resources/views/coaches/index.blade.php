@@ -1,4 +1,4 @@
-@extends('layouts.solic_pro')
+@extends('layouts.solic')
 
 @section('content')
 
@@ -11,11 +11,17 @@
 
             <div class="card-header">
 
-                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary"> 
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> 
                     
                     <i class="fa fa-plus"></i> Ajouter Coach
                 
                 </button>
+
+                <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
+
+                    <a style="color : #fff" href="/coaches/viewdeleted">Corbeille</a>
+               
+               </button>
             
             </div>
 
@@ -46,16 +52,16 @@
 
                             @foreach ($coaches as $coach)
                                 <tr>
-                                    <td style="cursor:pointer;">{{ $coach->id }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->nom }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->prenom }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->date_naissance }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->id_qr }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->genre }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->nbr_telephone_urgence }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->adress }}</td>
-                                    <td style="cursor:pointer;">{{ $coach->email }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->id }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->nom }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->prenom }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->date_naissance }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->id_qr }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->genre }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->nbr_telephone }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->nbr_telephone_urgence }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->adress }}</td>
+                                    <td onclick="redirect_coach_profile({{ $coach->id }});" style="cursor:pointer;">{{ $coach->email }}</td>
                                     <td>
                                         <div class="table-action">
 
@@ -88,9 +94,9 @@
             
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Coach : </h3>
 
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-            
+                    </button>
                 </div>
                 
                 <div class="modal-body">
@@ -155,7 +161,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         </div>    
                     </form>
                 </div>
@@ -165,6 +171,22 @@
 
 
 <script src= "{{ asset('My_js/coaches.js') }}" ></script>
+
+
+<script>
+    
+
+    function redirect_coach_profile(id) 
+    {
+        location.href='/admin/coaches/'+id;
+    }
+
+
+
+
+
+
+</script>
 
 
 @endsection

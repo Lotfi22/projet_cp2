@@ -1,4 +1,4 @@
-@extends('layouts.solic_pro')
+@extends('layouts.solic')
 
 @section('content')
 
@@ -11,20 +11,19 @@
 
             <div class="card-header">
 
-                <button data-bs-toggle="modal" data-bs-target="#Ajout_modal" class="btn btn-primary"> 
+                <button data-toggle="modal" data-target="#Ajout_modal" class="btn btn-primary"> 
 
                     <i class="fa fa-plus"></i> Ajouter Adhérant
 
                 </button>
 
-                <button   style="margin-left: 880px;"  class="btn btn-warning"class="fa fa-trash"> 
+                <button style="margin-left: 1030px;" class="btn btn-warning" class="fa fa-trash"> 
 
-                    <a style="color : #fff" href="/admin/adherants/viewdeleted">Corbeille</a>
+                    <a style="color : #fff" href="/adherants/viewdeleted">Corbeille</a>
                
                </button> 
                
             </div>
-
 
             <div class="card-body">
 
@@ -51,6 +50,8 @@
 
                         </thead>
 
+                        <div style="display: none;" ><?php  Use App\models\Adherant; ?> </div>
+
                         <tbody>
 
                             @foreach ($adherants as $adherant)
@@ -60,7 +61,9 @@
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->nom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->prenom }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->date_naissance }}</td>
-                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->id_qr }}</td>
+                                    
+                                    <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;"> <img width="50%" src="{{ asset(Adherant::get_qr($adherant->id)) }}">  </td>
+                                    
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->genre }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel }}</td>
                                     <td onclick="redirect_adherant_profile({{ $adherant->id }});" style="cursor:pointer;">{{ $adherant->num_tel_urgence }}</td>
@@ -78,6 +81,8 @@
 
                                     </td>
                                 </tr>
+
+                                
                             @endforeach
                         </tbody>
                     </table>
@@ -100,7 +105,7 @@
 
                     <h3 class="modal-title " id="lineModalLabel">Ajouter Adhérant : </h3>
                     
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -133,23 +138,19 @@
                             
                             <input required type="date" value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" id="ajout_date_naissance" placeholder="Entrez la date de naissance">
                         
-                        </div>
-
+                        </div>    
                         
-                        <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
-                        
-                            <label class="label label-default" for="id_qr">QR code</label>
-                        
-                            <input required type="text" value="{{ old('id_qr') }}" name="id_qr" class="form-control" id="ajout_id_qr" placeholder="Entrez le QR code">
-                        
-                        </div>
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
                         
                             <label class="label label-default" for="genre">Genre</label>
                         
-                            <input required type="text" value="{{ old('genre') }}" name="genre" class="form-control" id="ajout_genre" placeholder="Entrez le genre">
-                        
+                            <select id="ajout_genre" name="genre" placeholder="Entrez le genre" required class="form-control"  tabindex="-1" aria-hidden="true">
+
+                                <option value="" disabled selected>Genre</option>
+                                <option value="Masculin" >Masculin</option>
+                                <option value="Féminin">Féminin</option>
+                            </select>
                         </div>
 
                         <div class="form-group col-md-12 col-sm-12 col-lg-12 col-xl-12">
@@ -208,7 +209,7 @@
 
                         <div class="btn-group col-md-6" role="group">
                             
-                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-bs-dismiss="modal" role="button">Fermer</button>
+                            <button id="ajout_fermer" type="button" class="col-md-12 btn btn-danger" data-dismiss="modal" role="button">Fermer</button>
                         
                         </div>    
 

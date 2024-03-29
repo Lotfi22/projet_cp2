@@ -27,9 +27,9 @@ Route::post('/admin/adherants/update','AdherantsController@update');
 Route::get('/admin/adherants/delete/{id}','AdherantsController@delete');
 Route::post('/admin/adherants/delete/ajax','AdherantsController@delete');
 Route::post('/admin/adherants/restore/ajax','AdherantsController@restore');
-Route::get('/admin/adherants/{id}','AdherantsController@profile');
+Route::get('/admin/adherants/{id_adherant}','AdherantsController@profile');
 Route::get('/admin/adherants/restore/{id}','AdherantsController@restore');
-Route::get('/admin/adherants/viewdeleted','AdherantsController@viewdeleted');
+Route::get('/adherants/viewdeleted','AdherantsController@viewdeleted');
 
 
 
@@ -42,3 +42,10 @@ Route::get('/admin/coaches','CoachController@index');
 Route::post('/admin/coaches/create','CoachController@create')->name('coaches.create');;
 Route::post('/admin/coaches/update','CoachController@update');
 Route::get('/admin/coaches/delete/{id}','CoachController@delete');
+Route::post('/admin/coaches/delete/ajax','CoachController@delete');
+Route::post('/admin/coaches/restore/ajax','CoachController@restore');
+Route::get('/admin/coaches/{id_coach}','CoachController@profile');
+Route::get('/admin/coaches/restore/{id}','CoachController@restore');
+Route::get('/coaches/viewdeleted','CoachController@viewdeleted');
+
+

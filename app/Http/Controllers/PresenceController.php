@@ -30,4 +30,6 @@ class PresenceController extends Controller
         return view('presences.index',compact('presences','seance'));
     }
 
+
+
 }

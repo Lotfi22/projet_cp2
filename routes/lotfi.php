@@ -45,6 +45,8 @@ Route::post('/gestionnaire/login', 'Auth\GestionnaireLoginController@login')->na
 Route::get('/gestionnaire/', 'GestionnaireController@index')->name('gestionnaire.home');
 
 
+//QR
+Route::get('/testqr', 'TestController@generate');
 
 
 
